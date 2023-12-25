@@ -1,0 +1,31 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+flavors:
+  stg:
+    app:
+      name: "Nhanh Stg"
+    android:
+      applicationId: "com.ibp.app_nhanh.stg"
+      icon: "assets/images/img_logo_round.png"
+#      firebase:
+#        config: ".firebase/stg/google-services.json"
+    ios:
+      bundleId: "com.ibp.app_nhanh.stg"
+      icon: "assets/images/img_logo_round.png"
+#      firebase:
+#        config: ".firebase/stg/GoogleService-Info.plist"
+
+  prod:
+    app:
+      name: "Nhanh"
+    android:
+      applicationId: "com.ibp.app_nhanh"
+      icon: "assets/images/img_logo_round.png"
+#      firebase:
+#        config: ".firebase/prod/google-services.json"
+    ios:
+      bundleId: "com.ibp.app_nhanh"
+      icon: "assets/images/img_logo_round.png"
+#      firebase:
+#        config: ".firebase/prod/GoogleService-Info.plist"

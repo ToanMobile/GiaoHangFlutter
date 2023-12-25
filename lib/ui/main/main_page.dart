@@ -1,0 +1,94 @@
+import 'package:app_giao_hang/res/style.dart';
+import 'package:flutter/material.dart';
+
+import '../../ui/base/base_page.dart';
+import '../../ui/main/main_controller.dart';
+import '../../ui/widgets/menu/custom_bottom_menu.dart';
+import '../widgets/dialogs/app_popup.dart';
+import 'home/home_page.dart';
+import 'product/product_page.dart';
+import 'settings/settings_page.dart';
+
+//ignore: must_be_immutable
+class MainPage extends BasePage<MainController> {
+  final List<Widget> pages = [HomePage(), ProductPage(), ProductPage(), ProductPage(), ProductPage(), SettingsPage()];
+
+  @override
+  Widget buildContentView(BuildContext context, MainController controller) {
+    controller.appPopup = AppPopup(
+      context: context,
+      onAddFarmPressed: () {
+        controller.onGotoAddFarm();
+      },
+      onFarmDetailsPressed: (detail) {
+        controller.getFarmDetails(detail?.name, detail?.fkey);
+      },
+      onFarmEditPressed: (detail) {
+        controller.onGotoListFarm();
+      },
+    );
+    initToast(context);
+    final List<BottomNavigationBarItem> items = [
+      BottomNavigationBarItem(
+        label: 'Home',
+        icon: Icon(Icons.home),
+        activeIcon: Icon(Icons.home, color: colorPrimary),
+      ),
+      BottomNavigationBarItem(
+        label: 'Sản phẩm',
+        icon: Icon(Icons.receipt_long_outlined),
+        activeIcon: Icon(Icons.receipt_long_outlined, color: colorPrimary),
+      ),
+      BottomNavigationBarItem(
+        label: 'Kho hàng',
+        icon: Icon(Icons.compare_arrows),
+        activeIcon: Icon(Icons.compare_arrows, color: colorPrimary),
+      ),
+      BottomNavigationBarItem(
+        label: 'Bán hàng',
+        icon: Icon(Icons.store_mall_directory_outlined),
+        activeIcon: Icon(Icons.store_mall_directory_outlined, color: colorPrimary),
+      ),
+      BottomNavigationBarItem(
+        label: 'Đơn hàng',
+        icon: Icon(Icons.local_grocery_store_rounded),
+        activeIcon: Icon(Icons.local_grocery_store_rounded, color: colorPrimary),
+      ),
+      BottomNavigationBarItem(
+        label: 'Khác',
+        icon: Icon(Icons.more_horiz),
+        activeIcon: Icon(Icons.more_horiz, color: colorPrimary),
+      ),
+    ];
+    return Scaffold(
+      body: buildPage(context),
+      bottomNavigationBar: CustomBottomNenu(
+        type: BottomNavigationBarType.fixed,
+        index: controller.pageIndex.value,
+        items: items,
+        onTabChanged: (value) {
+          controller.appPopup?.removePopup();
+          controller.onTabChanged(value);
+        },
+        selectedItemColor: colorPrimary,
+        unselectedItemColor: color929394,
+      ),
+    );
+  }
+
+  buildPage(BuildContext context) {
+    if (!controller.checkConnect.value && !AppPopup.pairDevice) {
+      Future.delayed(Duration(seconds: 1), () {
+        showMessage(textLocalization('setting.error.connect'), second: 5);
+      });
+    }
+    return SizedBox.expand(
+      child: PageView(
+        controller: controller.pageController,
+        physics: NeverScrollableScrollPhysics(),
+        onPageChanged: (index) {},
+        children: pages,
+      ),
+    );
+  }
+}
