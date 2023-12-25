@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_charts/charts_opacity.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../base/base_page.dart';
 import 'device_controller.dart';

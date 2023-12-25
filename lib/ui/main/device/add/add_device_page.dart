@@ -4,7 +4,7 @@ import 'package:app_giao_hang/ui/widgets/container_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:open_settings/open_settingsainer_widget.dart';
+import 'package:open_settings/open_settings.dart';
 
 import '../../../../../data/storage/key_constant.dart';
 import '../../../base/base_page.dart';

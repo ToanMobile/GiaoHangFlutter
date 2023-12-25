@@ -1,7 +1,7 @@
 import 'package:app_giao_hang/data/api/models/province/province_item.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:flutter/material.dart';
-import 'package:get/getes/style.dart';
+import 'package:get/get.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_super_page.dart';

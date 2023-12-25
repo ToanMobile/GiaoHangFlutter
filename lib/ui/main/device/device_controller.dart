@@ -5,6 +5,7 @@ import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/utils/data_util.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../../data/api/models/urvega/ChartSampleData.dart';
 import '../../../data/api/api_constants.dart';

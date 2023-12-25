@@ -6,7 +6,7 @@ import 'package:app_giao_hang/ui/widgets/dialogs/app_popup.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:location/location.dart' as loc;
-import 'package:network_info_plus/network_info_plusgs/app_popup.dart';
+import 'package:network_info_plus/network_info_plus.dart';
 import 'package:wifi_iot/wifi_iot.dart';
 import 'package:wifi_scan/wifi_scan.dart';
 

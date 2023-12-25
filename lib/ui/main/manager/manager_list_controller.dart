@@ -1,5 +1,5 @@
 import 'package:app_giao_hang/data/api/models/farm/farm_item.dart';
-import 'package:get/getitem.dart';
+import 'package:get/get.dart';
 
 import '../../../app/app_pages.dart';
 import '../../base/base_controller.dart';

@@ -5,6 +5,7 @@ import 'package:app_giao_hang/ui/widgets/button/touchable_opacity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../base/base_page.dart';
 import '../../widgets/base_scaffold_widget.dart';
