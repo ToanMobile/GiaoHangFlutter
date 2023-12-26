@@ -19,9 +19,9 @@ class UserService extends BaseService {
 
   Future<TUser> getUserInfo(String? email) async {
     final params = {"email": email};
-    final response = await post(GET_PROFILE, data: params);
-    if (response.data != null) {
-      return TUser.fromJson(response.data);
+    final response = await get(GET_PROFILE, params: params);
+    if (response.data.first != null) {
+      return TUser.fromJson(response.data.first);
     } else {
       return TUser();
     }

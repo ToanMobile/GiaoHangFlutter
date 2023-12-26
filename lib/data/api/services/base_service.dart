@@ -1,10 +1,5 @@
-import 'dart:convert';
-
-import 'package:app_giao_hang/data/api/api_constants.dart';
-import 'package:app_giao_hang/res/style.dart';
 import 'package:dio/dio.dart' as dio;
 
-import '../../storage/key_constant.dart';
 import '../models/response/api_response.dart';
 import '../rest_client.dart';
 
@@ -20,21 +15,13 @@ abstract class BaseService {
   }
 
   Future<ApiResponse> get(String path, {Map<String, dynamic>? params}) async {
-    if (isConnection) {
-      final response = await RestClient.getDio().get(path, queryParameters: params);
-      return _handleResponse(response);
-    } else {
-      return _handleResponseLostConnect();
-    }
+    final response = await RestClient.getDio().get(path, queryParameters: params);
+    return _handleResponse(response);
   }
 
   Future<ApiResponse> post(String path, {data, bool enableCache = false}) async {
-    if (isConnection) {
-      final response = await RestClient.getDio().post(path, data: data);
-      return _handleResponse(response);
-    } else {
-      return _handleResponseLostConnect();
-    }
+    final response = await RestClient.getDio().post(path, data: data);
+    return _handleResponse(response);
   }
 
   Future<ApiResponse> put(String path, {data}) async {
@@ -53,23 +40,14 @@ abstract class BaseService {
   }
 
   ApiResponse _handleResponse(dio.Response response) {
-    Map result = jsonDecode(response.data);
-    if (result['status'] == STATUS_TYPE.OK.name) {
-      final apiResponse = ApiResponse.fromJson(jsonDecode(response.data));
+    final apiResponse = ApiResponse.fromJson(response.data);
+    print('_handleResponse:result::' + apiResponse.toString());
+    if (apiResponse.result == true) {
       print('_handleResponse:ok::' + apiResponse.toString());
       return apiResponse;
     } else {
-      var apiResponse = ApiResponse.fromJson(jsonDecode(response.data));
       print('_handleResponse:fail::' + apiResponse.toString());
       return throw apiResponse;
     }
-  }
-
-  ApiResponse _handleResponseLostConnect() {
-    print("_handleResponseLostConnect::");
-    return throw ApiResponse(
-      code: 0,
-      message: textLocalization('setting.error.connect'),
-    );
   }
 }

@@ -28,6 +28,7 @@ const LOGIN_BY_SOCIAL = "identity/login-with-partner";
 //Get user
 const GET_PROFILE = "customer/get-customer";
 //Get List Order
+const GET_LIST_ORDER_DELIVERY = "order/delivery";
 
 //Register
 const REGISTER = "auth/register";

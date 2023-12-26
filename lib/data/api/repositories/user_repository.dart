@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
 import '../models/TUser.dart';
-import '../models/response/auth/AuthRes.dart';
 import '../services/user_service.dart';
 import 'base_repository.dart';
 
@@ -10,9 +9,10 @@ class UserRepository extends BaseRepository {
   final _userService = Get.find<UserService>();
   final _storage = Get.find<MyStorage>();
 
-  Future<AuthRes> loginByEmail(String email, String password) async {
+  Future<void> loginByEmail(String email, String password) async {
     final response = await _userService.loginByEmail(email, password);
-    return response;
+    print('loginByEmail::' + response.toString());
+    await _storage.saveDeviceToken(response);
   }
 
   Future<TUser> getUserInfo(String email) async {

@@ -37,7 +37,7 @@ class AppController extends GetxController {
     final tokenModel = await storage.getDeviceToken();
 
     if (tokenModel != null) {
-      await initApi();
+      await initApi(token: tokenModel.token);
       if (user?.name != null && user!.name!.isNotEmpty) {
         authState.value = AuthState.authorized;
       } else {

@@ -57,8 +57,9 @@ class LoginController extends BaseController {
     showLoading();
     try {
       await _userRepository.loginByEmail(textEmailCl.text, textPasswordCl.text);
-      hideLoading();
       await Get.find<AppController>().initAuth();
+      await _userRepository.getUserInfo(textEmailCl.text);
+      hideLoading();
       Get.offAllNamed(AppRoutes.MAIN);
     } catch (e) {
       hideLoading();

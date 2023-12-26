@@ -1,30 +1,24 @@
 class ApiResponse {
-  ApiResponse({this.code, this.status, this.total, this.message, this.data});
+  ApiResponse({this.result, this.message, this.data});
 
-  int? code = 0;
-  int? total;
   String? message;
-  String? status;
+  bool? result;
   dynamic data;
 
   @override
   String toString() {
-    return 'ApiResponse{code: $code, total: $total, message: $message, status: $status, data: $data}';
+    return 'ApiResponse{message: $message, status: $result, data: $data}';
   }
 
   factory ApiResponse.fromJson(Map<String, dynamic> json) => ApiResponse(
-        code: json["code"],
-        status: json["status"],
-        total: json.containsKey("total") ? json["total"] : 0,
-        message: json["msg"],
+        result: json["result"],
+        message: json["message"],
         data: json["data"],
       );
 
   Map<String, dynamic> toJson() => {
-        "code": code,
-        "status": status,
-        "total": total,
-        "msg": message,
+        "result": result,
+        "message": message,
         "data": data,
       };
 }
