@@ -1,18 +1,15 @@
 import 'package:flutter/widgets.dart';
 
+import '../../../../data/api/models/response/order/list_order.dart';
 import '../../../../res/style.dart';
 import '../../../widgets/button/touchable_opacity.dart';
 
 class ManagerItemView extends StatelessWidget {
-  final String title;
-  final String? content;
-  final bool isIconNext;
+  final ListOrder item;
   final VoidCallback onPressed;
 
   ManagerItemView({
-    this.content,
-    this.isIconNext = false,
-    required this.title,
+    required this.item,
     required this.onPressed,
   });
 
@@ -20,26 +17,68 @@ class ManagerItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TouchableOpacity(
       child: Container(
-        height: 65.ws,
+        height: 100.ws,
         padding: EdgeInsets.only(right: 10.ws, top: 8.ws, bottom: 8.ws),
-        child: Row(
+        child: Column(
           children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(title, style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                  if (content != null) ...[
-                    Text(content ?? '', style: text14.textColorB2B2B2, maxLines: 2, overflow: TextOverflow.ellipsis),
-                    SizedBox(width: 6.ws),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text('ID', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text(item.deliveryid.toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
-                ],
-              ),
+                ),
+                Column(
+                  children: [
+                    Text('Người giao', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text(item.shipname ?? '', style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('SDT', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text(item.phone ?? '', style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+              ],
             ),
-            if (isIconNext) ...[
-              Assets.icons.icSettingsNext.svg(width: 8.ws),
-            ]
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Text('Tổng đơn', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.total ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Chờ lấy', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.choLayHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Đã lấy', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.daLayHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Đang giao', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.dangGiaoHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text('Hoàn thành', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.hoanTat ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                  ],
+                ),
+              ],
+            )
           ],
         ),
       ),

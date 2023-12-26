@@ -1,13 +1,24 @@
 import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
-import '../models/response/auth/AuthRes.dart';
+import '../api_constants.dart';
+import '../models/response/auth/auth_res.dart';
+import '../models/response/order/list_order.dart';
 import 'base_service.dart';
 
-class FarmService extends BaseService {
+class OrderService extends BaseService {
   final _storage = Get.find<MyStorage>();
 
   Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
+
+  Future<List<ListOrder>?> getListOrder() async {
+    final response = await get(GET_LIST_ORDER_DELIVERY);
+    if (response.data != null) {
+      return List<ListOrder>.from(response.data.map((item) => ListOrder.fromJson(item)));
+    } else {
+      return null;
+    }
+  }
 /*
   Future<String> getNameFarm(List<FarmItem>? listFarm) async {
     final token = await tokenModel();

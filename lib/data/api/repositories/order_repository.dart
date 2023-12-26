@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
 
-import '../services/farm_service.dart';
+import '../models/response/order/list_order.dart';
+import '../services/order_service.dart';
 import 'base_repository.dart';
 
-class FarmRepository extends BaseRepository {
-  final _farmService = Get.find<FarmService>();
+class OrderRepository extends BaseRepository {
+  final _orderService = Get.find<OrderService>();
+
+  Future<List<ListOrder>?> getListOrder() async => _orderService.getListOrder();
 
 /*Future<FarmItem?> getFarmDetail(String? fk) async {
     final farm = await _farmService.getFarmDetail(fk);
@@ -13,7 +16,7 @@ class FarmRepository extends BaseRepository {
 
   Future<String> getNameFarm(List<FarmItem>? listFarm) async => _farmService.getNameFarm(listFarm);
 
-  Future<List<FarmItem>?> getListFarm() async => _farmService.getListFarm();
+
 
   Future<ApiResponse> updateFarm({required String fk, required String name, required String acreage, required String unit, required String address}) async {
     return await _farmService.updateFarm(fk: fk, name: name, acreage: acreage, unit: unit, address: address);

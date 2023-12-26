@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_page.dart';
+import './widget/manager_item_view.dart';
 import 'home_controller.dart';
 
 //ignore: must_be_immutable
@@ -18,9 +19,7 @@ class HomePage extends BasePage<HomeController> {
             children: [
               buildWidgetUserInfo(context),
               SizedBox(height: 10.ws),
-              buildWidgetTotal(context),
-              SizedBox(height: 10.ws),
-              buildWidgetNguonDonHang(),
+              buildWidgetDonHang(),
             ],
           ),
         ),
@@ -92,7 +91,7 @@ class HomePage extends BasePage<HomeController> {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.ws),
-                    child: Text('Farm của tôi', style: text14.textColor141414),
+                    child: Text('Biên bản giao hàng', style: text14.textColor141414),
                   ),
                   TouchableOpacity(
                     child: Padding(
@@ -165,50 +164,32 @@ class HomePage extends BasePage<HomeController> {
     );
   }
 
-  // buildWidgetDonHang() => Container(
-  //       width: double.infinity,
-  //       height: 210.ws,
-  //       decoration: BoxDecoration(
-  //         borderRadius: BorderRadius.all(Radius.circular(16)),
-  //         color: colorWhite,
-  //       ),
-  //       child: ListView.separated(
-  //         physics: const NeverScrollableScrollPhysics(),
-  //         itemBuilder: (context, index) => Container(
-  //           color: colorWhite,
-  //           padding: EdgeInsets.symmetric(horizontal: 26.ws),
-  //           child: ManagerItemView(
-  //             title: controller.listDon[index].name,
-  //             content: controller.listDon[index].total.toString(),
-  //             onPressed: () {},
-  //           ),
-  //         ),
-  //         shrinkWrap: true,
-  //         separatorBuilder: (context, index) => Divider(
-  //           indent: 24,
-  //           endIndent: 24,
-  //           height: 1,
-  //           thickness: 0.5,
-  //           color: color929394,
-  //         ),
-  //         itemCount: controller.listDon.length,
-  //       ),
-  //     );
-
-  buildWidgetNguonDonHang() => Container(
+  buildWidgetDonHang() => Container(
+        width: double.infinity,
+        height: 700.ws,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(16)),
           color: colorWhite,
         ),
-        padding: EdgeInsets.all(16),
-        width: double.infinity,
-        height: 100.ws,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Nguồn đơn hàng', style: text16.bold.textColor141414),
-            Center(child: Text('Không có dữ liệu', style: text16.textColor141414)),
-          ],
+        child: ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
+          itemBuilder: (context, index) => Container(
+            color: colorWhite,
+            padding: EdgeInsets.symmetric(horizontal: 26.ws),
+            child: ManagerItemView(
+              item: controller.listOrder[index],
+              onPressed: () {},
+            ),
+          ),
+          shrinkWrap: true,
+          separatorBuilder: (context, index) => Divider(
+            indent: 24,
+            endIndent: 24,
+            height: 1,
+            thickness: 0.5,
+            color: color929394,
+          ),
+          itemCount: controller.listOrder.length,
         ),
       );
 }

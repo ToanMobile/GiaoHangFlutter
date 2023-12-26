@@ -2,11 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 import '../../data/api/repositories/device_repository.dart';
-import '../../data/api/repositories/farm_repository.dart';
+import '../../data/api/repositories/order_repository.dart';
 import '../../ui/base/base_controller.dart';
 
 class MainController extends BaseController {
-  final _farmRepository = Get.find<FarmRepository>();
+  final _orderRepository = Get.find<OrderRepository>();
   final _deviceRepository = Get.find<DeviceRepository>();
   late PageController pageController;
   RxInt pageIndex = 0.obs;

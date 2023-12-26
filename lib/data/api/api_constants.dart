@@ -28,7 +28,8 @@ const LOGIN_BY_SOCIAL = "identity/login-with-partner";
 //Get user
 const GET_PROFILE = "customer/get-customer";
 //Get List Order
-const GET_LIST_ORDER_DELIVERY = "order/delivery";
+const GET_LIST_ORDER_DELIVERY_OLD = "order/delivery";
+const GET_LIST_ORDER_DELIVERY = "order/get-delivery?page=1&limit=100";
 
 //Register
 const REGISTER = "auth/register";

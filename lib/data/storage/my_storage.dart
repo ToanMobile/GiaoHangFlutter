@@ -5,7 +5,7 @@ import 'package:get_storage/get_storage.dart';
 import '../../res/languages/localization_service.dart';
 import '../../res/theme/theme_service.dart';
 import '../api/models/TUser.dart';
-import '../api/models/response/auth/AuthRes.dart';
+import '../api/models/response/auth/auth_res.dart';
 
 class MyStorage {
   late GetStorage box;
