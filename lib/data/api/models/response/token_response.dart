@@ -5,8 +5,7 @@ class TokenResponse {
   int? expiresIn;
   String? scope;
 
-  TokenResponse(
-      {this.id, this.accessToken, this.tokenType, this.expiresIn, this.scope});
+  TokenResponse({this.id, this.accessToken, this.tokenType, this.expiresIn, this.scope});
 
   TokenResponse.fromJson(Map<String, dynamic> json) {
     id = json['id'];

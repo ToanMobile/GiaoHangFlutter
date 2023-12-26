@@ -1,21 +1,14 @@
-import 'package:app_giao_hang/data/api/models/device/device_new.dart';
-import 'package:app_giao_hang/data/api/models/device/device_push.dart';
-import 'package:app_giao_hang/data/api/models/response/api_response.dart';
 import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
-import '../api_constants.dart';
-import '../models/device/chart_device.dart';
-import '../models/device/device_detail_item.dart';
-import '../models/device/device_item.dart';
-import '../models/token_model.dart';
+import '../models/response/auth/AuthRes.dart';
 import 'base_service.dart';
 
 class DeviceService extends BaseService {
   final _storage = Get.find<MyStorage>();
 
-  Future<TokenModel?> tokenModel() async => await _storage.getDeviceToken();
-
+  Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
+/*
   Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final token = await tokenModel();
     final params = {"uk": token?.uk, "fk": token?.fk, "sn": sn};
@@ -41,7 +34,7 @@ class DeviceService extends BaseService {
   Future<DeviceItemNew?> pairDevice({required String wifi, required String pass}) async {
     final token = await tokenModel();
     final params = <String, String>{"ukey": token?.uk ?? "", "fkey": token?.fk ?? "", "wifi": wifi, "pass": pass};
-    final response = await getWithCustomUrlPost(URL_PAIR, PAIR_DEVICE, data: params);
+    final response = await getWithCustomUrlPost("URL_PAIR", PAIR_DEVICE, data: params);
     return DeviceItemNew.fromJson(response);
   }
 
@@ -109,5 +102,5 @@ class DeviceService extends BaseService {
     } else {
       return List.empty();
     }
-  }
+  }*/
 }

@@ -1,15 +1,12 @@
-import 'package:app_giao_hang/data/api/models/province/province_item.dart';
 import 'package:get/get.dart';
 
-import '../models/farm/farm_item.dart';
-import '../models/response/api_response.dart';
 import '../services/farm_service.dart';
 import 'base_repository.dart';
 
 class FarmRepository extends BaseRepository {
   final _farmService = Get.find<FarmService>();
 
-  Future<FarmItem?> getFarmDetail(String? fk) async {
+/*Future<FarmItem?> getFarmDetail(String? fk) async {
     final farm = await _farmService.getFarmDetail(fk);
     return farm;
   }
@@ -30,5 +27,5 @@ class FarmRepository extends BaseRepository {
 
   Future<List<ProvinceItem>?> getListDistrict(String code) async => await _farmService.getListDistrict(code);
 
-  Future<List<ProvinceItem>?> getListWard(String code) async => await _farmService.getListWard(code);
+  Future<List<ProvinceItem>?> getListWard(String code) async => await _farmService.getListWard(code);*/
 }

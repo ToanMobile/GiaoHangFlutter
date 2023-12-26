@@ -79,9 +79,7 @@ class PermissionHandleManager {
     // Blocked?
     if (status.isDenied || status.isRestricted) {
       // Ask the user to unblock
-      if (await Permission.location
-          .request()
-          .isGranted) {
+      if (await Permission.location.request().isGranted) {
         // Either the permission was already granted before or the user just granted it.
         // ignore: avoid_print
         print('Location permission granted');

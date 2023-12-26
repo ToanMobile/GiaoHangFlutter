@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:app_giao_hang/data/api/api_constants.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cupertino_datetime_picker/flutter_cupertino_datetime_picker.dart';
 import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -219,26 +218,26 @@ class SettingsPage extends BasePage<SettingsController> {
       ).show();
 
   void _showDatePicker(BuildContext context, SettingsController controller) {
-    DatePicker.showDatePicker(
-      context,
-      onMonthChangeStartWithFirstDate: true,
-      pickerTheme: DateTimePickerTheme(
-        showTitle: true,
-        confirm: Text(textLocalization('dialog.confirm'), style: text16.bold.textColorPrimary),
-      ),
-      minDateTime: DateTime.parse(MIN_DATETIME),
-      maxDateTime: DateTime.parse(MAX_DATETIME),
-      initialDateTime: controller.dateTime,
-      dateFormat: DATE_FORMAT3,
-      locale: controller.locale!,
-      onClose: () => print("----- onClose -----"),
-      onCancel: () => print('onCancel'),
-      onConfirm: (dateTime, List<int> index) {
-        controller.updateProfile((error) {
-          showMessage(error);
-        }, birthday: dateTime);
-      },
-    );
+    // DatePicker.showDatePicker(
+    //   context,
+    //   onMonthChangeStartWithFirstDate: true,
+    //   pickerTheme: DateTimePickerTheme(
+    //     showTitle: true,
+    //     confirm: Text(textLocalization('dialog.confirm'), style: text16.bold.textColorPrimary),
+    //   ),
+    //   minDateTime: DateTime.parse(MIN_DATETIME),
+    //   maxDateTime: DateTime.parse(MAX_DATETIME),
+    //   initialDateTime: controller.dateTime,
+    //   dateFormat: DATE_FORMAT3,
+    //   locale: controller.locale!,
+    //   onClose: () => print("----- onClose -----"),
+    //   onCancel: () => print('onCancel'),
+    //   onConfirm: (dateTime, List<int> index) {
+    //     controller.updateProfile((error) {
+    //       showMessage(error);
+    //     }, birthday: dateTime);
+    //   },
+    // );
   }
 
   void openSexBottomSheet(BuildContext context) {

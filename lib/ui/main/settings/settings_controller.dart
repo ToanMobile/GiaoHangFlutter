@@ -1,8 +1,6 @@
 import 'package:app_giao_hang/data/api/models/TUser.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_cupertino_datetime_picker/flutter_cupertino_datetime_picker.dart';
 import 'package:get/get.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 
 import '../../../app/app_controller.dart';
 import '../../../app/app_pages.dart';
@@ -22,27 +20,24 @@ class SettingsController extends BaseController {
   var appVersion = ''.obs;
 
   TUser get user => _user.value;
-  DateTimePickerLocale? locale = DateTimePickerLocale.en_us;
   DateTime? dateTime;
 
   @override
   void onInit() async {
     super.onInit();
     try {
-      await _useRepository.getUserInfo();
+      //await _useRepository.getUserInfo();
     } catch (e) {}
     _user.value = appController.user ?? TUser(name: '', gender: SEX_TYPE.MEN.name, phone: '');
     if (user.gender == null) {
       _user.update((_user) {
-        user.updateUser(gender: SEX_TYPE.MEN.name);
+        user.copyWith(gender: SEX_TYPE.MEN.name);
       });
     }
     dateTime = user.birthday ?? DateTime.parse(INIT_DATETIME);
     sexType.value = user.gender == 1 ? SEX_TYPE.MEN : (user.gender == 0 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
     txtNameController.text = user.name ?? '';
     txtPhoneController.text = user.phone ?? '';
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
-    appVersion.value = packageInfo.version;
   }
 
   void updateProfile(Function(String) errorMessage, {String? userName, DateTime? birthday, SEX_TYPE? sexType, String? phone}) async {
@@ -50,9 +45,9 @@ class SettingsController extends BaseController {
     try {
       if (userName != null) {
         try {
-          await _useRepository.updateProfile(name: userName);
+          //await _useRepository.updateProfile(name: userName);
           _user.update((_user) {
-            user.updateUser(name: userName);
+            user.copyWith(name: userName);
           });
           txtNameController.text = userName;
         } catch (e) {
@@ -62,10 +57,10 @@ class SettingsController extends BaseController {
       }
       if (birthday != null) {
         try {
-          await _useRepository.updateProfile(birthday: birthday);
+          //await _useRepository.updateProfile(birthday: birthday);
           dateTime = birthday;
           _user.update((_user) {
-            user.updateUser(birthday: birthday);
+            user.copyWith(birthday: birthday);
           });
         } catch (e) {
           dateTime = user.birthday ?? DateTime.parse(INIT_DATETIME);
@@ -84,10 +79,10 @@ class SettingsController extends BaseController {
             case SEX_TYPE.OTHER:
               gender = SEX_TYPE.OTHER.name;
           }
-          await _useRepository.updateProfile(gender: gender);
+          //await _useRepository.updateProfile(gender: gender);
           this.sexType.value = sexType;
           _user.update((_user) {
-            user.updateUser(gender: gender);
+            user.copyWith(gender: gender);
           });
         } catch (e) {
           this.sexType.value = user.gender == 1 ? SEX_TYPE.MEN : (user.gender == 0 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
@@ -96,9 +91,9 @@ class SettingsController extends BaseController {
       }
       if (phone != null) {
         try {
-          await _useRepository.updateProfile(phone: phone);
+          //await _useRepository.updateProfile(phone: phone);
           _user.update((_user) {
-            user.updateUser(phone: phone);
+            user.copyWith(phone: phone);
           });
           txtPhoneController.text = phone;
         } catch (e) {
@@ -120,11 +115,7 @@ class SettingsController extends BaseController {
     Get.toNamed(AppRoutes.LIST_NOTIFICATION);
   }
 
-  onGotoSecurityPage() {
-    Get.toNamed(AppRoutes.SECURITY);
-  }
+  onGotoSecurityPage() {}
 
-  onGotoNotificationsSettingPage() {
-    Get.toNamed(AppRoutes.SETTING_NOTIFICATION);
-  }
+  onGotoNotificationsSettingPage() {}
 }

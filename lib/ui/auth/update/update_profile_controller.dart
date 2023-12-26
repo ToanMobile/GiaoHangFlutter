@@ -10,6 +10,7 @@ class UpdateProfileController extends BaseController {
   final nameController = TextEditingController();
   RxBool isEnable = false.obs;
   final profile = Get.find<AppController>().user!.copyWith();
+
   onUpdateProfile() {}
 
   @override
@@ -29,10 +30,10 @@ class UpdateProfileController extends BaseController {
   }
 
   Future<void> updateProfile() async {
-    profile.updateUser(name: nameController.text, birthday: DateTime.now(), gender: 0, phone: "");
+    profile.copyWith(name: nameController.text, birthday: DateTime.now(), gender: 0, phone: "");
     try {
       showLoading();
-      await _userRespository.updateProfile();
+      //await _userRespository.updateProfile();
       hideLoading();
     } catch (e) {
       showErrors(e);

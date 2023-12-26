@@ -10,8 +10,9 @@ class CommentWidget extends GetWidget {
   final RxInt totalComment;
   final double iconSize;
   final VoidCallback? onComment;
-  CommentWidget(
-      {required this.totalComment, this.iconSize = 32, this.onComment});
+
+  CommentWidget({required this.totalComment, this.iconSize = 32, this.onComment});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,8 +25,7 @@ class CommentWidget extends GetWidget {
               height: iconSize,
               color: getColor().themeColorB2B2B2,
             ),
-            Obx(() => Text("${totalComment.value} bình luận",
-                style: text14.textColor777777, textAlign: TextAlign.left))
+            Obx(() => Text("${totalComment.value} bình luận", style: text14.textColor777777, textAlign: TextAlign.left))
           ],
         ),
         onPressed: () {

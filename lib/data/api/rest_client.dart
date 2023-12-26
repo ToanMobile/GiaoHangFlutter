@@ -25,7 +25,7 @@ class RestClient {
   void init(String baseUrl, {String? accessToken}) {
     this.baseUrl = baseUrl;
     headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/json',
     };
     if (accessToken != null && accessToken.isNotEmpty) setToken(accessToken);
     //setLanguage(language!);

@@ -75,8 +75,8 @@ class RegisterController extends BaseController {
     }
     showLoading();
     try {
-      final response = await _userRepository.register(textUserNameCl.text, textEmailCl.text);
-      print("response::" + response.toString());
+      //final response = await _userRepository.register(textUserNameCl.text, textEmailCl.text);
+      //print("response::" + response.toString());
       hideLoading();
       await Get.find<AppController>().initAuth();
       Get.offAllNamed(AppRoutes.MAIN);

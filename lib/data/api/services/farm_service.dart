@@ -1,19 +1,14 @@
-import 'package:app_giao_hang/data/api/models/response/api_response.dart';
-import 'package:app_giao_hang/data/api/models/token_model.dart';
-import 'package:app_giao_hang/res/style.dart';
 import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
-import '../api_constants.dart';
-import '../models/farm/farm_item.dart';
-import '../models/province/province_item.dart';
+import '../models/response/auth/AuthRes.dart';
 import 'base_service.dart';
 
 class FarmService extends BaseService {
   final _storage = Get.find<MyStorage>();
 
-  Future<TokenModel?> tokenModel() async => await _storage.getDeviceToken();
-
+  Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
+/*
   Future<String> getNameFarm(List<FarmItem>? listFarm) async {
     final token = await tokenModel();
     final farm = listFarm?.firstWhere((element) => element.fkey == token?.fk);
@@ -85,5 +80,5 @@ class FarmService extends BaseService {
     } else {
       return null;
     }
-  }
+  }*/
 }

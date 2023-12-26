@@ -10,7 +10,9 @@ class UserRoleWidget extends StatelessWidget {
   final TUser user;
   final double? avatarSize;
   final String createDate;
+
   UserRoleWidget({required this.user, this.avatarSize = 56, required this.createDate});
+
   @override
   Widget build(BuildContext context) {
     return Container(

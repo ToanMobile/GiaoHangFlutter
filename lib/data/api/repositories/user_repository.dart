@@ -1,12 +1,8 @@
-import 'package:app_giao_hang/data/api/models/response/api_response.dart';
-import 'package:app_giao_hang/data/api/models/token_model.dart';
-import 'package:app_giao_hang/utils/date_time_utils.dart';
 import 'package:get/get.dart';
 
-import '../../../app/app_controller.dart';
 import '../../storage/my_storage.dart';
-import '../api_constants.dart';
 import '../models/TUser.dart';
+import '../models/response/auth/AuthRes.dart';
 import '../services/user_service.dart';
 import 'base_repository.dart';
 
@@ -14,12 +10,19 @@ class UserRepository extends BaseRepository {
   final _userService = Get.find<UserService>();
   final _storage = Get.find<MyStorage>();
 
-  Future<ApiResponse> loginByEmail(String email) async {
-    final response = await _userService.loginByEmail(email);
+  Future<AuthRes> loginByEmail(String email, String password) async {
+    final response = await _userService.loginByEmail(email, password);
     return response;
   }
 
-  Future<ApiResponse> loginBySocial(
+  Future<TUser> getUserInfo(String email) async {
+    final userInfo = await _userService.getUserInfo(email);
+    print("tokenModel:::userInfo::" + userInfo.toString());
+    await _storage.saveUserInfo(userInfo);
+    return userInfo;
+  }
+
+/*Future<ApiResponse> loginBySocial(
     String email,
     String type, {
     String? token,
@@ -68,15 +71,6 @@ class UserRepository extends BaseRepository {
     return response;
   }
 
-  Future<TUser> getUserInfo() async {
-    final _storage = Get.find<MyStorage>();
-    final tokenModel = await _storage.getDeviceToken();
-    final userInfo = await _userService.getUserInfo(tokenModel?.uk);
-    print("tokenModel:::" + tokenModel.toString() + "userInfo::" + userInfo.toString());
-    await _storage.saveUserInfo(userInfo);
-    return userInfo;
-  }
-
   Future<TUser> updateProfile({String? name, DateTime? birthday, String? phone, num? gender}) async {
     final _storage = Get.find<MyStorage>();
     final tokenModel = await _storage.getDeviceToken();
@@ -88,5 +82,5 @@ class UserRepository extends BaseRepository {
 
   updateFirebaseToken({required String token, required String deviceId, String? verName, String? verCode}) async {
     await _userService.updateFirebaseToken(token: token, deviceId: deviceId, verCode: verCode, verName: verName);
-  }
+  }*/
 }

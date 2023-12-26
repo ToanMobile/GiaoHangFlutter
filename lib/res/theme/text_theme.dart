@@ -49,6 +49,7 @@ extension TextStyleExt on TextStyle {
   //TextStyle get semibold => this.copyWith(fontWeight: FontWeight.w600);
 
   TextStyle get bold => this.copyWith(fontWeight: FontWeight.w700);
+
   TextStyle get normalItanic => this.copyWith(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic);
 
   TextStyle get normalLineThrough => this.copyWith(fontWeight: FontWeight.w400, decoration: TextDecoration.lineThrough);

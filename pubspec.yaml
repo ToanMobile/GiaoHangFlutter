@@ -15,7 +15,6 @@ dependencies:
   get: ^4.6.6
   dio: ^5.3.4
   intl: ^0.18.0
-  connecteo: ^2.1.1
   json_annotation: ^4.8.1
   google_sign_in: ^6.1.5
   flutter_facebook_auth: ^6.0.2
@@ -37,12 +36,8 @@ dependencies:
   dots_indicator: ^3.0.0
   http_parser: ^4.0.2
   path: ^1.8.3
-  wakelock_plus: ^1.1.1
   logger: ^2.0.2
   url_launcher: ^6.1.14
-  #app_tracking_transparency: ^2.0.4
-  #flutter_widget_from_html: ^0.10.0
-  path_drawing: ^1.0.1
   fluttertoast: ^8.2.2
   lottie: ^2.4.0
   #Gallery
@@ -50,18 +45,6 @@ dependencies:
   #photo_manager: 2.7.2
   path_provider: ^2.0.15
   camera: ^0.10.5+2
-  flutter_cupertino_datetime_picker: ^3.0.0
-  syncfusion_flutter_charts: ^23.2.4
-  #Wifi
-  wifi_iot: ^0.3.18+1
-  wifi_scan: ^0.4.0+2
-  location: 5.0.3
-  network_info_plus: ^4.0.2
-  open_settings: ^2.0.2
-  package_info_plus: ^4.1.0
-  #Location
-  geolocator: ^10.1.0
-  geocoding: ^2.1.0
 
 dev_dependencies:
   flutter_test:

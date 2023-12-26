@@ -1,18 +1,12 @@
-import 'package:app_giao_hang/data/api/models/device/device_push.dart';
 import 'package:get/get.dart';
 
-import '../models/device/chart_device.dart';
-import '../models/device/device_detail_item.dart';
-import '../models/device/device_item.dart';
-import '../models/device/device_new.dart';
-import '../models/response/api_response.dart';
 import '../services/device_service.dart';
 import 'base_repository.dart';
 
 class DeviceRepository extends BaseRepository {
   final _deviceService = Get.find<DeviceService>();
 
-  Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
+/* Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final device = await _deviceService.getDeviceDetail(sn: sn);
     return device;
   }
@@ -48,5 +42,5 @@ class DeviceRepository extends BaseRepository {
         endTime: endTime,
       );
 
-  Future<List<ChartDevice>?> getChartLite(String sn) async => _deviceService.getChartLite(sn);
+  Future<List<ChartDevice>?> getChartLite(String sn) async => _deviceService.getChartLite(sn);*/
 }

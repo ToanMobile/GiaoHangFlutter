@@ -1,4 +1,3 @@
-import 'package:app_giao_hang/ui/main/home/home_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -15,8 +14,7 @@ class MainApp extends GetWidget<AppController> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Obx(
-        () => GetMaterialApp(
+      child: Obx(() => GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: textLocalization('appName'),
             translations: LocalizationService(),
@@ -32,27 +30,20 @@ class MainApp extends GetWidget<AppController> {
               GlobalCupertinoLocalizations.delegate,
             ],
             builder: (context, child) => Overlay(
-                  initialEntries: [
-                    if (child != null) ...[
-                      OverlayEntry(
-                        builder: (context) => child,
-                      ),
-                    ],
-                  ],
-                ),
+              initialEntries: [
+                if (child != null) ...[
+                  OverlayEntry(
+                    builder: (context) => child,
+                  ),
+                ],
+              ],
+            ),
             supportedLocales: [
               const Locale('en', 'US'), // English
               const Locale('vi', 'VN'), // Vietname
             ],
             navigatorKey: Get.key,
-            routingCallback: (routing) {
-              if (routing?.current == AppRoutes.MAIN && routing?.previous != AppRoutes.SPLASH) {
-                try {
-                  Get.find<HomeController>().autoRefreshList();
-                } catch (e) {}
-              }
-            }),
-      ),
+          )),
       onTap: () {
         FocusManager.instance.primaryFocus?.unfocus();
       },
@@ -65,7 +56,7 @@ class MainApp extends GetWidget<AppController> {
     }
     switch (controller.authState.value) {
       case AuthState.unauthorized:
-        return AppRoutes.INITIAL;
+        return AppRoutes.SPLASH;
       case AuthState.authorized:
         return AppRoutes.MAIN;
       case AuthState.new_install:

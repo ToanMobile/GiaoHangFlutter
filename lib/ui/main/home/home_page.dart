@@ -1,12 +1,9 @@
 import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/ui/widgets/button/touchable_opacity.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_page.dart';
-import '../manager/widget/manager_item_view.dart';
 import 'home_controller.dart';
 
 //ignore: must_be_immutable
@@ -22,10 +19,6 @@ class HomePage extends BasePage<HomeController> {
               buildWidgetUserInfo(context),
               SizedBox(height: 10.ws),
               buildWidgetTotal(context),
-              SizedBox(height: 10.ws),
-              buildWidgetChart(),
-              SizedBox(height: 10.ws),
-              buildWidgetDonHang(),
               SizedBox(height: 10.ws),
               buildWidgetNguonDonHang(),
             ],
@@ -99,8 +92,7 @@ class HomePage extends BasePage<HomeController> {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.ws),
-                    child: Text(controller.getMainController.nameFarmPick.value.isNotEmpty ? controller.getMainController.nameFarmPick.value : 'Farm của tôi',
-                        style: text14.textColor141414),
+                    child: Text('Farm của tôi', style: text14.textColor141414),
                   ),
                   TouchableOpacity(
                     child: Padding(
@@ -108,11 +100,7 @@ class HomePage extends BasePage<HomeController> {
                       padding: EdgeInsets.symmetric(horizontal: 24.ws, vertical: 4.ws),
                       child: Assets.icons.icMenu.svg(height: 24.ws, width: 20.ws),
                     ),
-                    onPressed: () {
-                      final RenderBox renderBox = controller.widgetKey.currentContext?.findRenderObject() as RenderBox;
-                      final Offset offset = renderBox.localToGlobal(Offset.zero);
-                      controller.getPopup()?.showPopupDialog(context, offset);
-                    },
+                    onPressed: () {},
                   ),
                 ],
               ),
@@ -177,83 +165,35 @@ class HomePage extends BasePage<HomeController> {
     );
   }
 
-  buildWidgetChart() {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(16)),
-        color: colorWhite,
-      ),
-      child: SfCartesianChart(
-        backgroundColor: colorWhite,
-        plotAreaBorderWidth: 0,
-        title: ChartTitle(text: 'Biểu đồ doanh thu'),
-        legend: Legend(
-          isVisible: true,
-          position: LegendPosition.bottom,
-          padding: 10.ws,
-          itemPadding: 10.ws,
-          isResponsive: true,
-          textStyle: text16,
-          overflowMode: LegendItemOverflowMode.wrap,
-          orientation: LegendItemOrientation.horizontal,
-        ),
-        primaryXAxis: DateTimeCategoryAxis(
-          axisLine: const AxisLine(width: 0),
-          majorGridLines: const MajorGridLines(width: 0),
-          intervalType: DateTimeIntervalType.auto,
-          interval: 1,
-          dateFormat: DateFormat.Hm(),
-          rangePadding: ChartRangePadding.none,
-        ),
-        primaryYAxis: NumericAxis(
-          labelFormat: '{value}',
-          axisLine: const AxisLine(width: 0),
-          majorTickLines: const MajorTickLines(color: Colors.transparent),
-        ),
-        axes: <ChartAxis>[
-          NumericAxis(
-            name: 'yAxis',
-            labelFormat: '{value}',
-            opposedPosition: true,
-            axisLine: const AxisLine(width: 0),
-            majorTickLines: const MajorTickLines(color: Colors.transparent),
-          )
-        ],
-        series: controller.listChart,
-        tooltipBehavior: TooltipBehavior(enable: true),
-      ),
-    );
-  }
-
-  buildWidgetDonHang() => Container(
-        width: double.infinity,
-        height: 210.ws,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(16)),
-          color: colorWhite,
-        ),
-        child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
-          itemBuilder: (context, index) => Container(
-            color: colorWhite,
-            padding: EdgeInsets.symmetric(horizontal: 26.ws),
-            child: ManagerItemView(
-              title: controller.listDon[index].name,
-              content: controller.listDon[index].total.toString(),
-              onPressed: () {},
-            ),
-          ),
-          shrinkWrap: true,
-          separatorBuilder: (context, index) => Divider(
-            indent: 24,
-            endIndent: 24,
-            height: 1,
-            thickness: 0.5,
-            color: color929394,
-          ),
-          itemCount: controller.listDon.length,
-        ),
-      );
+  // buildWidgetDonHang() => Container(
+  //       width: double.infinity,
+  //       height: 210.ws,
+  //       decoration: BoxDecoration(
+  //         borderRadius: BorderRadius.all(Radius.circular(16)),
+  //         color: colorWhite,
+  //       ),
+  //       child: ListView.separated(
+  //         physics: const NeverScrollableScrollPhysics(),
+  //         itemBuilder: (context, index) => Container(
+  //           color: colorWhite,
+  //           padding: EdgeInsets.symmetric(horizontal: 26.ws),
+  //           child: ManagerItemView(
+  //             title: controller.listDon[index].name,
+  //             content: controller.listDon[index].total.toString(),
+  //             onPressed: () {},
+  //           ),
+  //         ),
+  //         shrinkWrap: true,
+  //         separatorBuilder: (context, index) => Divider(
+  //           indent: 24,
+  //           endIndent: 24,
+  //           height: 1,
+  //           thickness: 0.5,
+  //           color: color929394,
+  //         ),
+  //         itemCount: controller.listDon.length,
+  //       ),
+  //     );
 
   buildWidgetNguonDonHang() => Container(
         decoration: BoxDecoration(

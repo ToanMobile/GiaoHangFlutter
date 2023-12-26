@@ -3,7 +3,6 @@ import 'package:json_annotation/json_annotation.dart';
 import '../../../utils/date_time_utils.dart';
 import '../api_constants.dart';
 
-
 class DateTimeConverter implements JsonConverter<DateTime, String> {
   const DateTimeConverter();
 

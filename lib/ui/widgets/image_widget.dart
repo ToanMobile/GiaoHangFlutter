@@ -17,6 +17,7 @@ class RoundNetworkImage extends StatelessWidget {
   final Color? strokeColor;
   final double? strokeWidth;
   final bool? showImageError;
+
   RoundNetworkImage({required this.width, required this.height, this.url, this.radius, this.boxFit, this.strokeColor, this.strokeWidth, this.showImageError = true});
 
   @override

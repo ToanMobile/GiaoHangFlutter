@@ -10,28 +10,31 @@ final maxDate = DateTime(3000, 1, 1, 0, 0, 0);
 const MIN_YEAR_OLD_USED_APP = 18;
 const PAGE_SIZE = 30;
 //Stg
-const BASE_URL_DEV = "https://api.urvega.com/";
-const UPLOAD_PHOTO_URL_DEV = "https://api.urvega.com/";
-const DOWNLOAD_PHOTO_URL_DEV = "https://api.urvega.com/";
+const BASE_URL_DEV = "https://ibp-staging.tastycounter.vn/app/api/";
+const UPLOAD_PHOTO_URL_DEV = BASE_URL_DEV + "product/img/";
+
+void DOWNLOAD_PHOTO_URL_DEV(String name) => "$BASE_URL_DEV/common/files/$name?subfolder=contract";
 
 //Production
-const URL_PAIR = "http://192.168.1.86:8686/";
-const BASE_URL_PROD = "https://api.urvega.com/"; // production
-const UPLOAD_PHOTO_URL_PROD = "https://api.urvega.com/"; //production
-const DOWNLOAD_PHOTO_URL_PROD = "https://api.urvega.com/"; // production
+const BASE_URL_PROD = "https://ibp.tastycounter.vn/app/api/"; // production
+const UPLOAD_PHOTO_URL_PROD = BASE_URL_PROD + "product/img/"; //production
+void DOWNLOAD_PHOTO_URL_PROD(String name) => "$BASE_URL_PROD/common/files/$name?subfolder=contract";
 var isConnection = true;
 
 String PHOTO_URL_CDN = BASE_URL_DEV;
 //Login
-const LOGIN_BY_EMAIL = "auth/login";
-const LOGIN_BY_SOCIAL = "auth/slogin";
+const LOGIN_BY_EMAIL = "identity/login";
+const LOGIN_BY_SOCIAL = "identity/login-with-partner";
+//Get user
+const GET_PROFILE = "customer/get-customer";
+//Get List Order
+
 //Register
 const REGISTER = "auth/register";
 //OTP
 const VERIFY_OTP = "code/check";
 const REQUEST_OTP = "code/generate";
 //Profile
-const GET_PROFILE = "profile/fetch";
 const UPDATE_PROFILE = "profile/update";
 
 // firebase

@@ -1,8 +1,6 @@
 const String MIN_DATETIME = '1800-05-12';
 const String MAX_DATETIME = '2023-05-25';
 const String INIT_DATETIME = '1990-01-01';
-const String fkTest = "YNAt3Y51";
-const String ukTest = "/4mkVhaEkQVbtSpy+p1bMUnPqai/v0PSGcTbEBsL/PY=";
 
 enum ADD_DEVICE_TYPE { WIFI, SEARCH, REGISTER, CREATE, DONE }
 

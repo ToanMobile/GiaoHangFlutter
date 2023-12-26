@@ -1,17 +1,16 @@
 import 'dart:convert';
 
-import 'package:app_giao_hang/data/api/models/token_model.dart';
 import 'package:get_storage/get_storage.dart';
 
 import '../../res/languages/localization_service.dart';
 import '../../res/theme/theme_service.dart';
 import '../api/models/TUser.dart';
+import '../api/models/response/auth/AuthRes.dart';
 
 class MyStorage {
   late GetStorage box;
   static const STORAGE_NAME = "my_storage";
-  static const APP_USER_INFO = "telemed_user_info";
-  static const APP_NEW_INSTALL = "app_new_install";
+  static const APP_USER_INFO = "user_info";
   static const APP_THEME = "app_theme";
   static const APP_LANGUAGE = "app_language";
   static const DEVICE_TOKEN = "device_token";
@@ -21,14 +20,14 @@ class MyStorage {
     box = GetStorage(STORAGE_NAME);
   }
 
-  Future<void> saveDeviceToken(TokenModel tokenModel) async {
+  Future<void> saveDeviceToken(AuthRes tokenModel) async {
     String json = jsonEncode(tokenModel.toJson());
     box.write(DEVICE_TOKEN, json);
   }
 
-  Future<TokenModel?> getDeviceToken() async {
+  Future<AuthRes?> getDeviceToken() async {
     final tokenJson = await box.read(DEVICE_TOKEN);
-    return tokenJson != null ? TokenModel.fromJson(json.decode(tokenJson)) : null;
+    return tokenJson != null ? AuthRes.fromJson(json.decode(tokenJson)) : null;
   }
 
   Future<void> saveUserInfo(TUser user) async {
@@ -39,15 +38,6 @@ class MyStorage {
   Future<TUser?> getUserInfo() async {
     final userJson = await box.read(APP_USER_INFO);
     return userJson != null ? TUser.fromJson(json.decode(userJson)) : null;
-  }
-
-  Future<void> saveInstall(bool isInstall) async {
-    box.write(APP_NEW_INSTALL, isInstall);
-  }
-
-  Future<bool> isInstall() async {
-    final isInstall = await box.read(APP_NEW_INSTALL) ?? false;
-    return isInstall;
   }
 
   Future<void> setTheme(int theme) async {

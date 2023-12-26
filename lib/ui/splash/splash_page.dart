@@ -31,9 +31,9 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
         case AuthState.new_install:
           return Get.offNamed(AppRoutes.MAIN);
         case AuthState.uncompleted:
-          return Get.offNamed(AppRoutes.MAIN);
+          return Get.offNamed(AppRoutes.INITIAL);
         default:
-          return Get.offNamed(AppRoutes.MAIN);
+          return Get.offNamed(AppRoutes.INITIAL);
       }
     });
   }

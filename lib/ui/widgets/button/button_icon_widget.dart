@@ -9,15 +9,9 @@ class ButtonIconWidget extends StatefulWidget {
   final Color background;
   final Widget icon;
   final double? borderWidth;
-  ButtonIconWidget(
-      {Key? key,
-      required this.icon,
-      required this.width,
-      required this.height,
-      required this.background,
-      this.radius = 3,
-      this.borderWidth = 0})
-      : super(key: key);
+
+  ButtonIconWidget({Key? key, required this.icon, required this.width, required this.height, required this.background, this.radius = 3, this.borderWidth = 0}) : super(key: key);
+
   @override
   State<StatefulWidget> createState() => _ButtonIconWidgetState();
 }
@@ -31,8 +25,7 @@ class _ButtonIconWidgetState extends State<ButtonIconWidget> {
       alignment: Alignment.center,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(widget.radius!)),
-          border: Border.all(
-              color: getColor().themeColorFF6F15, width: widget.borderWidth!),
+          border: Border.all(color: getColor().themeColorFF6F15, width: widget.borderWidth!),
           color: widget.background),
       child: widget.icon,
     );

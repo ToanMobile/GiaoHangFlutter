@@ -5,7 +5,6 @@ import '../../../data/storage/my_storage.dart';
 import '../../../res/theme/app_theme.dart';
 import '../../../res/theme/theme_service.dart';
 
-
 class CustomBottomMenuController extends GetxController {
   final themeManager = Get.find<ThemeService>();
   Rx<ThemeData?>? theme;
