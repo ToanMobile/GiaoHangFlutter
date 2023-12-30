@@ -8,8 +8,7 @@ import '../../ui/widgets/loading_widget.dart';
 import 'base_page.dart';
 
 //ignore: must_be_immutable
-abstract class BaseSuperPage<C extends BaseSuperController>
-    extends GetWidget<C> {
+abstract class BaseSuperPage<C extends BaseSuperController> extends GetWidget<C> {
   @override
   Widget build(BuildContext context) {
     return Obx(() => buildViewState(context));
@@ -27,8 +26,7 @@ abstract class BaseSuperPage<C extends BaseSuperController>
         return Stack(
           children: [
             buildContentView(context, controller),
-            if (controller.viewState.value == ViewState.loading)
-              buildLoadingView,
+            if (controller.viewState.value == ViewState.loading) buildLoadingView,
           ],
         );
       default:

@@ -15,15 +15,7 @@ class SearchBarWidget extends StatefulWidget {
   final TextInputAction? textInputAction;
   final Function(String)? onFieldSubmitted;
 
-  SearchBarWidget(
-      {this.hint,
-      this.onTextChanged,
-      this.autoFocus = false,
-      this.textStyle,
-      this.searchIcon,
-      this.controller,
-      this.textInputAction,
-      this.onFieldSubmitted});
+  SearchBarWidget({this.hint, this.onTextChanged, this.autoFocus = false, this.textStyle, this.searchIcon, this.controller, this.textInputAction, this.onFieldSubmitted});
 
   @override
   State<StatefulWidget> createState() => SearchBarWidgetState();
@@ -70,10 +62,8 @@ class SearchBarWidgetState extends State<SearchBarWidget> {
           errorBorder: InputBorder.none,
           disabledBorder: InputBorder.none,
           hintText: widget.hint ?? "",
-          hintStyle:
-              widget.textStyle?.copyWith(color: getColor().themeColorB2B2B2),
-          prefixIconConstraints:
-              const BoxConstraints(maxHeight: 24, minHeight: 24),
+          hintStyle: widget.textStyle?.copyWith(color: getColor().themeColorB2B2B2),
+          prefixIconConstraints: const BoxConstraints(maxHeight: 24, minHeight: 24),
           prefixIcon: Padding(
             padding: EdgeInsets.only(left: 10, right: 10),
             child: widget.searchIcon ??
@@ -83,8 +73,7 @@ class SearchBarWidgetState extends State<SearchBarWidget> {
                   height: 16.ws,
                 ),
           ),
-          suffixIconConstraints:
-              const BoxConstraints(maxWidth: 30, maxHeight: 24, minHeight: 24),
+          suffixIconConstraints: const BoxConstraints(maxWidth: 30, maxHeight: 24, minHeight: 24),
           suffixIcon: _searchQuery.text != ""
               ? Padding(
                   padding: EdgeInsets.only(right: 10.ws),

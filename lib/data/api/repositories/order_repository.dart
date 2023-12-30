@@ -1,13 +1,13 @@
 import 'package:get/get.dart';
 
-import '../models/response/order/list_order.dart';
+import '../models/response/order/list_order_model.dart';
 import '../services/order_service.dart';
 import 'base_repository.dart';
 
 class OrderRepository extends BaseRepository {
   final _orderService = Get.find<OrderService>();
 
-  Future<List<ListOrder>?> getListOrder() async => _orderService.getListOrder();
+  Future<List<ListOrderModel>?> getListOrder() async => _orderService.getListOrder();
 
 /*Future<FarmItem?> getFarmDetail(String? fk) async {
     final farm = await _farmService.getFarmDetail(fk);

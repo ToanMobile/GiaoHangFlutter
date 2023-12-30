@@ -4,16 +4,14 @@ final Map<String, String> viVN = {
   'logout.title': 'Thoát',
   'login.password': 'Password',
   'login.email': 'Email',
-  'login.des':
-      'Sau khi bấm “ĐĂNG NHẬP”, một Email với OTP sẽ được gửi đến Email của bạn. Vui lòng kiểm tra Email, sao chép OTP và nhập dãy số vào màn hình tiếp theo.',
+  'login.des': 'Sau khi bấm “ĐĂNG NHẬP”, một Email với OTP sẽ được gửi đến Email của bạn. Vui lòng kiểm tra Email, sao chép OTP và nhập dãy số vào màn hình tiếp theo.',
   'login.create_email': 'Đăng ký nếu chưa có tài khoản',
   'login.facebook': 'Đăng nhập bằng Facebook',
   'login.google': 'Đăng nhập bằng Google',
   'login.zalo': 'Đăng nhập bằng Zalo',
   'login.error': 'Email đăng nhập không tồn tại.\nVui lòng kiểm tra lại.',
   'otp.title': 'Nhập OTP',
-  'otp.des':
-      'Mã OTP đã được gửi đến bạn qua Email @field.\nVui lòng kiểm tra Email và nhập mã OTP ',
+  'otp.des': 'Mã OTP đã được gửi đến bạn qua Email @field.\nVui lòng kiểm tra Email và nhập mã OTP ',
   'otp.timer': 'Gửi lại OTP (@field giây)',
   'otp.again': 'Gửi lại OTP',
   'otp.error': 'OTP không chính xác vui lòng kiểm tra lại!',
@@ -22,11 +20,9 @@ final Map<String, String> viVN = {
       '- Mã OTP sẽ hết hạn trong 1 giờ.\n- Nếu không nhận mã OTP, hãy kiểm tra trong mục Spam.\n- Bạn có thể yêu cầu gửi lại mã OTP sau 60 giây và giới hạn 3 lần trong 1 giờ.\n- Mã OTP cũ sẽ không dùng được khi mã OTP mới được gửi.',
   'signup.title': 'Đăng ký',
   'signup.user_name': 'Tên của bạn',
-  'signup.des':
-      'Sau khi bấm “Tiếp theo”, một Email với OTP sẽ được gửi đến Email của bạn. Vui lòng kiểm tra Email, sao chép OTP và nhập dãy số vào màn hình tiếp theo.',
+  'signup.des': 'Sau khi bấm “Tiếp theo”, một Email với OTP sẽ được gửi đến Email của bạn. Vui lòng kiểm tra Email, sao chép OTP và nhập dãy số vào màn hình tiếp theo.',
   'signup.login': 'Đăng nhập nếu đã có tài khoản',
-  'signup.error':
-      'Email này đã được đăng ký.\nVui lòng nhấn “Đăng nhập” bên dưới.',
+  'signup.error': 'Email này đã được đăng ký.\nVui lòng nhấn “Đăng nhập” bên dưới.',
   'sign_up_msg_is_required': '@field không hợp lệ',
   'sign_up_msg_is_at_least_3_characters': '@field ít nhất 3 ký tự',
   'sign_up_msg_is_at_least_6_characters': '@field ít nhất 6 ký tự',
@@ -52,15 +48,13 @@ final Map<String, String> viVN = {
       'Urvega cần truy cập dịch vụ định vị thiết bị của bạn để thiết bị tự động kết nối với mạng Wi-Fi. Bạn hãy nhấn “CHO PHÉP” từ ứng dụng này hoặc vào phần Cài Đặt của thiết bị tìm ứng dụng Urvega và bật cho phép sử dụng quyền vị trí.',
   'dialog.device.title': 'Tìm được thiết bị mới',
   'dialog.device.title.error': 'Không tìm được thiết bị',
-  'dialog.device.content.error':
-      'Bạn cần chắc chắn thiết bị đã bật nguồn, đặt trong phạm vi phủ sóng Wi-Fi và có kết nối internet.',
+  'dialog.device.content.error': 'Bạn cần chắc chắn thiết bị đã bật nguồn, đặt trong phạm vi phủ sóng Wi-Fi và có kết nối internet.',
   'dialog.device.name': 'Tên thiết bị',
   'dialog.device.farm': 'Nhập tên farm',
   'dialog.device.des': 'Thiết bị @field sẵn sàng kết nối.',
   'dialog.device.verify': 'Nhập mã xác nhận',
   'dialog.device.remove': 'Bạn chắc muốn xóa thiết bị?',
-  'dialog.device.remove.des':
-      'Thiết bị sẽ không hiển thị trong danh sách và những cài đặt trước đó sẽ không thể khôi phục.',
+  'dialog.device.remove.des': 'Thiết bị sẽ không hiển thị trong danh sách và những cài đặt trước đó sẽ không thể khôi phục.',
   'dialog.ignore': 'BỎ QUA',
   'dialog.connect': 'KẾT NỐI',
   'dialog.start': 'BẮT ĐẦU',
@@ -74,19 +68,15 @@ final Map<String, String> viVN = {
   'home_list_device': 'Danh sách thiết bị',
   'home.add.title': 'Thêm thiết bị',
   'home.add.wifi': 'Chọn mạng Wi-Fi 2.4 GHz',
-  'home.add.wifi.des':
-      'Nếu bạn đang kết nối đến mạng 5 GHz, vui lòng kết nối lại mạng 2.4 GHz.',
-  'home.add.wifi.search.des':
-      'Chắc chắn rằng thiết bị đã được cấp nguồn và nằm trong phạm vi gần để có tính hiệu tốt hơn.',
+  'home.add.wifi.des': 'Nếu bạn đang kết nối đến mạng 5 GHz, vui lòng kết nối lại mạng 2.4 GHz.',
+  'home.add.wifi.search.des': 'Chắc chắn rằng thiết bị đã được cấp nguồn và nằm trong phạm vi gần để có tính hiệu tốt hơn.',
   'home.add.wifi.search': 'Tìm',
   'home.add.wifi.create': 'Khởi tạo',
   'home.add.wifi.pass.empty': 'Bạn cần nhập mật khẩu của Wi-Fi.',
   'home.device.error': 'Thiết bị không hoạt động',
-  'home.device.error.des1':
-      'Vui lòng kiểm tra:\n1. Thiết bị đã được cấp nguồn.\n2. Thiết bị Wi-Fi đang hoạt động bình thường.\n3. Nếu tên Wi-Fi và mật khẩu thay đổi. Hãy “',
+  'home.device.error.des1': 'Vui lòng kiểm tra:\n1. Thiết bị đã được cấp nguồn.\n2. Thiết bị Wi-Fi đang hoạt động bình thường.\n3. Nếu tên Wi-Fi và mật khẩu thay đổi. Hãy “',
   'home.device.error.des2': 'Cài đặt lại thiết bị',
-  'home.device.error.des3':
-      '”.\n4. Thiết bị ở quá xa không bắt được sóng Wi-Fi hoặc có  đồ vật ở giữa cản sóng.',
+  'home.device.error.des3': '”.\n4. Thiết bị ở quá xa không bắt được sóng Wi-Fi hoặc có  đồ vật ở giữa cản sóng.',
   'home.device.control.on': 'Đang BẬT',
   'home.device.control.off': 'Đang TẮT',
   'home.device.water.now': 'Mực nước hiện tại:',
@@ -120,8 +110,7 @@ final Map<String, String> viVN = {
   'service.manager.address': 'Địa chỉ',
   'service.manager.location': 'Tỉnh/Thành Phố, Quận/Huyện, Phường/Xã',
   'service.manager.location2': 'Số, đường, thôn, ấp',
-  'service.manager.please.choose':
-      'Vui lòng chọn Tỉnh/Thành Phố, Quận/Huyện, Phường/Xã',
+  'service.manager.please.choose': 'Vui lòng chọn Tỉnh/Thành Phố, Quận/Huyện, Phường/Xã',
   'service.location.now': 'Sử dụng vị trí hiện tại của tôi',
   'service.location.reset': 'Tỉnh / Thành phố',
   'service.manager.pick.location': 'Khu vực được chọn',
@@ -166,6 +155,5 @@ final Map<String, String> viVN = {
   'setting.sex.men': 'Nam',
   'setting.sex.woman': 'Nữ',
   'setting.sex.other': 'Khác',
-  'setting.error.connect':
-      'Không có internet. Vui lòng kiểm tra lại kết nối mạng của bạn',
+  'setting.error.connect': 'Không có internet. Vui lòng kiểm tra lại kết nối mạng của bạn',
 };

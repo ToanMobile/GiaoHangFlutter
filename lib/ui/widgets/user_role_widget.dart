@@ -11,8 +11,7 @@ class UserRoleWidget extends StatelessWidget {
   final double? avatarSize;
   final String createDate;
 
-  UserRoleWidget(
-      {required this.user, this.avatarSize = 56, required this.createDate});
+  UserRoleWidget({required this.user, this.avatarSize = 56, required this.createDate});
 
   @override
   Widget build(BuildContext context) {
@@ -50,8 +49,7 @@ class UserRoleWidget extends StatelessWidget {
               SizedBox(
                 height: 2.ws,
               ),
-              Text("${readTimeStampBySecond(createDate)} trước",
-                  style: text12.textColorB2B2B2)
+              Text("${readTimeStampBySecond(createDate)} trước", style: text12.textColorB2B2B2)
             ],
           )
         ],

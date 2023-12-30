@@ -8,8 +8,7 @@ class LineIndicatorWidget extends GetWidget {
   final unselectedColor;
   final selectedColor;
 
-  LineIndicatorWidget(this.totalStep, this.currentStep,
-      {this.selectedColor = colorPrimary, this.unselectedColor = colorB2B2B2});
+  LineIndicatorWidget(this.totalStep, this.currentStep, {this.selectedColor = colorPrimary, this.unselectedColor = colorB2B2B2});
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +26,7 @@ class LineIndicatorWidget extends GetWidget {
       items.add(Container(
         height: 6,
         width: i == currentStep.value ? 18 : 6,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: i == currentStep.value ? selectedColor : unselectedColor),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: i == currentStep.value ? selectedColor : unselectedColor),
       ));
     }
     return Row(

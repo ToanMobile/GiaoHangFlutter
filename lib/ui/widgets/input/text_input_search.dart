@@ -34,9 +34,7 @@ class TextInputSearch extends StatelessWidget {
       height: height,
       padding: EdgeInsets.symmetric(horizontal: 10.ws),
       alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(radius!)),
-          color: background),
+      decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(radius!)), color: background),
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -57,10 +55,7 @@ class TextInputSearch extends StatelessWidget {
                 scrollPadding: EdgeInsets.all(0),
                 enableInteractiveSelection: isInput,
                 enabled: isInput,
-                decoration: new InputDecoration(
-                    hintText: hint,
-                    hintStyle: hintStyle,
-                    border: InputBorder.none),
+                decoration: new InputDecoration(hintText: hint, hintStyle: hintStyle, border: InputBorder.none),
               ),
             ),
             onPressed: () {

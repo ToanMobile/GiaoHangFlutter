@@ -5,6 +5,5 @@ class PaymentItem {
   List<String> icons;
   RxBool isSelected;
 
-  PaymentItem(
-      {required this.name, required this.icons, required this.isSelected});
+  PaymentItem({required this.name, required this.icons, required this.isSelected});
 }

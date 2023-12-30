@@ -67,21 +67,17 @@ class AppDialog {
                       Stack(
                         children: [
                           Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 40, vertical: 20),
+                            margin: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                             decoration: const BoxDecoration(
                               color: Colors.white,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10)),
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
                             ),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 20),
+                            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                             child: Column(
                               children: [
                                 _buildTitleText,
                                 _buildDescriptionText,
-                                if (type == DialogType.INPUT &&
-                                    input != null) ...[
+                                if (type == DialogType.INPUT && input != null) ...[
                                   SizedBox(height: 10),
                                   input!,
                                 ],
@@ -153,8 +149,7 @@ class AppDialog {
         style: ElevatedButton.styleFrom(
           minimumSize: Size(113.ws, 48.hs),
           backgroundColor: colorPrimary,
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5))),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
         ),
         onPressed: () {
           dismiss();
@@ -170,8 +165,7 @@ class AppDialog {
         style: OutlinedButton.styleFrom(
           minimumSize: Size(113.ws, 48.hs),
           side: BorderSide(color: colorPrimary, width: 1),
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(5))),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(5))),
         ),
         onPressed: () {
           dismiss();

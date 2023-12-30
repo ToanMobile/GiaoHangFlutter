@@ -16,14 +16,7 @@ class CountDownTimerWidget extends StatefulWidget {
   final Function? endCountDown;
   final Function? onResend;
 
-  CountDownTimerWidget(
-      {required this.start,
-      this.isOtp = true,
-      this.end = 0,
-      this.reload,
-      this.textStyle,
-      this.endCountDown,
-      this.onResend});
+  CountDownTimerWidget({required this.start, this.isOtp = true, this.end = 0, this.reload, this.textStyle, this.endCountDown, this.onResend});
 
   @override
   State<StatefulWidget> createState() => _CountDownTimerWidgetState();
@@ -87,8 +80,7 @@ class _CountDownTimerWidgetState extends State<CountDownTimerWidget> {
                     },
                   ))
             : formatTimeOfDuration(_start),
-        style: widget.textStyle ??
-            (isEnd ? text14.textColorPrimary : text14.textColor141414),
+        style: widget.textStyle ?? (isEnd ? text14.textColorPrimary : text14.textColor141414),
       ),
       onPressed: () {
         if (widget.onResend != null) {

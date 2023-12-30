@@ -13,18 +13,14 @@ class LoginController extends BaseController {
 
   ViewState get initState => ViewState.loaded;
   final formKey = GlobalKey<FormState>();
-  TextEditingController textEmailCl = TextEditingController()
-    ..text = 'vodaiquoctu@gmail.com';
-  TextEditingController textPasswordCl = TextEditingController()
-    ..text = '123456';
+  TextEditingController textEmailCl = TextEditingController()..text = 'vodaiquoctu@gmail.com';
+  TextEditingController textPasswordCl = TextEditingController()..text = '123456';
   RxBool buttonEnable = false.obs;
 
   @override
   int get typeViewNoti => 3;
 
-  bool get validate =>
-      GetUtils.isEmail(textEmailCl.text) &&
-      GetUtils.isLengthGreaterOrEqual(textPasswordCl.text, 5);
+  bool get validate => GetUtils.isEmail(textEmailCl.text) && GetUtils.isLengthGreaterOrEqual(textPasswordCl.text, 5);
 
   @override
   void onInit() {
@@ -40,21 +36,17 @@ class LoginController extends BaseController {
   }
 
   String? validatorEmail(String fieldName) {
-    return GetUtils.isNullOrBlank(textEmailCl.text) == true ||
-            !GetUtils.isEmail(textEmailCl.text)
+    return GetUtils.isNullOrBlank(textEmailCl.text) == true || !GetUtils.isEmail(textEmailCl.text)
         ? 'sign_up_msg_is_required'.trParams({
             'field': fieldName,
           })
         : null;
   }
 
-  String? minimum6Characters() =>
-      textPasswordCl.text.length < 6 ? 'Tối thiểu 6 chữ số' : null;
+  String? minimum6Characters() => textPasswordCl.text.length < 6 ? 'Tối thiểu 6 chữ số' : null;
 
   String? requiredField(String? value) {
-    return value == null || value.isEmpty
-        ? 'Không được để trống mật khẩu!'
-        : null;
+    return value == null || value.isEmpty ? 'Không được để trống mật khẩu!' : null;
   }
 
   loginEmail(Function(String) errorMessage) async {

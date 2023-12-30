@@ -12,8 +12,8 @@
 /// dang_giao_hang : 0
 /// hoan_tat : 0
 
-class ListOrder {
-  ListOrder({
+class ListOrderModel {
+  ListOrderModel({
     String? deliveryid,
     String? phone,
     String? shipname,
@@ -35,7 +35,7 @@ class ListOrder {
     _hoanTat = hoanTat;
   }
 
-  ListOrder.fromJson(dynamic json) {
+  ListOrderModel.fromJson(dynamic json) {
     _deliveryid = json['deliveryid'];
     _phone = json['phone'];
     _shipname = json['shipname'];
@@ -57,7 +57,7 @@ class ListOrder {
   num? _dangGiaoHang;
   num? _hoanTat;
 
-  ListOrder copyWith({
+  ListOrderModel copyWith({
     String? deliveryid,
     String? phone,
     String? shipname,
@@ -68,7 +68,7 @@ class ListOrder {
     num? dangGiaoHang,
     num? hoanTat,
   }) =>
-      ListOrder(
+      ListOrderModel(
         deliveryid: deliveryid ?? _deliveryid,
         phone: phone ?? _phone,
         shipname: shipname ?? _shipname,
@@ -98,11 +98,7 @@ class ListOrder {
 
   num? get hoanTat => _hoanTat;
 
-  num? get total =>
-      (choLayHang ?? 0) +
-      (daLayHang ?? 0) +
-      (dangGiaoHang ?? 0) +
-      (hoanTat ?? 0);
+  num? get total => (choLayHang ?? 0) + (daLayHang ?? 0) + (dangGiaoHang ?? 0) + (hoanTat ?? 0);
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

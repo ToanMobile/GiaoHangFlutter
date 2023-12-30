@@ -20,17 +20,7 @@ class DefaultAppbar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onPress;
   final PreferredSizeWidget? tabBar;
 
-  DefaultAppbar(
-      {this.leading,
-      this.title,
-      this.style,
-      this.color,
-      this.actions,
-      this.height,
-      this.leadingColor,
-      this.onPress,
-      this.tabBar,
-      this.appBarStyle = AppBarStyle.NONE});
+  DefaultAppbar({this.leading, this.title, this.style, this.color, this.actions, this.height, this.leadingColor, this.onPress, this.tabBar, this.appBarStyle = AppBarStyle.NONE});
 
   @override
   Widget build(BuildContext context) {

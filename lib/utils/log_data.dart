@@ -3,13 +3,9 @@ void logPrint(Object? object) async {
   if (object == null || object.toString().length <= defaultPrintLength) {
     print(object);
   } else {
-    print(
-        "===================================================================================================");
+    print("===================================================================================================");
     final pattern = RegExp('.{1,800}'); // 800 is the size of each chunk
-    pattern
-        .allMatches(object.toString())
-        .forEach((match) => print(match.group(0)));
-    print(
-        "===================================================================================================");
+    pattern.allMatches(object.toString()).forEach((match) => print(match.group(0)));
+    print("===================================================================================================");
   }
 }

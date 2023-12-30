@@ -8,8 +8,7 @@ class NotificationItemView extends StatefulWidget {
   final VoidCallback onPressed;
   final Function(bool) onSwitch;
 
-  NotificationItemView(
-      {required this.title, required this.onPressed, required this.onSwitch});
+  NotificationItemView({required this.title, required this.onPressed, required this.onSwitch});
 
   @override
   State<NotificationItemView> createState() => _NotificationItemViewState();

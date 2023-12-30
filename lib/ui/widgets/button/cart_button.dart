@@ -27,9 +27,7 @@ class CartButton extends StatelessWidget {
           // );
           // Get.find<PlatformChannel>().openChatConversation(user);
           // Get.find<PlatformChannel>().openChatWithUser(user!, target);
-          Get.snackbar("Thông báo", "Tính năng đang được đấu nối",
-              colorText: getColor().textColorWhite,
-              backgroundColor: getColor().themeColorFF6F15);
+          Get.snackbar("Thông báo", "Tính năng đang được đấu nối", colorText: getColor().textColorWhite, backgroundColor: getColor().themeColorFF6F15);
         },
       ),
     );

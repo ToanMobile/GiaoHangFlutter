@@ -140,25 +140,19 @@ extension MyColorScheme on ColorScheme {
 
   Color get themeColor00CCDD => getColorTheme(color00CCDD, color00CCDD);
 
-  Color get themeColorPrimaryOpacity10 => getColorTheme(
-      colorPrimary.withOpacity(0.1), colorPrimary.withOpacity(0.1));
+  Color get themeColorPrimaryOpacity10 => getColorTheme(colorPrimary.withOpacity(0.1), colorPrimary.withOpacity(0.1));
 
-  Color get themeColorPrimaryOpacity30 => getColorTheme(
-      colorPrimary.withOpacity(0.3), colorPrimary.withOpacity(0.3));
+  Color get themeColorPrimaryOpacity30 => getColorTheme(colorPrimary.withOpacity(0.3), colorPrimary.withOpacity(0.3));
 
-  Color get themeColor00AC44Opacity10 =>
-      getColorTheme(color00AC44.withOpacity(0.1), color00AC44.withOpacity(0.1));
+  Color get themeColor00AC44Opacity10 => getColorTheme(color00AC44.withOpacity(0.1), color00AC44.withOpacity(0.1));
 
-  Color get themeColor00AC44Opacity30 =>
-      getColorTheme(color00AC44.withOpacity(0.3), color00AC44.withOpacity(0.3));
+  Color get themeColor00AC44Opacity30 => getColorTheme(color00AC44.withOpacity(0.3), color00AC44.withOpacity(0.3));
 
   Color get themeColorFF6F15 => getColorTheme(colorFF6F15, colorFF6F15);
 
-  Color get themeColorFF6F15Opacity10 =>
-      getColorTheme(colorFF6F15.withOpacity(0.1), colorFF6F15.withOpacity(0.1));
+  Color get themeColorFF6F15Opacity10 => getColorTheme(colorFF6F15.withOpacity(0.1), colorFF6F15.withOpacity(0.1));
 
-  Color get themeColorFF6F15Opacity30 =>
-      getColorTheme(colorFF6F15.withOpacity(0.3), colorFF6F15.withOpacity(0.3));
+  Color get themeColorFF6F15Opacity30 => getColorTheme(colorFF6F15.withOpacity(0.3), colorFF6F15.withOpacity(0.3));
 
 //***************************BACKGROUND COLOR*****************************************
   //Màu của các background

@@ -10,8 +10,7 @@ import '../../widgets/input/text_input_line_border.dart';
 // ignore: must_be_immutable
 class UpdateProfilePage extends BasePage<UpdateProfileController> {
   @override
-  Widget buildContentView(
-      BuildContext context, UpdateProfileController controller) {
+  Widget buildContentView(BuildContext context, UpdateProfileController controller) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -45,11 +44,7 @@ class UpdateProfilePage extends BasePage<UpdateProfileController> {
               height: 8.ws,
             ),
             TextInputLineBorder(
-                hint: "Nhập họ tên",
-                hintTextStyle: text16.textColorB2B2B2,
-                textTextStyle: text16.textColor141414,
-                height: 44.ws,
-                textEditingController: controller.nameController),
+                hint: "Nhập họ tên", hintTextStyle: text16.textColorB2B2B2, textTextStyle: text16.textColor141414, height: 44.ws, textEditingController: controller.nameController),
             SizedBox(
               height: 40.ws,
             ),
@@ -58,9 +53,7 @@ class UpdateProfilePage extends BasePage<UpdateProfileController> {
                 width: 315.ws,
                 height: 44.ws,
                 radius: 5.ws,
-                textStyle: controller.isEnable.value
-                    ? text16.bold.textColorWhite
-                    : text16.bold.textColor777777,
+                textStyle: controller.isEnable.value ? text16.bold.textColorWhite : text16.bold.textColor777777,
                 isEnable: controller.isEnable.value,
                 onPressed: () {
                   controller.updateProfile();

@@ -25,8 +25,7 @@ class LoginPage extends BasePage<LoginController> {
               SizedBox(height: 20.ws),
               Assets.images.imgLogo.image(width: 100.ws, height: 100.ws),
               SizedBox(height: 10.ws),
-              Text(textLocalization('appName').toUpperCase(),
-                  style: text26.bold.textColorPrimary),
+              Text(textLocalization('appName').toUpperCase(), style: text26.bold.textColorPrimary),
               SizedBox(height: 40.ws),
               buildEditTextLogin(),
               SizedBox(height: 20.ws),
@@ -44,12 +43,10 @@ class LoginPage extends BasePage<LoginController> {
                 radius: 5.rs,
               ),
               SizedBox(height: 20.ws),
-              Text(textLocalization('login.des'),
-                  style: text14, textAlign: TextAlign.center),
+              Text(textLocalization('login.des'), style: text14, textAlign: TextAlign.center),
               SizedBox(height: 34.ws),
               TouchableOpacity(
-                child: Text(textLocalization('login.create_email'),
-                    style: text16.medium.height19Per.textColorPrimary),
+                child: Text(textLocalization('login.create_email'), style: text16.medium.height19Per.textColorPrimary),
                 onPressed: controller.register,
               ),
               SizedBox(height: 15.ws),
@@ -79,8 +76,7 @@ class LoginPage extends BasePage<LoginController> {
             obscureText: true,
             controller: controller.textPasswordCl,
             onValidated: (val) {
-              return controller
-                  .requiredField(textLocalization("login.password"));
+              return controller.requiredField(textLocalization("login.password"));
             },
           )
         ],
@@ -94,15 +90,10 @@ class LoginPage extends BasePage<LoginController> {
               color: colorD3D3D4,
               child: Stack(
                 children: [
-                  Positioned(
-                      top: 0,
-                      bottom: 0,
-                      left: 30.ws,
-                      child: Assets.icons.icFb.image(width: 27.ws)),
+                  Positioned(top: 0, bottom: 0, left: 30.ws, child: Assets.icons.icFb.image(width: 27.ws)),
                   Positioned.fill(
                     child: Center(
-                      child: Text(textLocalization("login.facebook"),
-                          style: text14.medium.height16Per.textColor777777),
+                      child: Text(textLocalization("login.facebook"), style: text14.medium.height16Per.textColor777777),
                     ),
                   ),
                 ],
@@ -116,15 +107,10 @@ class LoginPage extends BasePage<LoginController> {
               color: colorD3D3D4,
               child: Stack(
                 children: [
-                  Positioned(
-                      top: 0,
-                      bottom: 0,
-                      left: 30.ws,
-                      child: Assets.icons.icGoogle.svg()),
+                  Positioned(top: 0, bottom: 0, left: 30.ws, child: Assets.icons.icGoogle.svg()),
                   Positioned.fill(
                     child: Center(
-                      child: Text(textLocalization("login.google"),
-                          style: text14.medium.height16Per.textColor777777),
+                      child: Text(textLocalization("login.google"), style: text14.medium.height16Per.textColor777777),
                     ),
                   ),
                 ],
@@ -141,15 +127,10 @@ class LoginPage extends BasePage<LoginController> {
               child: ContainerBase(
                 child: Stack(
                   children: [
-                    Positioned(
-                        top: 0,
-                        bottom: 0,
-                        left: 30.ws,
-                        child: Assets.icons.icZalo.svg()),
+                    Positioned(top: 0, bottom: 0, left: 30.ws, child: Assets.icons.icZalo.svg()),
                     Positioned.fill(
                       child: Center(
-                        child: Text(textLocalization("login.zalo"),
-                            style: text14.medium.height16Per.textColor777777),
+                        child: Text(textLocalization("login.zalo"), style: text14.medium.height16Per.textColor777777),
                       ),
                     ),
                   ],

@@ -48,9 +48,7 @@ abstract class BaseController<C> extends GetxController {
         break;
       case 3:
         viewState.value = ViewState.loaded;
-        Get.snackbar(textLocalization('noti.title'),
-            errorMessage ?? textLocalization('data.error'),
-            backgroundColor: getColor().themeColorFF6F15);
+        Get.snackbar(textLocalization('noti.title'), errorMessage ?? textLocalization('data.error'), backgroundColor: getColor().themeColorFF6F15);
         break;
     }
   }

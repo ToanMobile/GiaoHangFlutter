@@ -4,10 +4,7 @@ class RoundUnderlineTabIndicator extends Decoration {
   /// Create an underline style selected tab indicator.
   ///
   /// The [borderSide] and [insets] arguments must not be null.
-  const RoundUnderlineTabIndicator(
-      {this.borderSide = const BorderSide(width: 2.0, color: Colors.white),
-      this.insets = EdgeInsets.zero,
-      this.paddingBottom = 3})
+  const RoundUnderlineTabIndicator({this.borderSide = const BorderSide(width: 2.0, color: Colors.white), this.insets = EdgeInsets.zero, this.paddingBottom = 3})
       : assert(borderSide != null),
         assert(insets != null);
 
@@ -70,11 +67,7 @@ class _UnderlinePainter extends BoxPainter {
     double wantWidth = 90;
     //Take intermediate coordinates
     double cw = (indicator.left + indicator.right) / 2;
-    return Rect.fromLTWH(
-        cw - wantWidth / 2,
-        indicator.bottom - borderSide.width - paddingBottom,
-        wantWidth,
-        borderSide.width);
+    return Rect.fromLTWH(cw - wantWidth / 2, indicator.bottom - borderSide.width - paddingBottom, wantWidth, borderSide.width);
   }
 
   @override
@@ -83,8 +76,7 @@ class _UnderlinePainter extends BoxPainter {
     assert(configuration!.size != null);
     final Rect rect = offset & configuration!.size!;
     final TextDirection textDirection = configuration.textDirection!;
-    final Rect indicator =
-        _indicatorRectFor(rect, textDirection).deflate(borderSide.width / 2.0);
+    final Rect indicator = _indicatorRectFor(rect, textDirection).deflate(borderSide.width / 2.0);
     final Paint paint = borderSide.toPaint()..strokeCap = StrokeCap.round;
     canvas.drawLine(indicator.bottomLeft, indicator.bottomRight, paint);
   }

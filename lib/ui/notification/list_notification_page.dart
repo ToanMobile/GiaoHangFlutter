@@ -12,8 +12,7 @@ import '../../ui/notification/list_notification_controller.dart';
 import '../widgets/image_widget.dart';
 
 //ignore: must_be_immutable
-class ListNotificationPage
-    extends BaseListPage<NotificationItem, ListNotificationController> {
+class ListNotificationPage extends BaseListPage<NotificationItem, ListNotificationController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +46,7 @@ class ListNotificationPage
         padding: EdgeInsets.all(5.0),
         child: RichText(
           text: TextSpan(children: [
-            TextSpan(
-                text: "Tất cả hoạt động", style: text18.bold.textColor141414),
+            TextSpan(text: "Tất cả hoạt động", style: text18.bold.textColor141414),
             WidgetSpan(
                 alignment: ui.PlaceholderAlignment.middle,
                 child: Image.asset(
@@ -83,8 +81,7 @@ class ListNotificationPage
         itemBuild = _buildAccountItem(context, item, index);
         break;
       case "payment":
-        itemBuild =
-            _buildSystemItem(context, item, index, icon: DImages.notiPayment);
+        itemBuild = _buildSystemItem(context, item, index, icon: DImages.notiPayment);
         break;
       default:
         itemBuild = _buildSystemItem(context, item, index);
@@ -98,18 +95,14 @@ class ListNotificationPage
           }
         },
         child: Container(
-          color: item.isRead?.value == true
-              ? getColor().themeColorWhite
-              : getColor().themeColorE5F2FF,
+          color: item.isRead?.value == true ? getColor().themeColorWhite : getColor().themeColorE5F2FF,
           child: itemBuild,
         ),
       ),
     );
   }
 
-  Widget _buildSystemItem(
-      BuildContext context, NotificationItem item, int index,
-      {String? icon}) {
+  Widget _buildSystemItem(BuildContext context, NotificationItem item, int index, {String? icon}) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -156,8 +149,7 @@ class ListNotificationPage
     );
   }
 
-  Widget _buildAccountItem(
-      BuildContext context, NotificationItem item, int index) {
+  Widget _buildAccountItem(BuildContext context, NotificationItem item, int index) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

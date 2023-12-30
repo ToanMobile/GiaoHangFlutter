@@ -15,9 +15,7 @@ class RegisterPage extends BasePage<RegisterController> {
   @override
   Widget buildContentView(BuildContext context, RegisterController controller) {
     return ScaffoldBase(
-      appBar: DefaultAppbar(
-          title: textLocalization('signup.title'),
-          appBarStyle: AppBarStyle.NONE),
+      appBar: DefaultAppbar(title: textLocalization('signup.title'), appBarStyle: AppBarStyle.NONE),
       body: SingleChildScrollView(
         child: Form(
           key: controller.formKey,
@@ -27,8 +25,7 @@ class RegisterPage extends BasePage<RegisterController> {
               SizedBox(height: 20.ws),
               Assets.images.imgLogo.image(width: 100.ws, height: 100.ws),
               SizedBox(height: 10.ws),
-              Text(textLocalization('appName').toUpperCase(),
-                  style: text26.bold.textColorPrimary),
+              Text(textLocalization('appName').toUpperCase(), style: text26.bold.textColorPrimary),
               SizedBox(height: 50.ws),
               ContainerBase(
                 height: 160.hs,
@@ -50,12 +47,10 @@ class RegisterPage extends BasePage<RegisterController> {
                 radius: 5.rs,
               ),
               SizedBox(height: 20.ws),
-              Text(textLocalization('signup.des'),
-                  style: text14, textAlign: TextAlign.center),
+              Text(textLocalization('signup.des'), style: text14, textAlign: TextAlign.center),
               SizedBox(height: 34.ws),
               TouchableOpacity(
-                child: Text(textLocalization('signup.login'),
-                    style: text16.medium.textColorPrimary),
+                child: Text(textLocalization('signup.login'), style: text16.medium.textColorPrimary),
                 onPressed: controller.login,
               ),
             ],

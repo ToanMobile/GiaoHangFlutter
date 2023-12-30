@@ -38,9 +38,7 @@ class _CustomButtonState extends State<CustomButton> {
         height: widget.height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: widget.isEnable!
-              ? widget.background ?? getColor().themeColorPrimary
-              : getColor().themeColorD3D3D4,
+          color: widget.isEnable! ? widget.background ?? getColor().themeColorPrimary : getColor().themeColorD3D3D4,
           borderRadius: BorderRadius.all(Radius.circular(widget.radius!)),
         ),
         child: Text(

@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../storage/my_storage.dart';
 import '../api_constants.dart';
 import '../models/response/auth/auth_res.dart';
-import '../models/response/order/list_order.dart';
+import '../models/response/order/list_order_model.dart';
 import 'base_service.dart';
 
 class OrderService extends BaseService {
@@ -11,11 +11,10 @@ class OrderService extends BaseService {
 
   Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
 
-  Future<List<ListOrder>?> getListOrder() async {
+  Future<List<ListOrderModel>?> getListOrder() async {
     final response = await get(GET_LIST_ORDER_DELIVERY);
     if (response.data != null) {
-      return List<ListOrder>.from(
-          response.data.map((item) => ListOrder.fromJson(item)));
+      return List<ListOrderModel>.from(response.data.map((item) => ListOrderModel.fromJson(item)));
     } else {
       return null;
     }

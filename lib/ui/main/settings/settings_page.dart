@@ -23,9 +23,7 @@ class SettingsPage extends BasePage<SettingsController> {
   @override
   Widget buildContentView(BuildContext context, SettingsController controller) {
     return Scaffold(
-      appBar: DefaultAppbar(
-          title: textLocalization('settings_title'),
-          appBarStyle: AppBarStyle.NONE),
+      appBar: DefaultAppbar(title: textLocalization('settings_title'), appBarStyle: AppBarStyle.NONE),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -33,8 +31,7 @@ class SettingsPage extends BasePage<SettingsController> {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 26.ws, vertical: 15.hs),
-              child: Text(textLocalization('settings_account'),
-                  style: text14.textColorB2B2B2),
+              child: Text(textLocalization('settings_account'), style: text14.textColorB2B2B2),
             ),
             buildSettingsAccount(context),
             Visibility(
@@ -42,10 +39,8 @@ class SettingsPage extends BasePage<SettingsController> {
               child: Column(
                 children: [
                   Padding(
-                    padding: EdgeInsets.symmetric(
-                        horizontal: 26.ws, vertical: 15.hs),
-                    child: Text(textLocalization('settings_title'),
-                        style: text14.textColorB2B2B2),
+                    padding: EdgeInsets.symmetric(horizontal: 26.ws, vertical: 15.hs),
+                    child: Text(textLocalization('settings_title'), style: text14.textColorB2B2B2),
                   ),
                   buildSettingsConfig(),
                 ],
@@ -53,8 +48,7 @@ class SettingsPage extends BasePage<SettingsController> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 26.ws, vertical: 15.hs),
-              child: Text(textLocalization('settings_support'),
-                  style: text14.textColorB2B2B2),
+              child: Text(textLocalization('settings_support'), style: text14.textColorB2B2B2),
             ),
             buildSupport(),
             SizedBox(height: 30.hs),
@@ -63,8 +57,7 @@ class SettingsPage extends BasePage<SettingsController> {
               color: getColor().themeColorWhite,
               child: Center(
                 child: TextButton(
-                  child: Text(textLocalization('logout.title'),
-                      style: text14.bold.textColorF20606),
+                  child: Text(textLocalization('logout.title'), style: text14.bold.textColorF20606),
                   onPressed: () {
                     Get.find<AppController>().logout();
                   },
@@ -107,9 +100,7 @@ class SettingsPage extends BasePage<SettingsController> {
             title: textLocalization('settings_sex'),
             titleRight: controller.user.gender == SEX_TYPE.MEN.name
                 ? textLocalization('common_men')
-                : (controller.user.gender == SEX_TYPE.WOMAN.name
-                    ? textLocalization('common_women')
-                    : textLocalization('common_other')),
+                : (controller.user.gender == SEX_TYPE.WOMAN.name ? textLocalization('common_women') : textLocalization('common_other')),
             isIconNext: true,
             onPressed: () => openSexBottomSheet(context),
           ),
@@ -273,9 +264,7 @@ class SettingsPage extends BasePage<SettingsController> {
                     textLocalization('setting.sex.men'),
                     style: text14.textColor141414,
                   ),
-                  controller.sexType.value == SEX_TYPE.MEN
-                      ? Icon(Icons.check, size: 16)
-                      : SizedBox()
+                  controller.sexType.value == SEX_TYPE.MEN ? Icon(Icons.check, size: 16) : SizedBox()
                 ],
               ),
             ),
@@ -297,9 +286,7 @@ class SettingsPage extends BasePage<SettingsController> {
                     textLocalization('setting.sex.woman'),
                     style: text14.textColor141414,
                   ),
-                  controller.sexType.value == SEX_TYPE.WOMAN
-                      ? Icon(Icons.check, size: 16)
-                      : SizedBox()
+                  controller.sexType.value == SEX_TYPE.WOMAN ? Icon(Icons.check, size: 16) : SizedBox()
                 ],
               ),
             ),
@@ -321,9 +308,7 @@ class SettingsPage extends BasePage<SettingsController> {
                     textLocalization('setting.sex.other'),
                     style: text14.textColor141414,
                   ),
-                  controller.sexType.value == SEX_TYPE.OTHER
-                      ? Icon(Icons.check, size: 16)
-                      : SizedBox()
+                  controller.sexType.value == SEX_TYPE.OTHER ? Icon(Icons.check, size: 16) : SizedBox()
                 ],
               ),
             ),
@@ -340,8 +325,7 @@ class SettingsPage extends BasePage<SettingsController> {
       backgroundColor: colorWhite,
       elevation: 1,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(10), topRight: Radius.circular(10)),
+        borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
       ),
     );
   }
@@ -350,9 +334,7 @@ class SettingsPage extends BasePage<SettingsController> {
     if (Platform.isAndroid || Platform.isIOS) {
       final appId = Platform.isAndroid ? 'com.tasty.app' : '12345678';
       final url = Uri.parse(
-        Platform.isAndroid
-            ? "market://details?id=$appId"
-            : "https://apps.apple.com/app/id$appId",
+        Platform.isAndroid ? "market://details?id=$appId" : "https://apps.apple.com/app/id$appId",
       );
       launchUrl(
         url,
@@ -363,8 +345,7 @@ class SettingsPage extends BasePage<SettingsController> {
 
   Future<void> _launchUrl(Uri _url) async {
     if (await canLaunchUrl(_url)) {
-      await launchUrl(_url,
-          webViewConfiguration: WebViewConfiguration(enableJavaScript: true));
+      await launchUrl(_url, webViewConfiguration: WebViewConfiguration(enableJavaScript: true));
     } else {
       throw 'Could not launch $_url';
     }

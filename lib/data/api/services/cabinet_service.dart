@@ -1,13 +1,25 @@
 import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
+import '../api_constants.dart';
 import '../models/response/auth/auth_res.dart';
+import '../models/response/cabinet/cabinet_model.dart';
 import 'base_service.dart';
 
 class CabinetService extends BaseService {
   final _storage = Get.find<MyStorage>();
 
   Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
+
+  Future<List<CabinetModel>?> getListCabinet() async {
+    final response = await get(GET_LIST_CABINET);
+    if (response.data != null) {
+      return List<CabinetModel>.from(response.data.map((item) => CabinetModel.fromJson(item)));
+    } else {
+      return null;
+    }
+  }
+
 /*
   Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final token = await tokenModel();

@@ -11,8 +11,7 @@ class CircleIndicatorWidget extends StatefulWidget {
   final double size;
   final double? itemMargin;
 
-  CircleIndicatorWidget(this.size, this.totalStep, this.currentStep,
-      {this.selectedColor, this.unselectedColor, this.itemMargin});
+  CircleIndicatorWidget(this.size, this.totalStep, this.currentStep, {this.selectedColor, this.unselectedColor, this.itemMargin});
 
   @override
   State<StatefulWidget> createState() => _CircleIndicatorWidgetState();
@@ -37,9 +36,7 @@ class _CircleIndicatorWidgetState extends State<CircleIndicatorWidget> {
         width: i == widget.currentStep ? widget.size * 3 : widget.size,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(widget.size / 2),
-            color: i == widget.currentStep
-                ? widget.selectedColor ?? getColor().themeColorPrimary
-                : widget.unselectedColor ?? getColor().themeColorB2B2B2),
+            color: i == widget.currentStep ? widget.selectedColor ?? getColor().themeColorPrimary : widget.unselectedColor ?? getColor().themeColorB2B2B2),
       ));
     }
     return Row(

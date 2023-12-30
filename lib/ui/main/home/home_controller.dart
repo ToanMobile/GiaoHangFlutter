@@ -8,7 +8,7 @@ import 'package:get/get.dart';
 
 import '../../../app/app_controller.dart';
 import '../../../data/api/models/TUser.dart';
-import '../../../data/api/models/response/order/list_order.dart';
+import '../../../data/api/models/response/order/list_order_model.dart';
 import '../../base/base_controller.dart';
 
 class HomeController extends BaseController {
@@ -20,8 +20,8 @@ class HomeController extends BaseController {
   TUser get user => _user.value;
   final GlobalKey widgetKey = GlobalKey();
 
-  List<ListOrder> get listOrder => _listOrder$.value;
-  final _listOrder$ = <ListOrder>[].obs;
+  List<ListOrderModel> get listOrder => _listOrder$.value;
+  final _listOrder$ = <ListOrderModel>[].obs;
 
   @override
   void onClose() {
@@ -32,8 +32,7 @@ class HomeController extends BaseController {
   @override
   void onInit() async {
     super.onInit();
-    _user.value = _appController.user ??
-        TUser(name: 'Văn Toàn', gender: SEX_TYPE.MEN.name, phone: '');
+    _user.value = _appController.user ?? TUser(name: 'Văn Toàn', gender: SEX_TYPE.MEN.name, phone: '');
     getListOrder();
   }
 

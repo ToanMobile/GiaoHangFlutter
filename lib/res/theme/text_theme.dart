@@ -50,11 +50,9 @@ extension TextStyleExt on TextStyle {
 
   TextStyle get bold => this.copyWith(fontWeight: FontWeight.w700);
 
-  TextStyle get normalItanic =>
-      this.copyWith(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic);
+  TextStyle get normalItanic => this.copyWith(fontWeight: FontWeight.w400, fontStyle: FontStyle.italic);
 
-  TextStyle get normalLineThrough => this.copyWith(
-      fontWeight: FontWeight.w400, decoration: TextDecoration.lineThrough);
+  TextStyle get normalLineThrough => this.copyWith(fontWeight: FontWeight.w400, decoration: TextDecoration.lineThrough);
 
   //height style
   TextStyle get height14Per => this.copyWith(height: 1.4);
@@ -79,47 +77,33 @@ extension TextStyleExt on TextStyle {
 
   //Color style
 
-  TextStyle get textColor141414 =>
-      this.copyWith(color: getColor().textColor141414);
+  TextStyle get textColor141414 => this.copyWith(color: getColor().textColor141414);
 
-  TextStyle get textColorB90D18 =>
-      this.copyWith(color: getColor().textColorB90D18);
+  TextStyle get textColorB90D18 => this.copyWith(color: getColor().textColorB90D18);
 
-  TextStyle get textColor777777 =>
-      this.copyWith(color: getColor().textColor777777);
+  TextStyle get textColor777777 => this.copyWith(color: getColor().textColor777777);
 
-  TextStyle get textColorB2B2B2 =>
-      this.copyWith(color: getColor().textColorB2B2B2);
+  TextStyle get textColorB2B2B2 => this.copyWith(color: getColor().textColorB2B2B2);
 
-  TextStyle get textColor0083ED =>
-      this.copyWith(color: getColor().textColor0083ED);
+  TextStyle get textColor0083ED => this.copyWith(color: getColor().textColor0083ED);
 
-  TextStyle get textColorPrimary =>
-      this.copyWith(color: getColor().textColorPrimary);
+  TextStyle get textColorPrimary => this.copyWith(color: getColor().textColorPrimary);
 
-  TextStyle get textColorF20606 =>
-      this.copyWith(color: getColor().textColorF20606);
+  TextStyle get textColorF20606 => this.copyWith(color: getColor().textColorF20606);
 
-  TextStyle get textColorFF6F15 =>
-      this.copyWith(color: getColor().textColorFF6F15);
+  TextStyle get textColorFF6F15 => this.copyWith(color: getColor().textColorFF6F15);
 
-  TextStyle get textColor00AC44 =>
-      this.copyWith(color: getColor().textColor00AC44);
+  TextStyle get textColor00AC44 => this.copyWith(color: getColor().textColor00AC44);
 
-  TextStyle get textColorWhite =>
-      this.copyWith(color: getColor().textColorWhite);
+  TextStyle get textColorWhite => this.copyWith(color: getColor().textColorWhite);
 
-  TextStyle get textColor929394 =>
-      this.copyWith(color: getColor().textColor929394);
+  TextStyle get textColor929394 => this.copyWith(color: getColor().textColor929394);
 
-  TextStyle get textColorD67402 =>
-      this.copyWith(color: getColor().textColorD67402);
+  TextStyle get textColorD67402 => this.copyWith(color: getColor().textColorD67402);
 
-  TextStyle get textColor0E66AC =>
-      this.copyWith(color: getColor().textColor0E66AC);
+  TextStyle get textColor0E66AC => this.copyWith(color: getColor().textColor0E66AC);
 
-  TextStyle get textColorD3D3D4 =>
-      this.copyWith(color: getColor().textColorD3D3D4);
+  TextStyle get textColorD3D3D4 => this.copyWith(color: getColor().textColorD3D3D4);
 
   TextStyle get textErrorColor => this.copyWith(color: getColor().error);
 }
@@ -150,14 +134,8 @@ TextTheme createTextTheme() => TextTheme(
       fontWeight: FontWeight.w500,
       fontSize: 16.ts,
     ),
-    headline3: TextStyle(
-        fontFamily: FontFamily.roboto,
-        fontWeight: FontWeight.w500,
-        fontSize: 20.ts),
-    headline2: TextStyle(
-        fontFamily: FontFamily.roboto,
-        fontWeight: FontWeight.w500,
-        fontSize: 24.ts),
+    headline3: TextStyle(fontFamily: FontFamily.roboto, fontWeight: FontWeight.w500, fontSize: 20.ts),
+    headline2: TextStyle(fontFamily: FontFamily.roboto, fontWeight: FontWeight.w500, fontSize: 24.ts),
     headline1: TextStyle(
       fontFamily: FontFamily.roboto,
       fontWeight: FontWeight.w500,

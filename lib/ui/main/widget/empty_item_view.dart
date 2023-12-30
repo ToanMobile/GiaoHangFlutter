@@ -12,8 +12,7 @@ class EmptyItemView extends StatelessWidget {
       children: [
         Align(
           child: Padding(
-            padding:
-                EdgeInsets.symmetric(vertical: 8.0.ws, horizontal: padding),
+            padding: EdgeInsets.symmetric(vertical: 8.0.ws, horizontal: padding),
             child: Assets.icons.icLine.svg(),
           ),
           alignment: Alignment.centerRight,

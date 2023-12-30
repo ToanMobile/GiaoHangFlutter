@@ -9,8 +9,7 @@ import '../../ui/widgets/loading_widget.dart';
 import 'base_page.dart';
 
 //ignore: must_be_immutable
-abstract class BaseGridPage<I, C extends BaseGridController<I>>
-    extends BasePage<C> {
+abstract class BaseGridPage<I, C extends BaseGridController<I>> extends BasePage<C> {
   EdgeInsets get padding => const EdgeInsets.all(0);
 
   double get itemSpacing => 0;
@@ -31,8 +30,7 @@ abstract class BaseGridPage<I, C extends BaseGridController<I>>
   ScrollPhysics get scrollPhysics => AlwaysScrollableScrollPhysics();
   double gridMarginHorizontal = 0;
 
-  EdgeInsets get paddingGrid =>
-      EdgeInsets.symmetric(horizontal: gridMarginHorizontal);
+  EdgeInsets get paddingGrid => EdgeInsets.symmetric(horizontal: gridMarginHorizontal);
 
   Color get background => getColor().bgThemeColorWhite;
 
@@ -42,15 +40,13 @@ abstract class BaseGridPage<I, C extends BaseGridController<I>>
   Widget buildContentView(BuildContext context, C controller) {
     return Container(
         color: background,
-        child: (controller.items.isNotEmpty ||
-                controller.viewState.value == ViewState.loading)
+        child: (controller.items.isNotEmpty || controller.viewState.value == ViewState.loading)
             ? CustomScrollView(
                 physics: BouncingScrollPhysics(),
                 controller: controller.scrollController,
                 slivers: [
                   CupertinoSliverRefreshControl(
-                    onRefresh:
-                        controller.enableRefresh ? controller.onRrefresh : null,
+                    onRefresh: controller.enableRefresh ? controller.onRrefresh : null,
                     builder: (_, __, a1, a2, a3) {
                       return Container(
                         alignment: Alignment.center,
@@ -69,10 +65,8 @@ abstract class BaseGridPage<I, C extends BaseGridController<I>>
                           mainAxisSpacing: mainAxisSpacing,
                           crossAxisSpacing: crossAxisSpacing,
                         ),
-                        delegate: SliverChildBuilderDelegate(
-                            (BuildContext context, int index) {
-                          return buildItem(
-                              context, controller.items[index], index);
+                        delegate: SliverChildBuilderDelegate((BuildContext context, int index) {
+                          return buildItem(context, controller.items[index], index);
                         }, childCount: controller.items.length),
                       )),
                   SliverToBoxAdapter(

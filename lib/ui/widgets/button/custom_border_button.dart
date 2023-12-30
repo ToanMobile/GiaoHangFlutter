@@ -38,12 +38,8 @@ class _CustomBorderButtonState extends State<CustomBorderButton> {
         height: widget.height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: widget.isEnable!
-              ? getColor().themeColorWhite
-              : getColor().themeColorEBEBEC,
-          border: Border.all(
-              width: 1,
-              color: widget.borderColor ?? getColor().themeColorPrimary),
+          color: widget.isEnable! ? getColor().themeColorWhite : getColor().themeColorEBEBEC,
+          border: Border.all(width: 1, color: widget.borderColor ?? getColor().themeColorPrimary),
           borderRadius: BorderRadius.all(Radius.circular(widget.radius!)),
         ),
         child: Text(

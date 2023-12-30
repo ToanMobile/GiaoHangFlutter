@@ -18,15 +18,7 @@ class RoundNetworkImage extends StatelessWidget {
   final double? strokeWidth;
   final bool? showImageError;
 
-  RoundNetworkImage(
-      {required this.width,
-      required this.height,
-      this.url,
-      this.radius,
-      this.boxFit,
-      this.strokeColor,
-      this.strokeWidth,
-      this.showImageError = true});
+  RoundNetworkImage({required this.width, required this.height, this.url, this.radius, this.boxFit, this.strokeColor, this.strokeWidth, this.showImageError = true});
 
   @override
   Widget build(BuildContext context) {
@@ -36,25 +28,20 @@ class RoundNetworkImage extends StatelessWidget {
         cacheManager: CustomCacheManager.instance,
         fadeInDuration: Duration(milliseconds: 300),
         fadeOutDuration: Duration(milliseconds: 500),
-        imageUrl: (url != null && url!.contains("http"))
-            ? url!
-            : "$PHOTO_URL_CDN$url",
+        imageUrl: (url != null && url!.contains("http")) ? url! : "$PHOTO_URL_CDN$url",
         imageBuilder: (context, imageProvider) => Container(
           height: height,
           width: width,
           decoration: BoxDecoration(
             borderRadius: new BorderRadius.all(Radius.circular(radius ?? 0)),
-            border: Border.all(
-                color: strokeColor ?? Colors.transparent,
-                width: strokeWidth ?? 0),
+            border: Border.all(color: strokeColor ?? Colors.transparent, width: strokeWidth ?? 0),
             image: DecorationImage(
               image: imageProvider,
               fit: boxFit ?? BoxFit.cover,
             ),
           ),
         ),
-        placeholder: (context, url) =>
-            ImageShimmer(width: width, height: height),
+        placeholder: (context, url) => ImageShimmer(width: width, height: height),
         errorWidget: (context, url, error) => showImageError!
             ? Image.asset(
                 DImages.error,
@@ -84,47 +71,30 @@ class RoundNetworkImageTopRadius extends StatelessWidget {
   final Color? strokeColor;
   final double? strokeWidth;
 
-  RoundNetworkImageTopRadius(
-      {required this.width,
-      required this.height,
-      this.url,
-      this.radius,
-      this.errorHolder,
-      this.boxFit,
-      this.strokeColor,
-      this.strokeWidth});
+  RoundNetworkImageTopRadius({required this.width, required this.height, this.url, this.radius, this.errorHolder, this.boxFit, this.strokeColor, this.strokeWidth});
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(radius ?? 0),
-          topRight: Radius.circular(radius ?? 0)),
+      borderRadius: BorderRadius.only(topLeft: Radius.circular(radius ?? 0), topRight: Radius.circular(radius ?? 0)),
       child: CachedNetworkImage(
         cacheManager: CustomCacheManager.instance,
         fadeInDuration: Duration(milliseconds: 300),
         fadeOutDuration: Duration(milliseconds: 500),
-        imageUrl: (url != null && url!.contains("http"))
-            ? url!
-            : "$PHOTO_URL_CDN$url",
+        imageUrl: (url != null && url!.contains("http")) ? url! : "$PHOTO_URL_CDN$url",
         imageBuilder: (context, imageProvider) => Container(
           height: height,
           width: width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(radius ?? 0),
-                topRight: Radius.circular(radius ?? 0)),
-            border: Border.all(
-                color: strokeColor ?? Colors.transparent,
-                width: strokeWidth ?? 0),
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(radius ?? 0), topRight: Radius.circular(radius ?? 0)),
+            border: Border.all(color: strokeColor ?? Colors.transparent, width: strokeWidth ?? 0),
             image: DecorationImage(
               image: imageProvider,
               fit: boxFit ?? BoxFit.cover,
             ),
           ),
         ),
-        placeholder: (context, url) =>
-            ImageShimmer(width: width, height: height),
+        placeholder: (context, url) => ImageShimmer(width: width, height: height),
         errorWidget: (context, url, error) =>
             errorHolder ??
             ImageShimmer(
@@ -140,22 +110,8 @@ class RoundNetworkImageTopRadius extends StatelessWidget {
 }
 
 class CircleNetworkImage extends AvatarNetworkImage {
-  CircleNetworkImage(
-      {required double size,
-      String? url,
-      Widget? errorHolder,
-      BoxFit? boxFit,
-      Color? strokeColor,
-      double? strokeWidth})
-      : super(
-            radius: size * 2 / 3,
-            url: url,
-            width: size,
-            height: size,
-            boxFit: boxFit,
-            errorHolder: errorHolder,
-            strokeWidth: strokeWidth,
-            strokeColor: strokeColor);
+  CircleNetworkImage({required double size, String? url, Widget? errorHolder, BoxFit? boxFit, Color? strokeColor, double? strokeWidth})
+      : super(radius: size * 2 / 3, url: url, width: size, height: size, boxFit: boxFit, errorHolder: errorHolder, strokeWidth: strokeWidth, strokeColor: strokeColor);
 }
 
 class PhotoViewNetworkImage extends StatelessWidget {
@@ -170,15 +126,7 @@ class PhotoViewNetworkImage extends StatelessWidget {
   final double? strokeWidth;
 
   PhotoViewNetworkImage(
-      {required this.width,
-      required this.height,
-      this.url,
-      this.radius = 0.0,
-      this.placeholder,
-      this.errorHolder,
-      this.boxFit,
-      this.strokeColor,
-      this.strokeWidth});
+      {required this.width, required this.height, this.url, this.radius = 0.0, this.placeholder, this.errorHolder, this.boxFit, this.strokeColor, this.strokeWidth});
 
   @override
   Widget build(BuildContext context) {
@@ -193,12 +141,9 @@ class PhotoViewNetworkImage extends StatelessWidget {
           filterQuality: FilterQuality.high,
           initialScale: PhotoViewComputedScale.covered,
           imageProvider: CachedNetworkImageProvider(
-            (url != null && url!.contains("http"))
-                ? url!
-                : "$PHOTO_URL_CDN$url",
+            (url != null && url!.contains("http")) ? url! : "$PHOTO_URL_CDN$url",
           ),
-          loadingBuilder: (context, event) =>
-              ImageShimmer(width: width, height: height),
+          loadingBuilder: (context, event) => ImageShimmer(width: width, height: height),
         ),
       ),
     );
@@ -218,16 +163,7 @@ class AvatarNetworkImage extends StatefulWidget {
   final TextStyle? textStyle;
 
   AvatarNetworkImage(
-      {required this.width,
-      required this.height,
-      this.url,
-      this.radius = 0.0,
-      this.errorHolder,
-      this.boxFit,
-      this.strokeColor,
-      this.strokeWidth,
-      this.userName,
-      this.textStyle});
+      {required this.width, required this.height, this.url, this.radius = 0.0, this.errorHolder, this.boxFit, this.strokeColor, this.strokeWidth, this.userName, this.textStyle});
 
   @override
   State<StatefulWidget> createState() => _AvatarNetworkImageState();
@@ -256,27 +192,21 @@ class _AvatarNetworkImageState extends State<AvatarNetworkImage> {
         cacheManager: CustomCacheManager.instance,
         fadeInDuration: Duration(milliseconds: 300),
         fadeOutDuration: Duration(milliseconds: 500),
-        imageUrl: (url != null && url!.contains("http"))
-            ? url!
-            : "$PHOTO_URL_CDN$url",
+        imageUrl: (url != null && url!.contains("http")) ? url! : "$PHOTO_URL_CDN$url",
         imageBuilder: (context, imageProvider) => Container(
           height: widget.height,
           width: widget.width,
           decoration: BoxDecoration(
             borderRadius: new BorderRadius.all(Radius.circular(widget.radius!)),
-            border: Border.all(
-                color: widget.strokeColor ?? Colors.transparent,
-                width: widget.strokeWidth ?? 0),
+            border: Border.all(color: widget.strokeColor ?? Colors.transparent, width: widget.strokeWidth ?? 0),
             image: DecorationImage(
               image: imageProvider,
               fit: widget.boxFit ?? BoxFit.cover,
             ),
           ),
         ),
-        placeholder: (context, url) =>
-            ImageShimmer(width: widget.width, height: widget.height),
-        errorWidget: (context, url, error) =>
-            widget.errorHolder ?? _buildErrorWidget(widget.radius!),
+        placeholder: (context, url) => ImageShimmer(width: widget.width, height: widget.height),
+        errorWidget: (context, url, error) => widget.errorHolder ?? _buildErrorWidget(widget.radius!),
         memCacheWidth: widget.width > 300 ? 300 : widget.width.toInt(),
         memCacheHeight: widget.height > 300 ? 300 : widget.height.toInt(),
       ),
@@ -290,13 +220,10 @@ class _AvatarNetworkImageState extends State<AvatarNetworkImage> {
       alignment: Alignment.center,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(radius)),
-          gradient: LinearGradient(
-              begin: Alignment(1, 0),
-              end: Alignment(0, 1),
-              colors: [
-                getColor().themeColorPrimary,
-                getColor().themeColorPrimary.withOpacity(0.5),
-              ])),
+          gradient: LinearGradient(begin: Alignment(1, 0), end: Alignment(0, 1), colors: [
+            getColor().themeColorPrimary,
+            getColor().themeColorPrimary.withOpacity(0.5),
+          ])),
       child: Text(
         getUserName(),
         style: widget.textStyle ?? text24.bold.textColorWhite,
@@ -307,8 +234,6 @@ class _AvatarNetworkImageState extends State<AvatarNetworkImage> {
   String getUserName() {
     if (widget.userName == null || widget.userName!.isEmpty) return "";
     final arrName = widget.userName!.split(" ");
-    return arrName.isNotEmpty
-        ? arrName[arrName.length - 1][0].toUpperCase()
-        : "";
+    return arrName.isNotEmpty ? arrName[arrName.length - 1][0].toUpperCase() : "";
   }
 }

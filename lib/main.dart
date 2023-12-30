@@ -15,8 +15,7 @@ import 'flavors.dart';
 FutureOr<void> main() async {
   HttpOverrides.global = new MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
-  await Get.put<AppController>(AppController())
-      .init(F.appFlavor ?? Flavor.prod);
+  await Get.put<AppController>(AppController()).init(F.appFlavor ?? Flavor.prod);
   setupStatusBar();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,

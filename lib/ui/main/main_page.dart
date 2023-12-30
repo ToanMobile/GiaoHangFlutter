@@ -15,7 +15,7 @@ class MainPage extends BasePage<MainController> {
     HomePage(),
     CabinetPage(),
     DeliveryPage(),
-    SettingsPage()
+    SettingsPage(),
   ];
 
   @override
@@ -30,14 +30,12 @@ class MainPage extends BasePage<MainController> {
       BottomNavigationBarItem(
         label: 'Kiểm tủ',
         icon: Icon(Icons.store_mall_directory_outlined),
-        activeIcon:
-            Icon(Icons.store_mall_directory_outlined, color: colorPrimary),
+        activeIcon: Icon(Icons.store_mall_directory_outlined, color: colorPrimary),
       ),
       BottomNavigationBarItem(
         label: 'Giao hàng',
         icon: Icon(Icons.local_grocery_store_rounded),
-        activeIcon:
-            Icon(Icons.local_grocery_store_rounded, color: colorPrimary),
+        activeIcon: Icon(Icons.local_grocery_store_rounded, color: colorPrimary),
       ),
       BottomNavigationBarItem(
         label: 'Setting',

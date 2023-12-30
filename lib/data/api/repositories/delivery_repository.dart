@@ -1,10 +1,13 @@
 import 'package:get/get.dart';
 
+import '../models/response/delivery/delivery_model.dart';
 import '../services/delivery_service.dart';
 import 'base_repository.dart';
 
 class DeliveryRepository extends BaseRepository {
   final _deliveryService = Get.find<DeliveryService>();
+
+  Future<List<DeliveryModel>?> getListDelivery() async => _deliveryService.getListDelivery();
 
 /* Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final device = await _deviceService.getDeviceDetail(sn: sn);

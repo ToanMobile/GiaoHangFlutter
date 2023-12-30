@@ -44,9 +44,7 @@ bool isToday(DateTime day) {
 }
 
 bool isSameDay(DateTime dayA, DateTime dayB) {
-  return dayA.year == dayB.year &&
-      dayA.month == dayB.month &&
-      dayA.day == dayB.day;
+  return dayA.year == dayB.year && dayA.month == dayB.month && dayA.day == dayB.day;
 }
 
 bool isSameMonth(DateTime dayA, DateTime dayB) {
@@ -58,8 +56,7 @@ bool isWeekend(DateTime date) {
 }
 
 bool isInRange(DateTime date, DateTime start, DateTime end) {
-  return date.compareTo(startOfDay(start)) >= 0 &&
-      date.compareTo(endOfDay(end)) <= 0;
+  return date.compareTo(startOfDay(start)) >= 0 && date.compareTo(endOfDay(end)) <= 0;
 }
 
 DateTime startOfDay(DateTime date, {bool utc = false}) {
@@ -89,9 +86,7 @@ String formatTimeOfDuration(int seconds) {
         result = "${formatDecimalTime(minutes)}:" + result;
       } else {
         int hours = minutes ~/ 60;
-        result =
-            "${formatDecimalTime(hours)}:${formatDecimalTime(minutes % 60)}:" +
-                result;
+        result = "${formatDecimalTime(hours)}:${formatDecimalTime(minutes % 60)}:" + result;
       }
     }
   } else {
@@ -111,9 +106,7 @@ String readTimeStampByHour(String dateTime) {
   var diff = now.difference(date);
   var time = '';
 
-  if (diff.inSeconds <= 0 ||
-      diff.inSeconds > 0 && diff.inMinutes == 0 ||
-      diff.inMinutes > 0 && diff.inHours == 0 && diff.inDays == 0) {
+  if (diff.inSeconds <= 0 || diff.inSeconds > 0 && diff.inMinutes == 0 || diff.inMinutes > 0 && diff.inHours == 0 && diff.inDays == 0) {
     time = format.format(date);
   } else if (diff.inHours > 0 && diff.inHours < 24) {
     time = diff.inHours.toString() + " giờ";
@@ -264,18 +257,13 @@ String readTimeStampBySecond(String? dateTime) {
   } else if (diff.inSeconds > 0 && diff.inSeconds < 60) {
     time = textLocalization('justNow');
   } else if (diff.inMinutes > 0 && diff.inMinutes < 60) {
-    time = diff.inMinutes.toString() +
-        " " +
-        textLocalization('minute').toLowerCase();
+    time = diff.inMinutes.toString() + " " + textLocalization('minute').toLowerCase();
   } else if (diff.inHours > 0 && diff.inHours < 24) {
-    time =
-        diff.inHours.toString() + " " + textLocalization('hour').toLowerCase();
+    time = diff.inHours.toString() + " " + textLocalization('hour').toLowerCase();
   } else if (diff.inDays > 0 && diff.inDays < 7) {
     time = diff.inDays.toString() + ' ' + textLocalization('day').toLowerCase();
   } else {
-    time = (diff.inDays / 7).floor().toString() +
-        ' ' +
-        textLocalization('week').toLowerCase();
+    time = (diff.inDays / 7).floor().toString() + ' ' + textLocalization('week').toLowerCase();
   }
 
   return time;

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_page.dart';
-import './widget/manager_item_view.dart';
+import './widget/home_item_view.dart';
 import 'home_controller.dart';
 
 //ignore: must_be_immutable
@@ -32,9 +32,7 @@ class HomePage extends BasePage<HomeController> {
         height: 130.ws,
         decoration: BoxDecoration(
           color: getColor().bgThemeColorWhite,
-          borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(14),
-              bottomRight: Radius.circular(14)),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(14), bottomRight: Radius.circular(14)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
@@ -93,8 +91,7 @@ class HomePage extends BasePage<HomeController> {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.ws),
-                    child: Text('Biên bản giao hàng',
-                        style: text14.textColor141414),
+                    child: Text('Biên bản giao hàng', style: text14.textColor141414),
                   ),
                 ],
               ),
@@ -167,11 +164,10 @@ class HomePage extends BasePage<HomeController> {
           color: colorWhite,
         ),
         child: ListView.separated(
-          physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) => Container(
             color: colorWhite,
             padding: EdgeInsets.symmetric(horizontal: 26.ws),
-            child: ManagerItemView(
+            child: HomeItemView(
               item: controller.listOrder[index],
               onPressed: () {},
             ),

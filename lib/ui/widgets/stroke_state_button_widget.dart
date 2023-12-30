@@ -43,17 +43,12 @@ class _StrokeStateButtonState extends State<StrokeStateButton> {
       splashColor: Colors.transparent,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(widget.radius!),
-        side: BorderSide(
-            color: widget.enable
-                ? widget.borderColor ?? getColor().themeColorB2B2B2
-                : widget.disableBorderColor ?? getColor().themeColorD3D3D4),
+        side: BorderSide(color: widget.enable ? widget.borderColor ?? getColor().themeColorB2B2B2 : widget.disableBorderColor ?? getColor().themeColorD3D3D4),
       ),
       onPressed: widget.enable ? widget.onPressed ?? () {} : () {},
       child: Text(
         widget.text ?? "",
-        style: widget.enable
-            ? widget.textStyle ?? text18.textColor141414
-            : widget.disableTextStyle ?? text18.textColor141414,
+        style: widget.enable ? widget.textStyle ?? text18.textColor141414 : widget.disableTextStyle ?? text18.textColor141414,
       ),
     );
   }
@@ -93,9 +88,7 @@ class _ChangePhoneTextState extends State<ChangePhoneText> {
         alignment: Alignment.center,
         child: Text(
           widget.text ?? "",
-          style: widget.enable
-              ? widget.textStyle ?? text18.textColor777777
-              : widget.disableTextStyle ?? text18.textColorB2B2B2,
+          style: widget.enable ? widget.textStyle ?? text18.textColor777777 : widget.disableTextStyle ?? text18.textColorB2B2B2,
         ),
       ),
     );
