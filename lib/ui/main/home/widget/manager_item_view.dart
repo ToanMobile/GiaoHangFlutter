@@ -17,29 +17,43 @@ class ManagerItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TouchableOpacity(
       child: Container(
-        height: 100.ws,
+        height: 130.ws,
         padding: EdgeInsets.only(right: 10.ws, top: 8.ws, bottom: 8.ws),
         child: Column(
           children: [
-            Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('ID', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text(item.deliveryid.toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    SizedBox(
+                      width: 90.ws,
+                      child: Text('ID: ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    ),
+                    Text(item.deliveryid.toString(), style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
-                Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Người giao', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text(item.shipname ?? '', style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    SizedBox(
+                      width: 90.ws,
+                      child: Text('Người giao: ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    ),
+                    Expanded(
+                      child: Text(item.shipname ?? '', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    ),
                   ],
                 ),
-                Column(
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('SDT', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text(item.phone ?? '', style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    SizedBox(
+                      width: 90.ws,
+                      child: Text('SDT: ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    ),
+                    Text(item.phone ?? '', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
               ],
@@ -49,32 +63,32 @@ class ManagerItemView extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Text('Tổng đơn', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text((item.total ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text('Tổng đơn', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.total ?? 0).toString(), style: text16.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Chờ lấy', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text((item.choLayHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text('Chờ lấy', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.choLayHang ?? 0).toString(), style: text16.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Đã lấy', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text((item.daLayHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text('Đã lấy', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.daLayHang ?? 0).toString(), style: text16.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Đang giao', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text((item.dangGiaoHang ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text('Đang giao', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.dangGiaoHang ?? 0).toString(), style: text16.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
                 Column(
                   children: [
-                    Text('Hoàn thành', style: text10.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
-                    Text((item.hoanTat ?? 0).toString(), style: text14.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text('Hoàn thành', style: text14.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text((item.hoanTat ?? 0).toString(), style: text16.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
               ],
