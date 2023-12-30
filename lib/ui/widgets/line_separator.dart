@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class LineSeparator extends StatelessWidget {
-  const LineSeparator({Key? key, this.height = 1, this.color = Colors.black}) : super(key: key);
+  const LineSeparator({Key? key, this.height = 1, this.color = Colors.black})
+      : super(key: key);
   final double height;
   final Color color;
 

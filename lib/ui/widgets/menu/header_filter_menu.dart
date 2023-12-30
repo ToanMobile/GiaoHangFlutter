@@ -13,7 +13,13 @@ class HeaderFilterMenu extends GetWidget {
   final VoidCallback? onFilterCallback;
   final VoidCallback? onSortCallback;
 
-  HeaderFilterMenu({this.height, this.padding, this.textStyle, this.onMenuCallback, this.onFilterCallback, this.onSortCallback});
+  HeaderFilterMenu(
+      {this.height,
+      this.padding,
+      this.textStyle,
+      this.onMenuCallback,
+      this.onFilterCallback,
+      this.onSortCallback});
 
   @override
   Widget build(BuildContext context) {

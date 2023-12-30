@@ -32,14 +32,17 @@ class TextInputComment extends StatelessWidget {
       height: height,
       padding: EdgeInsets.symmetric(horizontal: 10.ws, vertical: 0.ws),
       alignment: Alignment.centerLeft,
-      decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(radius!)), color: background),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.all(Radius.circular(radius!)),
+          color: background),
       child: TextField(
         style: textStyle,
         controller: controller,
         scrollPadding: EdgeInsets.all(0),
         enableInteractiveSelection: isInput,
         enabled: isInput,
-        decoration: new InputDecoration(hintText: hint, hintStyle: hintStyle, border: InputBorder.none),
+        decoration: new InputDecoration(
+            hintText: hint, hintStyle: hintStyle, border: InputBorder.none),
       ),
     );
   }

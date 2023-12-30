@@ -54,10 +54,15 @@ class _TextInputLineBorderState extends State<TextInputLineBorder> {
         decoration: BoxDecoration(
             color: widget.background ?? getColor().themeColorWhite,
             borderRadius: BorderRadius.all(Radius.circular(widget.radius!)),
-            border: Border.all(color: getColor().themeColorD3D3D4, width: 1, style: BorderStyle.solid)),
+            border: Border.all(
+                color: getColor().themeColorD3D3D4,
+                width: 1,
+                style: BorderStyle.solid)),
         alignment: Alignment.centerLeft,
         child: Row(
-          crossAxisAlignment: widget.maxLine == 1 ? CrossAxisAlignment.center : CrossAxisAlignment.start,
+          crossAxisAlignment: widget.maxLine == 1
+              ? CrossAxisAlignment.center
+              : CrossAxisAlignment.start,
           children: [
             Expanded(
               child: TextField(
@@ -71,7 +76,13 @@ class _TextInputLineBorderState extends State<TextInputLineBorder> {
                 textInputAction: TextInputAction.done,
                 autofocus: true,
                 decoration: InputDecoration(
-                    counterText: "", isDense: true, filled: true, hintStyle: widget.hintTextStyle, hintText: widget.hint, border: InputBorder.none, fillColor: Colors.transparent),
+                    counterText: "",
+                    isDense: true,
+                    filled: true,
+                    hintStyle: widget.hintTextStyle,
+                    hintText: widget.hint,
+                    border: InputBorder.none,
+                    fillColor: Colors.transparent),
                 textAlign: TextAlign.start,
                 //onEditingComplete: () => widget.onComplete != null ? widget.onComplete!('') : null,
                 onSubmitted: widget.onComplete,
@@ -81,7 +92,9 @@ class _TextInputLineBorderState extends State<TextInputLineBorder> {
                 },
               ),
             ),
-            if ((isClearText.value && widget.maxLine == 1 || widget.textEditingController.text.isNotEmpty) && widget.enabled!)
+            if ((isClearText.value && widget.maxLine == 1 ||
+                    widget.textEditingController.text.isNotEmpty) &&
+                widget.enabled!)
               InkWell(
                 child: Image.asset(
                   DImages.textClear,

@@ -4,7 +4,7 @@ import '../../storage/my_storage.dart';
 import '../models/response/auth/auth_res.dart';
 import 'base_service.dart';
 
-class DeviceService extends BaseService {
+class CabinetService extends BaseService {
   final _storage = Get.find<MyStorage>();
 
   Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();

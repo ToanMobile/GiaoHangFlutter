@@ -98,7 +98,11 @@ class ListOrder {
 
   num? get hoanTat => _hoanTat;
 
-  num? get total => (choLayHang ?? 0) + (daLayHang ?? 0) + (dangGiaoHang ?? 0) + (hoanTat ?? 0);
+  num? get total =>
+      (choLayHang ?? 0) +
+      (daLayHang ?? 0) +
+      (dangGiaoHang ?? 0) +
+      (hoanTat ?? 0);
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

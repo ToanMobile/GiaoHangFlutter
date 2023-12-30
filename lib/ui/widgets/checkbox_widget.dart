@@ -7,7 +7,11 @@ class CheckBoxWidget extends StatefulWidget {
   final bool? initValue;
   final Function(bool)? onCheckChange;
 
-  CheckBoxWidget({this.checkedWidget, this.unCheckedWidget, this.initValue = false, this.onCheckChange});
+  CheckBoxWidget(
+      {this.checkedWidget,
+      this.unCheckedWidget,
+      this.initValue = false,
+      this.onCheckChange});
 
   @override
   State<StatefulWidget> createState() => _CheckBoxWidgetState();

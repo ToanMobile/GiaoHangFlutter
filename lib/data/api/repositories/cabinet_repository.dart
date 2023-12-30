@@ -1,10 +1,10 @@
 import 'package:get/get.dart';
 
-import '../services/device_service.dart';
+import '../services/cabinet_service.dart';
 import 'base_repository.dart';
 
-class DeviceRepository extends BaseRepository {
-  final _deviceService = Get.find<DeviceService>();
+class CabinetRepository extends BaseRepository {
+  final _cabinetService = Get.find<CabinetService>();
 
 /* Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final device = await _deviceService.getDeviceDetail(sn: sn);

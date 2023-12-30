@@ -5,7 +5,12 @@ class BookingRequest {
   Info? info;
   List<Rooms>? rooms;
 
-  BookingRequest({this.dateCheckin, this.dateCheckout, this.description, this.info, this.rooms});
+  BookingRequest(
+      {this.dateCheckin,
+      this.dateCheckout,
+      this.description,
+      this.info,
+      this.rooms});
 
   BookingRequest.fromJson(Map<String, dynamic> json) {
     dateCheckin = json['dateCheckin'];
@@ -71,7 +76,13 @@ class Rooms {
   int? price;
   String? roomType;
 
-  Rooms({this.children, this.hotel, this.id, this.infants, this.price, this.roomType});
+  Rooms(
+      {this.children,
+      this.hotel,
+      this.id,
+      this.infants,
+      this.price,
+      this.roomType});
 
   Rooms.fromJson(Map<String, dynamic> json) {
     children = json['children'];

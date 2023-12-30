@@ -58,12 +58,18 @@ class DTextFromField extends StatelessWidget {
       this.prefixPadding,
       this.isHideCounterText,
       this.textCenter,
-      this.prefixConstraints = const BoxConstraints(maxHeight: 36, minHeight: 36),
-      this.iconContraints = const BoxConstraints(maxWidth: 24, maxHeight: 24, minHeight: 24),
-      this.contentPadding = const EdgeInsets.symmetric(vertical: 17.0, horizontal: 0.0)});
+      this.prefixConstraints =
+          const BoxConstraints(maxHeight: 36, minHeight: 36),
+      this.iconContraints =
+          const BoxConstraints(maxWidth: 24, maxHeight: 24, minHeight: 24),
+      this.contentPadding =
+          const EdgeInsets.symmetric(vertical: 17.0, horizontal: 0.0)});
 
-  UnderlineInputBorder _underlineInputBorder(Color? strokeColor, BuildContext context) {
-    return UnderlineInputBorder(borderSide: BorderSide(color: strokeColor ?? getColor().textColorB2B2B2));
+  UnderlineInputBorder _underlineInputBorder(
+      Color? strokeColor, BuildContext context) {
+    return UnderlineInputBorder(
+        borderSide:
+            BorderSide(color: strokeColor ?? getColor().textColorB2B2B2));
   }
 
   @override
@@ -106,12 +112,17 @@ class DTextFromField extends StatelessWidget {
               errorText: errorText,
               counterStyle: text12.textColor777777,
               hintText: hintText ?? "",
-              hintStyle: textStyle?.copyWith(color: getColor().textColorB2B2B2) ?? text18.textColor777777,
+              hintStyle:
+                  textStyle?.copyWith(color: getColor().textColorB2B2B2) ??
+                      text18.textColor777777,
               prefixIconConstraints: prefixConstraints,
               prefixIcon: prefixIcon != null
                   ? Padding(
                       child: prefixIcon,
-                      padding: EdgeInsets.only(left: prefixPadding != null ? prefixPadding! : 0, right: prefixPadding != null ? prefixPadding! : 16.ws),
+                      padding: EdgeInsets.only(
+                          left: prefixPadding != null ? prefixPadding! : 0,
+                          right:
+                              prefixPadding != null ? prefixPadding! : 16.ws),
                     )
                   : null,
               suffixIconConstraints: iconContraints,
@@ -123,7 +134,8 @@ class DTextFromField extends StatelessWidget {
               focusedBorder: _underlineInputBorder(strokeColor, context),
               border: _underlineInputBorder(strokeColor, context),
               disabledBorder: _underlineInputBorder(strokeColor, context),
-              focusedErrorBorder: _underlineInputBorder(getColor().error, context),
+              focusedErrorBorder:
+                  _underlineInputBorder(getColor().error, context),
               errorBorder: _underlineInputBorder(getColor().error, context)),
         )
       ],
@@ -162,7 +174,8 @@ class ClearTextField extends StatefulWidget {
       this.onValidated,
       this.errorText,
       this.obscureText,
-      this.contentPadding = const EdgeInsets.symmetric(vertical: 17.0, horizontal: 0.0),
+      this.contentPadding =
+          const EdgeInsets.symmetric(vertical: 17.0, horizontal: 0.0),
       this.errorStyle});
 
   @override
@@ -199,7 +212,8 @@ class _ClearTextFieldState extends State<ClearTextField> {
       errorStyle: widget.errorStyle,
       contentPadding: widget.contentPadding,
       obscureText: widget.obscureText,
-      iconContraints: const BoxConstraints(maxWidth: 30, maxHeight: 30, minHeight: 30),
+      iconContraints:
+          const BoxConstraints(maxWidth: 30, maxHeight: 30, minHeight: 30),
       suffixIcon: controller?.text != ""
           ? MaterialButton(
               height: 24,
@@ -303,7 +317,8 @@ class _CountryCodeTextFieldState extends State<CountryCodeTextField> {
 
 class LowerCaseTxt extends TextInputFormatter {
   @override
-  TextEditingValue formatEditUpdate(TextEditingValue oldValue, TextEditingValue newValue) {
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
     return newValue.copyWith(text: newValue.text.toLowerCase());
   }
 }

@@ -28,7 +28,8 @@ abstract class BasePage<C extends BaseController> extends GetWidget<C> {
               absorbing: controller.viewState.value == ViewState.loading,
               child: buildContentView(context, controller),
             ),
-            if (controller.viewState.value == ViewState.loading) buildLoadingView,
+            if (controller.viewState.value == ViewState.loading)
+              buildLoadingView,
           ],
         );
       default:

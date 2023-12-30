@@ -39,8 +39,10 @@ class CustomBottomNenu extends StatelessWidget {
             showUnselectedLabels: true,
             currentIndex: index,
             type: type ?? BottomNavigationBarType.fixed,
-            selectedItemColor: selectedItemColor ?? getColor().themeColorPrimary,
-            unselectedItemColor: unselectedItemColor ?? getColor().themeColorB2B2B2,
+            selectedItemColor:
+                selectedItemColor ?? getColor().themeColorPrimary,
+            unselectedItemColor:
+                unselectedItemColor ?? getColor().themeColorB2B2B2,
             backgroundColor: backgroundColor ?? getColor().bgThemeColorWhite,
             onTap: onTabChanged,
             selectedLabelStyle: text12.textColorPrimary,

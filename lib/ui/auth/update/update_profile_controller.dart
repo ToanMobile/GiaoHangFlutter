@@ -30,7 +30,11 @@ class UpdateProfileController extends BaseController {
   }
 
   Future<void> updateProfile() async {
-    profile.copyWith(name: nameController.text, birthday: DateTime.now(), gender: 0, phone: "");
+    profile.copyWith(
+        name: nameController.text,
+        birthday: DateTime.now(),
+        gender: 0,
+        phone: "");
     try {
       showLoading();
       //await _userRespository.updateProfile();

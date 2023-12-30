@@ -13,9 +13,21 @@ class NotificationItem {
   dynamic createdAt;
   dynamic updatedAt;
 
-  NotificationItem({this.id, this.title, this.content, this.receiver, this.type, this.notify, this.booking, this.isRead, this.image, this.createdAt, this.updatedAt});
+  NotificationItem(
+      {this.id,
+      this.title,
+      this.content,
+      this.receiver,
+      this.type,
+      this.notify,
+      this.booking,
+      this.isRead,
+      this.image,
+      this.createdAt,
+      this.updatedAt});
 
-  factory NotificationItem.fromJson(Map<String, dynamic> json) => NotificationItem(
+  factory NotificationItem.fromJson(Map<String, dynamic> json) =>
+      NotificationItem(
         id: json["id"] ?? "",
         title: json["title"] ?? "",
         content: json["content"] ?? "--",

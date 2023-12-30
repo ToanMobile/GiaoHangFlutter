@@ -4,13 +4,19 @@ import 'package:flutter/material.dart';
 import '../../ui/base/base_page.dart';
 import '../../ui/main/main_controller.dart';
 import '../../ui/widgets/menu/custom_bottom_menu.dart';
+import 'cabinet/cabinet_page.dart';
+import 'delivery/delivery_page.dart';
 import 'home/home_page.dart';
-import 'product/product_page.dart';
 import 'settings/settings_page.dart';
 
 //ignore: must_be_immutable
 class MainPage extends BasePage<MainController> {
-  final List<Widget> pages = [HomePage(), ProductPage(), ProductPage(), ProductPage(), ProductPage(), SettingsPage()];
+  final List<Widget> pages = [
+    HomePage(),
+    CabinetPage(),
+    DeliveryPage(),
+    SettingsPage()
+  ];
 
   @override
   Widget buildContentView(BuildContext context, MainController controller) {
@@ -22,27 +28,19 @@ class MainPage extends BasePage<MainController> {
         activeIcon: Icon(Icons.home, color: colorPrimary),
       ),
       BottomNavigationBarItem(
-        label: 'Sản phẩm',
-        icon: Icon(Icons.receipt_long_outlined),
-        activeIcon: Icon(Icons.receipt_long_outlined, color: colorPrimary),
-      ),
-      BottomNavigationBarItem(
-        label: 'Kho hàng',
-        icon: Icon(Icons.compare_arrows),
-        activeIcon: Icon(Icons.compare_arrows, color: colorPrimary),
-      ),
-      BottomNavigationBarItem(
-        label: 'Bán hàng',
+        label: 'Kiểm tủ',
         icon: Icon(Icons.store_mall_directory_outlined),
-        activeIcon: Icon(Icons.store_mall_directory_outlined, color: colorPrimary),
+        activeIcon:
+            Icon(Icons.store_mall_directory_outlined, color: colorPrimary),
       ),
       BottomNavigationBarItem(
-        label: 'Đơn hàng',
+        label: 'Giao hàng',
         icon: Icon(Icons.local_grocery_store_rounded),
-        activeIcon: Icon(Icons.local_grocery_store_rounded, color: colorPrimary),
+        activeIcon:
+            Icon(Icons.local_grocery_store_rounded, color: colorPrimary),
       ),
       BottomNavigationBarItem(
-        label: 'Khác',
+        label: 'Setting',
         icon: Icon(Icons.more_horiz),
         activeIcon: Icon(Icons.more_horiz, color: colorPrimary),
       ),

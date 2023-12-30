@@ -70,7 +70,8 @@ abstract class BaseGridController<I> extends BaseController {
   }
 
   loadData({dynamic params, bool isClear = false}) async {
-    print("\n\n*************************** page: $page ***************************\n\n");
+    print(
+        "\n\n*************************** page: $page ***************************\n\n");
     try {
       final data = await getData();
       if (isClear) items.clear();

@@ -7,7 +7,8 @@ abstract class EnumConverter<T> implements JsonConverter<T, String> {
 
   @override
   T fromJson(String value) {
-    return values.firstWhere((type) => type.toString().split(".").last == value);
+    return values
+        .firstWhere((type) => type.toString().split(".").last == value);
   }
 
   @override

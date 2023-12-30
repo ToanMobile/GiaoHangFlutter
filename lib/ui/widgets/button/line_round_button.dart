@@ -8,13 +8,21 @@ class LineRoundButton extends StatelessWidget {
   final double? lineWidth;
   final EdgeInsetsGeometry? padding;
 
-  LineRoundButton({required this.text, this.lineColor = Colors.black, this.textStyle, this.radius = 5.0, this.padding, this.lineWidth = 0.5});
+  LineRoundButton(
+      {required this.text,
+      this.lineColor = Colors.black,
+      this.textStyle,
+      this.radius = 5.0,
+      this.padding,
+      this.lineWidth = 0.5});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: padding,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(radius!), border: Border.all(color: lineColor!, width: lineWidth!)),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius!),
+          border: Border.all(color: lineColor!, width: lineWidth!)),
       child: Text(
         text,
         style: textStyle,

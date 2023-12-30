@@ -28,19 +28,26 @@ class SettingsController extends BaseController {
     try {
       //await _useRepository.getUserInfo();
     } catch (e) {}
-    _user.value = appController.user ?? TUser(name: '', gender: SEX_TYPE.MEN.name, phone: '');
+    _user.value = appController.user ??
+        TUser(name: '', gender: SEX_TYPE.MEN.name, phone: '');
     if (user.gender == null) {
       _user.update((_user) {
         user.copyWith(gender: SEX_TYPE.MEN.name);
       });
     }
     dateTime = user.birthday ?? DateTime.parse(INIT_DATETIME);
-    sexType.value = user.gender == 1 ? SEX_TYPE.MEN : (user.gender == 0 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
+    sexType.value = user.gender == 0
+        ? SEX_TYPE.MEN
+        : (user.gender == 1 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
     txtNameController.text = user.name ?? '';
     txtPhoneController.text = user.phone ?? '';
   }
 
-  void updateProfile(Function(String) errorMessage, {String? userName, DateTime? birthday, SEX_TYPE? sexType, String? phone}) async {
+  void updateProfile(Function(String) errorMessage,
+      {String? userName,
+      DateTime? birthday,
+      SEX_TYPE? sexType,
+      String? phone}) async {
     showLoading();
     try {
       if (userName != null) {
@@ -85,7 +92,9 @@ class SettingsController extends BaseController {
             user.copyWith(gender: gender);
           });
         } catch (e) {
-          this.sexType.value = user.gender == 1 ? SEX_TYPE.MEN : (user.gender == 0 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
+          this.sexType.value = user.gender == 0
+              ? SEX_TYPE.MEN
+              : (user.gender == 1 ? SEX_TYPE.WOMAN : SEX_TYPE.OTHER);
           errorMessage(getErrors(e));
         }
       }

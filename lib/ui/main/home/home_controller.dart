@@ -32,7 +32,8 @@ class HomeController extends BaseController {
   @override
   void onInit() async {
     super.onInit();
-    _user.value = _appController.user ?? TUser(name: 'Văn Toàn', gender: SEX_TYPE.MEN.name, phone: '');
+    _user.value = _appController.user ??
+        TUser(name: 'Văn Toàn', gender: SEX_TYPE.MEN.name, phone: '');
     getListOrder();
   }
 

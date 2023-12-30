@@ -10,27 +10,34 @@ final maxDate = DateTime(3000, 1, 1, 0, 0, 0);
 const MIN_YEAR_OLD_USED_APP = 18;
 const PAGE_SIZE = 30;
 //Stg
-const BASE_URL_DEV = "https://ibp-staging.tastycounter.vn/app/api/";
+const BASE_URL_DEV = "https://ibp-staging.tastycounter.vn/";
 const UPLOAD_PHOTO_URL_DEV = BASE_URL_DEV + "product/img/";
 
-void DOWNLOAD_PHOTO_URL_DEV(String name) => "$BASE_URL_DEV/common/files/$name?subfolder=contract";
+void DOWNLOAD_PHOTO_URL_DEV(String name) =>
+    "$BASE_URL_DEV/common/files/$name?subfolder=contract";
 
 //Production
-const BASE_URL_PROD = "https://ibp.tastycounter.vn/app/api/"; // production
+const BASE_URL_PROD = "https://ibp.tastycounter.vn/"; // production
 const UPLOAD_PHOTO_URL_PROD = BASE_URL_PROD + "product/img/"; //production
-void DOWNLOAD_PHOTO_URL_PROD(String name) => "$BASE_URL_PROD/common/files/$name?subfolder=contract";
+void DOWNLOAD_PHOTO_URL_PROD(String name) =>
+    "$BASE_URL_PROD/common/files/$name?subfolder=contract";
 var isConnection = true;
 
 String PHOTO_URL_CDN = BASE_URL_DEV;
 //Login
-const LOGIN_BY_EMAIL = "identity/login";
-const LOGIN_BY_SOCIAL = "identity/login-with-partner";
+const LOGIN_BY_EMAIL = "app/api/identity/login";
+const LOGIN_BY_SOCIAL = "app/api/identity/login-with-partner";
 //Get user
-const GET_PROFILE = "customer/get-customer";
+const GET_PROFILE = "app/api/customer/get-customer";
 //Get List Order
-const GET_LIST_ORDER_DELIVERY_OLD = "order/delivery";
-const GET_LIST_ORDER_DELIVERY = "order/get-delivery?page=1&limit=100";
+const GET_LIST_ORDER_DELIVERY_OLD = "app/api/order/delivery";
+const GET_LIST_ORDER_DELIVERY = "app/api/order/get-delivery?page=1&limit=100";
+//Get list cabinet
+const GET_LIST_CABINET = "cms/api/customer/get-hscheck?page=1&limit=100";
+//Get list delivery
+const GET_LIST_DELIVERY = "meta/user-delivery";
 
+//OLD
 //Register
 const REGISTER = "auth/register";
 //OTP

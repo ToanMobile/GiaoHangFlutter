@@ -12,7 +12,11 @@ class LikeWidget extends GetWidget {
   final double iconSize;
   final VoidCallback? onFavorite;
 
-  LikeWidget({required this.isLike, required this.totalLike, this.iconSize = 32, this.onFavorite});
+  LikeWidget(
+      {required this.isLike,
+      required this.totalLike,
+      this.iconSize = 32,
+      this.onFavorite});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +29,9 @@ class LikeWidget extends GetWidget {
                 DImages.iconLike,
                 width: iconSize,
                 height: iconSize,
-                color: isLike.value ? getColor().themeColorPrimary : getColor().themeColorB2B2B2,
+                color: isLike.value
+                    ? getColor().themeColorPrimary
+                    : getColor().themeColorB2B2B2,
               ),
             ),
             onPressed: () {
@@ -33,7 +39,8 @@ class LikeWidget extends GetWidget {
             },
           ),
           Obx(
-            () => Text("${totalLike.value} lượt thích", style: text14.textColor777777, textAlign: TextAlign.left),
+            () => Text("${totalLike.value} lượt thích",
+                style: text14.textColor777777, textAlign: TextAlign.left),
           )
         ],
       ),

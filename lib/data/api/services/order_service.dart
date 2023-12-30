@@ -14,7 +14,8 @@ class OrderService extends BaseService {
   Future<List<ListOrder>?> getListOrder() async {
     final response = await get(GET_LIST_ORDER_DELIVERY);
     if (response.data != null) {
-      return List<ListOrder>.from(response.data.map((item) => ListOrder.fromJson(item)));
+      return List<ListOrder>.from(
+          response.data.map((item) => ListOrder.fromJson(item)));
     } else {
       return null;
     }

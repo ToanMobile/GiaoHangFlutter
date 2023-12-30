@@ -32,7 +32,9 @@ class HomePage extends BasePage<HomeController> {
         height: 130.ws,
         decoration: BoxDecoration(
           color: getColor().bgThemeColorWhite,
-          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(14), bottomRight: Radius.circular(14)),
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(14),
+              bottomRight: Radius.circular(14)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
@@ -91,15 +93,8 @@ class HomePage extends BasePage<HomeController> {
                 children: [
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: 8.ws),
-                    child: Text('Biên bản giao hàng', style: text14.textColor141414),
-                  ),
-                  TouchableOpacity(
-                    child: Padding(
-                      key: controller.widgetKey,
-                      padding: EdgeInsets.symmetric(horizontal: 24.ws, vertical: 4.ws),
-                      child: Assets.icons.icMenu.svg(height: 24.ws, width: 20.ws),
-                    ),
-                    onPressed: () {},
+                    child: Text('Biên bản giao hàng',
+                        style: text14.textColor141414),
                   ),
                 ],
               ),

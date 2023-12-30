@@ -22,7 +22,8 @@ class RegisterController extends BaseController {
 
   bool get validateEmail => GetUtils.isEmail(textEmailCl.text);
 
-  bool get validateUserName => GetUtils.isLengthGreaterOrEqual(textUserNameCl.text, 3);
+  bool get validateUserName =>
+      GetUtils.isLengthGreaterOrEqual(textUserNameCl.text, 3);
 
   @override
   void onInit() {
@@ -37,7 +38,8 @@ class RegisterController extends BaseController {
   }
 
   String? validatorEmail(String fieldName) {
-    return GetUtils.isNullOrBlank(textEmailCl.text) == true || !GetUtils.isEmail(textEmailCl.text)
+    return GetUtils.isNullOrBlank(textEmailCl.text) == true ||
+            !GetUtils.isEmail(textEmailCl.text)
         ? 'sign_up_msg_is_required'.trParams({
             'field': fieldName,
           })
@@ -62,7 +64,8 @@ class RegisterController extends BaseController {
 
   register(Function(String) errorMessage) async {
     if (validatorUserName(textLocalization("signup.user_name")) != null) {
-      errorMessage(validatorUserName(textLocalization("signup.user_name")) ?? '');
+      errorMessage(
+          validatorUserName(textLocalization("signup.user_name")) ?? '');
       return;
     }
     if (validatorEmail(textLocalization("login.email")) != null) {
