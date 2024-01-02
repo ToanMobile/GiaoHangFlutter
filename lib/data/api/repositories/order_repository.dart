@@ -1,3 +1,4 @@
+import 'package:app_giao_hang/data/api/models/response/order/order_detail_model.dart';
 import 'package:get/get.dart';
 
 import '../models/response/order/list_order_model.dart';
@@ -8,6 +9,8 @@ class OrderRepository extends BaseRepository {
   final _orderService = Get.find<OrderService>();
 
   Future<List<ListOrderModel>?> getListOrder() async => _orderService.getListOrder();
+
+  Future<List<OrderDetail>?> getListOrderDetails(String id) async => _orderService.getListOrderDetail(id);
 
 /*Future<FarmItem?> getFarmDetail(String? fk) async {
     final farm = await _farmService.getFarmDetail(fk);

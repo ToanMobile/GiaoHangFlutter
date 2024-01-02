@@ -8,11 +8,10 @@ import 'package:get/get.dart';
 
 import '../../../app/app_controller.dart';
 import '../../../data/api/models/TUser.dart';
-import '../../../data/api/models/response/order/list_order_model.dart';
 import '../../../data/api/models/response/order/order_detail_model.dart';
 import '../../base/base_controller.dart';
 
-class HomeController extends BaseController {
+class HomeDetailsController extends BaseController {
   final _mainController = Get.find<MainController>();
   final _orderRepository = Get.find<OrderRepository>();
   final _appController = Get.find<AppController>();
@@ -21,8 +20,10 @@ class HomeController extends BaseController {
   TUser get user => _user.value;
   final GlobalKey widgetKey = GlobalKey();
 
-  List<ListOrderModel> get listOrder => _listOrder$.value;
-  final _listOrder$ = <ListOrderModel>[].obs;
+  final String? orderId = Get.arguments as String?;
+
+  OrderDetail get orderDetail => _orderDetail$.value;
+  final _orderDetail$ = OrderDetail().obs;
 
   @override
   void onClose() {
@@ -34,13 +35,16 @@ class HomeController extends BaseController {
   void onInit() async {
     super.onInit();
     _user.value = _appController.user ?? TUser(name: 'Văn Toàn', gender: SEX_TYPE.MEN.name, phone: '');
-    getListOrder();
+    getOrderDetail(orderId ?? '');
   }
 
-  getListOrder() async {
+  getOrderDetail(String id) async {
     showLoading();
     try {
-      _listOrder$.value = await _orderRepository.getListOrder() ?? List.empty();
+      await _orderRepository.getListOrderDetails(id).then((value) {
+        _orderDetail$.value = value?.first ?? OrderDetail();
+      });
+      print('HomeController:orderDetail:' + orderDetail.shipping.toString());
       hideLoading();
     } catch (e) {
       hideLoading();

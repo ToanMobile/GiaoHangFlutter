@@ -1,6 +1,8 @@
+import 'package:app_giao_hang/app/app_pages.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/ui/widgets/button/touchable_opacity.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_page.dart';
@@ -169,7 +171,9 @@ class HomePage extends BasePage<HomeController> {
             padding: EdgeInsets.symmetric(horizontal: 26.ws),
             child: HomeItemView(
               item: controller.listOrder[index],
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoutes.MAIN_DETAIL, arguments: controller.listOrder[index].deliveryid);
+              },
             ),
           ),
           shrinkWrap: true,

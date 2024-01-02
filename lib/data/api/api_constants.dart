@@ -30,6 +30,7 @@ const GET_PROFILE = "app/api/customer/get-customer";
 //Get List Order
 const GET_LIST_ORDER_DELIVERY_OLD = "app/api/order/delivery";
 const GET_LIST_ORDER_DELIVERY = "app/api/order/get-delivery?page=1&limit=100";
+const GET_DETAIL_ORDER = "cms/api/order/get-delivery-detail?page=1&limit=100&orderID=&";
 //Get list cabinet
 const GET_LIST_CABINET = "cms/api/customer/get-hscheck?page=1&limit=100";
 //Get list delivery

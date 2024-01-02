@@ -1,3 +1,4 @@
+import 'package:app_giao_hang/data/api/models/response/order/order_detail_model.dart';
 import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
@@ -19,6 +20,17 @@ class OrderService extends BaseService {
       return null;
     }
   }
+
+  Future<List<OrderDetail>?> getListOrderDetail(String id) async {
+    final params = {"id": id};
+    final response = await get(GET_DETAIL_ORDER, params: params);
+    if (response.data != null) {
+      return List<OrderDetail>.from(response.data.map((item) => OrderDetail.fromJson(item)));
+    } else {
+      return null;
+    }
+  }
+
 /*
   Future<String> getNameFarm(List<FarmItem>? listFarm) async {
     final token = await tokenModel();
@@ -32,17 +44,6 @@ class OrderService extends BaseService {
     final response = await post(GET_FARM, data: params);
     if (response.data != null) {
       return FarmItem.fromJson(response.data);
-    } else {
-      return null;
-    }
-  }
-
-  Future<List<FarmItem>?> getListFarm() async {
-    final token = await tokenModel();
-    final params = {"uk": token?.uk};
-    final response = await post(GET_ALL_FARM, data: params);
-    if (response.data != null) {
-      return List<FarmItem>.from(response.data.map((item) => FarmItem.fromJson(item)));
     } else {
       return null;
     }

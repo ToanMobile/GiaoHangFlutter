@@ -4,6 +4,7 @@ import 'package:app_giao_hang/ui/widgets/base_scaffold_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../base/base_page.dart';
+import '../../widgets/default_appbar.dart';
 import 'widget/cabinet_item_view.dart';
 
 //ignore: must_be_immutable
@@ -11,6 +12,7 @@ class CabinetPage extends BasePage<CabinetController> {
   @override
   Widget buildContentView(BuildContext context, CabinetController controller) {
     return Scaffold(
+      appBar: DefaultAppbar(title: 'Danh sách kiểm tủ', appBarStyle: AppBarStyle.NONE),
       body: buildWidgetListData(),
     );
   }
