@@ -8,7 +8,7 @@ import '../../../widgets/image_widget.dart';
 class WineItem extends StatelessWidget {
   const WineItem({super.key, this.onTap, required this.item});
 
-  final SlotsModel item;
+  final MItemModel item;
   final VoidCallback? onTap;
 
   @override
@@ -17,15 +17,15 @@ class WineItem extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 100.ws,
-        margin: const EdgeInsets.symmetric(horizontal: 16),
         padding: const EdgeInsets.symmetric(vertical: 6),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             RoundNetworkImage(
               width: 60.ws,
-              height: 60.ws,
-              url: item.item?.img ?? '',
+              height: 80.ws,
+              url: item?.img ?? '',
+              boxFit: BoxFit.fitHeight,
             ),
             SizedBox(width: 20.ws),
             Expanded(
@@ -35,7 +35,7 @@ class WineItem extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      'Tên: ${item.item?.name ?? ''}',
+                      'Tên: ${item?.name ?? ''}',
                       style: TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 12.ts,
@@ -52,14 +52,14 @@ class WineItem extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    "SL: ${(item.item?.sl ?? 0).toString()}",
+                    "SL: ${(item.totalSL ?? 0).toString()}",
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13.ts,
                     ),
                   ),
                   Text(
-                    "Giá: ${((item.item?.price ?? 0).toString()).stringToVNCurrency()} ₫",
+                    "Giá: ${((item.price ?? 0).toString()).stringToVNCurrency()} ₫",
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 13.ts,

@@ -74,7 +74,7 @@ class DeliveryPersonItemView extends StatelessWidget {
                       width: 100.ws,
                       child: Text('Địa chỉ: ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                     ),
-                    Text(item.address ?? '', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Expanded(child: Text(item.address ?? '', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1)),
                   ],
                 ),
                 Row(

@@ -198,6 +198,7 @@ class MItemModel {
     num? price,
     num? temporaryprice,
     num? favorites,
+    num? sl,
   }) {
     _sku = sku;
     _uniqueid = uniqueid;
@@ -207,11 +208,7 @@ class MItemModel {
     _price = price;
     _temporaryprice = temporaryprice;
     _favorites = favorites;
-  }
-
-  @override
-  String toString() {
-    return 'MItemModel{_sku: $_sku, _uniqueid: $_uniqueid, _name: $_name, _img: $_img, _type: $_type, _price: $_price, _temporaryprice: $_temporaryprice, _favorites: $_favorites}';
+    _sl = sl;
   }
 
   MItemModel.fromJson(dynamic json) {
@@ -223,6 +220,7 @@ class MItemModel {
     _price = json['price'];
     _temporaryprice = json['temporaryprice'];
     _favorites = json['favorites'];
+    _sl = 1;
   }
 
   String? _sku;
@@ -233,6 +231,7 @@ class MItemModel {
   num? _price;
   num? _temporaryprice;
   num? _favorites;
+  num? _sl;
 
   MItemModel copyWith({
     String? sku,
@@ -243,6 +242,7 @@ class MItemModel {
     num? price,
     num? temporaryprice,
     num? favorites,
+    num? sl,
   }) =>
       MItemModel(
         sku: sku ?? _sku,
@@ -253,6 +253,7 @@ class MItemModel {
         price: price ?? _price,
         temporaryprice: temporaryprice ?? _temporaryprice,
         favorites: favorites ?? _favorites,
+        sl: sl ?? _sl,
       );
 
   String? get sku => _sku;
@@ -271,7 +272,12 @@ class MItemModel {
 
   num? get favorites => _favorites;
 
-  num get sl => 0;
+  num get totalSL => _sl ?? 1;
+
+  @override
+  String toString() {
+    return 'MItemModel{_sku: $_sku, _uniqueid: $_uniqueid, _name: $_name, _img: $_img, _type: $_type, _price: $_price, _temporaryprice: $_temporaryprice, _favorites: $_favorites, _sl: $_sl}';
+  }
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

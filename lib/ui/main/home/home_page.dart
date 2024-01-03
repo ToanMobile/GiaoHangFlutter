@@ -160,7 +160,7 @@ class HomePage extends BasePage<HomeController> {
 
   buildWidgetDonHang() => Container(
         width: double.infinity,
-        height: 700.ws,
+        height: 600.ws,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(16)),
           color: colorWhite,

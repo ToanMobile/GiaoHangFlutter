@@ -13,8 +13,8 @@ class LoginController extends BaseController {
 
   ViewState get initState => ViewState.loaded;
   final formKey = GlobalKey<FormState>();
-  TextEditingController textEmailCl = TextEditingController();//..text = 'vodaiquoctu@gmail.com';
-  TextEditingController textPasswordCl = TextEditingController();//..text = '123456';
+  TextEditingController textEmailCl = TextEditingController()..text = 'vodaiquoctu@gmail.com';
+  TextEditingController textPasswordCl = TextEditingController()..text = '123456';
   RxBool buttonEnable = false.obs;
 
   @override
@@ -57,8 +57,8 @@ class LoginController extends BaseController {
     showLoading();
     try {
       await _userRepository.loginByEmail(textEmailCl.text, textPasswordCl.text);
-      await Get.find<AppController>().initAuth();
       await _userRepository.getUserInfo(textEmailCl.text);
+      await Get.find<AppController>().initAuth();
       hideLoading();
       Get.offAllNamed(AppRoutes.MAIN);
     } catch (e) {
