@@ -4,28 +4,28 @@ app:
 flavors:
   stg:
     app:
-      name: "Nhanh Stg"
+      name: "GiaoHang Stg"
     android:
-      applicationId: "com.ibp.app_nhanh.stg"
+      applicationId: "com.ibp.app.giaohang.stg"
       icon: "assets/images/img_logo_round.png"
 #      firebase:
 #        config: ".firebase/stg/google-services.json"
     ios:
-      bundleId: "com.ibp.app_nhanh.stg"
+      bundleId: "com.ibp.app.giaohang.stg"
       icon: "assets/images/img_logo_round.png"
 #      firebase:
 #        config: ".firebase/stg/GoogleService-Info.plist"
 
   prod:
     app:
-      name: "Nhanh"
+      name: "GiaoHang"
     android:
-      applicationId: "com.ibp.app_nhanh"
+      applicationId: "com.ibp.app.giaohang"
       icon: "assets/images/img_logo_round.png"
 #      firebase:
 #        config: ".firebase/prod/google-services.json"
     ios:
-      bundleId: "com.ibp.app_nhanh"
+      bundleId: "com.ibp.app.giaohang"
       icon: "assets/images/img_logo_round.png"
 #      firebase:
 #        config: ".firebase/prod/GoogleService-Info.plist"

@@ -2,5 +2,5 @@
 
 FLUTTER_TARGET=lib/main_stg.dart
 ASSET_PREFIX=stg
-BUNDLE_NAME=Nhanh Stg
-BUNDLE_DISPLAY_NAME=Nhanh Stg
+BUNDLE_NAME=GiaoHang Stg
+BUNDLE_DISPLAY_NAME=GiaoHang Stg

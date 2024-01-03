@@ -30,13 +30,13 @@ android {
     productFlavors {
         stg {
             dimension "flavor-type"
-            applicationId "com.ibp.app_giaohang.stg"
-            resValue "string", "app_name", "Giao Hang Stg"
+            applicationId "com.ibp.app.giaohang.stg"
+            resValue "string", "app_name", "GiaoHang Stg"
         }
         prod {
             dimension "flavor-type"
-            applicationId "com.ibp.app_giaohang"
-            resValue "string", "app_name", "Giao Hang"
+            applicationId "com.ibp.app.giaohang"
+            resValue "string", "app_name", "GiaoHang"
         }
     }
 
