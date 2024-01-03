@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'item_model.dart';
+
 /// id : 275
 /// depotid : 0
 /// type : "shopping"
@@ -818,4 +822,12 @@ Productorder copyWith({  num? id,
     return map;
   }
 
+}
+
+List<MModel> mModelFromJson(String str) {
+  try {
+    return List<MModel>.from(json.decode(str).map((x) => MModel.fromJson(x)));
+  } catch (_) {
+    return [];
+  }
 }

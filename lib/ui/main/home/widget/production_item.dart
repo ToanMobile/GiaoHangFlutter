@@ -2,18 +2,18 @@ import 'package:app_giao_hang/data/api/models/response/order/order_detail_model.
 import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/utils/currency_format.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../data/api/models/response/order/item_model.dart';
 import '../../../widgets/image_widget.dart';
 
-class WineItem extends StatelessWidget {
-  const WineItem({super.key, this.onTap, required this.item});
+class ProductionItem extends StatelessWidget {
+  const ProductionItem({super.key, this.onTap, required this.item});
 
-  final SlotsModel item;
+  final Productorder item;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    print('WineItem::::'+ item.toString());
     return InkWell(
       onTap: onTap,
       child: Container(
@@ -39,7 +39,7 @@ class WineItem extends StatelessWidget {
                     child: RoundNetworkImage(
                       width: 200.ws,
                       height: 200.ws,
-                      url: item.item?.img ?? "",
+                      url: item.image ?? "",
                     ),
                   ),
                 ],
@@ -59,7 +59,7 @@ class WineItem extends StatelessWidget {
               ),
             ),
             Text(
-              "${((item.item?.price ?? 0).toString()).stringToVNCurrency()} ₫",
+              "${((item.price ?? 0).toString()).stringToVNCurrency()} ₫",
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 12,

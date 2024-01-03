@@ -1,13 +1,11 @@
 import 'package:app_giao_hang/res/style.dart';
+import 'package:app_giao_hang/ui/main/home/widget/production_item.dart';
 import 'package:app_giao_hang/ui/main/home/widget/wine_item.dart';
-import 'package:app_giao_hang/ui/widgets/button/touchable_opacity.dart';
 import 'package:flutter/material.dart';
 
 import '../../../res/theme/theme_service.dart';
 import '../../base/base_page.dart';
 import '../../widgets/default_appbar.dart';
-import './widget/home_item_view.dart';
-import 'home_controller.dart';
 import 'home_detail_controller.dart';
 
 //ignore: must_be_immutable
@@ -23,10 +21,12 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
             children: [
               buildWidgetUserInfo(context),
               SizedBox(height: 10.ws),
-              WineItem(
-                item: controller.orderDetail.productorder![0],
-                onTap: () {},
-              ),
+              if ((controller.orderDetail.productorder?.length ?? 0) > 0) ...[
+                ProductionItem(
+                  item: controller.orderDetail.productorder![0],
+                  onTap: () {},
+                ),
+              ],
               SizedBox(height: 10.ws),
               buildWidgetDetails(),
             ],
@@ -147,7 +147,6 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
         ),
       );
 
-
   buildWidgetDetails() => Container(
         width: double.infinity,
         height: 700.ws,
@@ -160,7 +159,7 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
             color: colorWhite,
             padding: EdgeInsets.symmetric(horizontal: 26.ws),
             child: WineItem(
-              item: controller.orderDetail.productorder.first.model,
+              item: controller.listModel[index],
               onTap: () {},
             ),
           ),
@@ -172,7 +171,7 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
             thickness: 0.5,
             color: color929394,
           ),
-          itemCount: controller.orderDetail.productorder?.length ?? 0,
+          itemCount: controller.listModel.length,
         ),
       );
 }

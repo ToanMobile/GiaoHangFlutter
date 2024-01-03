@@ -11,7 +11,7 @@ const MIN_YEAR_OLD_USED_APP = 18;
 const PAGE_SIZE = 30;
 //Stg
 const BASE_URL_DEV = "https://ibp-staging.tastycounter.vn/";
-const UPLOAD_PHOTO_URL_DEV = BASE_URL_DEV + "product/img/";
+const UPLOAD_PHOTO_URL_DEV = BASE_URL_DEV + "cms/api/product/img/";
 
 void DOWNLOAD_PHOTO_URL_DEV(String name) => "$BASE_URL_DEV/common/files/$name?subfolder=contract";
 
@@ -21,7 +21,7 @@ const UPLOAD_PHOTO_URL_PROD = BASE_URL_PROD + "product/img/"; //production
 void DOWNLOAD_PHOTO_URL_PROD(String name) => "$BASE_URL_PROD/common/files/$name?subfolder=contract";
 var isConnection = true;
 
-String PHOTO_URL_CDN = BASE_URL_DEV;
+String PHOTO_URL_CDN = UPLOAD_PHOTO_URL_DEV;
 //Login
 const LOGIN_BY_EMAIL = "app/api/identity/login";
 const LOGIN_BY_SOCIAL = "app/api/identity/login-with-partner";

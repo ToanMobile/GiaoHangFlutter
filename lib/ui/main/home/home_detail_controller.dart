@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 
 import '../../../app/app_controller.dart';
 import '../../../data/api/models/TUser.dart';
+import '../../../data/api/models/response/order/item_model.dart';
 import '../../../data/api/models/response/order/order_detail_model.dart';
 import '../../base/base_controller.dart';
 
@@ -24,6 +25,9 @@ class HomeDetailsController extends BaseController {
 
   OrderDetail get orderDetail => _orderDetail$.value;
   final _orderDetail$ = OrderDetail().obs;
+
+  List<SlotsModel> get listModel => _listModel$.value;
+  final _listModel$ = <SlotsModel>[].obs;
 
   @override
   void onClose() {
@@ -43,8 +47,15 @@ class HomeDetailsController extends BaseController {
     try {
       await _orderRepository.getListOrderDetails(id).then((value) {
         _orderDetail$.value = value?.first ?? OrderDetail();
+        if (_orderDetail$.value.productorder?.first.model != null) {
+          List<SlotsModel>? listSlot = [];
+          mModelFromJson(_orderDetail$.value.productorder?.first.model ?? '').map((e) {
+            listSlot.addAll(e.slots?.toList() ?? []);
+            print('HomeController:orderDetail:' + listSlot.toString());
+          });
+          _listModel$.value = listSlot;
+        }
       });
-      print('HomeController:orderDetail:' + orderDetail.shipping.toString());
       hideLoading();
     } catch (e) {
       hideLoading();
