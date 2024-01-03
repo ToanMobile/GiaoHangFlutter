@@ -15,6 +15,13 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
   Widget buildContentView(BuildContext context, DeliveryPersonController controller) {
     return Scaffold(
       body: buildWidgetListData(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          controller.clearDetail();
+          openDetailBottomSheet(context, null);
+        },
+      ),
     );
   }
 
@@ -52,10 +59,10 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
         ),
       );
 
-  void openDetailBottomSheet(BuildContext context, DeliveryModel item) {
+  void openDetailBottomSheet(BuildContext context, DeliveryModel? item) {
     Get.bottomSheet(
       SizedBox(
-        height: 700.ws,
+        height: 800.ws,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -64,7 +71,7 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
             children: [
               DTextFromField(
                 leftTitle: 'Tên:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Tên:',
                 keyboardType: TextInputType.text,
                 controller: controller.textName,
                 textStyle: text14.bold.textColor141414,
@@ -72,7 +79,7 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
               SizedBox(height: 10.ws),
               DTextFromField(
                 leftTitle: 'Email:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Email:',
                 keyboardType: TextInputType.text,
                 controller: controller.textEmail,
                 textStyle: text14.bold.textColor141414,
@@ -80,7 +87,7 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
               SizedBox(height: 10.ws),
               DTextFromField(
                 leftTitle: 'Phone:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Phone:',
                 keyboardType: TextInputType.text,
                 controller: controller.textSdt,
                 textStyle: text14.bold.textColor141414,
@@ -88,15 +95,23 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
               SizedBox(height: 10.ws),
               DTextFromField(
                 leftTitle: 'Địa chỉ:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Địa chỉ:',
                 keyboardType: TextInputType.visiblePassword,
                 textStyle: text14.bold.textColor141414,
                 controller: controller.textAddress,
               ),
               SizedBox(height: 10.ws),
               DTextFromField(
+                leftTitle: 'CCCD:',
+                hintText: 'CCCD:',
+                keyboardType: TextInputType.visiblePassword,
+                controller: controller.textCCCD,
+                textStyle: text14.bold.textColor141414,
+              ),
+              SizedBox(height: 10.ws),
+              DTextFromField(
                 leftTitle: 'Giới tính:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Giới tính:',
                 keyboardType: TextInputType.visiblePassword,
                 controller: controller.textSex,
                 textStyle: text14.bold.textColor141414,
@@ -107,11 +122,18 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomButton(
-                  text: "Cập nhật",
+                  text: item != null ? 'Cập nhật' : 'Thêm',
                   textStyle: text14.bold.textColorWhite,
-                  onPressed: () => Get.back(),
+                  onPressed: () {
+                    if (item != null) {
+                      controller.updatePerson(item);
+                    } else {
+                      controller.addPerson();
+                    }
+                    Get.back();
+                  },
                   width: 150.ws,
-                  height: 32.ws,
+                  height: 40.ws,
                   radius: 5.rs,
                   isEnable: true,
                 ),
@@ -120,6 +142,7 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
           ),
         ),
       ),
+      isScrollControlled: true,
       backgroundColor: colorWhite,
       elevation: 1,
       shape: RoundedRectangleBorder(

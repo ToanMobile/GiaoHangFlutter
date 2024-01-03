@@ -2,7 +2,6 @@ import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../base/base_page.dart';
 import '../../widgets/button/custom_button.dart';
 import '../../widgets/input/text_form_field_widget.dart';
@@ -15,6 +14,13 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
   Widget buildContentView(BuildContext context, DeliveryCarController controller) {
     return Scaffold(
       body: buildWidgetListData(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          controller.clearDetail();
+          openCarBottomSheet(context, null);
+        },
+      ),
     );
   }
 
@@ -35,7 +41,7 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
                 item: item,
                 onPressed: () {
                   controller.showDetail(item);
-                  openSexBottomSheet(context, item);
+                  openCarBottomSheet(context, item);
                 },
               ),
             );
@@ -52,10 +58,10 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
         ),
       );
 
-  void openSexBottomSheet(BuildContext context, CarModel item) {
+  void openCarBottomSheet(BuildContext context, CarModel? item) {
     Get.bottomSheet(
       SizedBox(
-        height: 700.ws,
+        height: 260.ws,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -64,7 +70,7 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
             children: [
               DTextFromField(
                 leftTitle: 'Tên:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Tên:',
                 keyboardType: TextInputType.text,
                 controller: controller.textName,
                 textStyle: text14.bold.textColor141414,
@@ -72,7 +78,7 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
               SizedBox(height: 10.ws),
               DTextFromField(
                 leftTitle: 'Biển số:',
-                hintText: textLocalization("login.password"),
+                hintText: 'Biển số:',
                 keyboardType: TextInputType.text,
                 controller: controller.textPlate,
                 textStyle: text14.bold.textColor141414,
@@ -81,11 +87,18 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomButton(
-                  text: "Cập nhật",
+                  text: item != null ? 'Cập nhật' : 'Thêm',
                   textStyle: text14.bold.textColorWhite,
-                  onPressed: () => Get.back(),
+                  onPressed: () {
+                    if (item != null) {
+                      controller.updateCar(item);
+                    } else {
+                      controller.addCar();
+                    }
+                    Get.back();
+                  },
                   width: 150.ws,
-                  height: 32.ws,
+                  height: 40.ws,
                   radius: 5.rs,
                   isEnable: true,
                 ),

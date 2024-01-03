@@ -1,6 +1,7 @@
 import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:get/get.dart';
 
+import '../models/request/delivery/delivery_car_request_model.dart';
 import '../models/request/delivery/delivery_user_request_model.dart';
 import '../models/response/delivery/delivery_model.dart';
 import '../services/delivery_service.dart';
@@ -14,6 +15,12 @@ class DeliveryRepository extends BaseRepository {
   Future<List<CarModel>?> getListDeliveryCar() async => _deliveryService.getListDeliveryCar();
 
   Future<bool> updatePerson(DeliveryUserRequestModel userRequestModel) async => _deliveryService.updatePerson(userRequestModel);
+
+  Future<bool> addPerson(DeliveryUserRequestModel userRequestModel) async => _deliveryService.addPerson(userRequestModel);
+
+  Future<bool> updateCar(DeliveryCarRequestModel carRequestModel) async => _deliveryService.updateCar(carRequestModel);
+
+  Future<bool> addCar(DeliveryCarRequestModel carRequestModel) async => _deliveryService.addCar(carRequestModel);
 
 /* Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final device = await _deviceService.getDeviceDetail(sn: sn);

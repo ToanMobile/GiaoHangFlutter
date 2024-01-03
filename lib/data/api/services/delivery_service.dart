@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:app_giao_hang/data/api/models/request/delivery/delivery_car_request_model.dart';
 import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:get/get.dart';
 
@@ -32,10 +35,24 @@ class DeliveryService extends BaseService {
   }
 
   Future<bool> updatePerson(DeliveryUserRequestModel userRequestModel) async {
-    final response = await post(UPDATE_DELIVERY_PER, data: userRequestModel.toJson());
+    final response = await put(UPDATE_DELIVERY_PER, data: '[${jsonEncode(userRequestModel.toJson())}]');
     return response.result ?? false;
   }
 
+  Future<bool> addPerson(DeliveryUserRequestModel userRequestModel) async {
+    final response = await post(ADD_DELIVERY_PER, data: '[${jsonEncode(userRequestModel.toJson())}]');
+    return response.result ?? false;
+  }
+
+  Future<bool> updateCar(DeliveryCarRequestModel carRequestModel) async {
+    final response = await put(UPDATE_DELIVERY_CAR, data: '[${jsonEncode(carRequestModel.toJson())}]');
+    return response.result ?? false;
+  }
+
+  Future<bool> addCar(DeliveryCarRequestModel carRequestModel) async {
+    final response = await post(ADD_DELIVERY_CAR, data: '[${jsonEncode(carRequestModel.toJson())}]');
+    return response.result ?? false;
+  }
 /*
   Future<DeviceDetailItem?> getDeviceDetail({required String sn}) async {
     final token = await tokenModel();

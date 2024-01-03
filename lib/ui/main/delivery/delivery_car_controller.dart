@@ -1,3 +1,4 @@
+import 'package:app_giao_hang/data/api/models/request/delivery/delivery_car_request_model.dart';
 import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -32,9 +33,52 @@ class DeliveryCarController extends BaseController {
     }
   }
 
+  clearDetail() {
+    textName.clear();
+    textPlate.clear();
+  }
+
   showDetail(CarModel item) {
     textName.text = item.vehiclename ?? '';
     textPlate.text = item.licenseplate ?? '';
+  }
+
+  updateCar(CarModel item) async {
+    showLoading();
+    try {
+      await _deliveryRepository.updateCar(DeliveryCarRequestModel(
+        id: item.id,
+        vehiclename: textName.text,
+        licensePlate: textPlate.text,
+        licenseplate: textPlate.text,
+        type: 1,
+        status: 1,
+      ));
+      await getListDeliveryCar();
+      print('getListDelivery::' + listData.length.toString());
+      hideLoading();
+    } catch (e) {
+      hideLoading();
+    }
+  }
+
+  addCar() async {
+    showLoading();
+    try {
+      await _deliveryRepository.addCar(DeliveryCarRequestModel(
+        id: 0,
+        vehiclename: textName.text,
+        licenseplate: textPlate.text,
+        licensePlate: textPlate.text,
+        type: 1,
+        status: 1,
+      ));
+      await getListDeliveryCar();
+      print('getListDelivery::' + listData.length.toString());
+      hideLoading();
+    } catch (e) {
+      hideLoading();
+    }
   }
 
   @override

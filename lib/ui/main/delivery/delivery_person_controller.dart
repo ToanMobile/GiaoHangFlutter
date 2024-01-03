@@ -38,11 +38,20 @@ class DeliveryPersonController extends BaseController {
     }
   }
 
+  clearDetail() {
+    textName.clear();
+    textEmail.clear();
+    textSdt.clear();
+    textAddress.clear();
+    textCCCD.clear();
+    textSex.clear();
+  }
+
   showDetail(DeliveryModel item) {
     textName.text = item.fullname ?? '';
     textEmail.text = item.email ?? '';
     textSdt.text = item.phone ?? '';
-    textAddress.text = item.address;
+    textAddress.text = item.address ?? '';
     textCCCD.text = item.cccd ?? '';
     textSex.text = item.gender == 0 ? 'Nam' : 'Nữ';
   }
@@ -50,7 +59,36 @@ class DeliveryPersonController extends BaseController {
   updatePerson(DeliveryModel item) async {
     showLoading();
     try {
-      await _deliveryRepository.updatePerson(DeliveryUserRequestModel(id: item.id, ));
+      await _deliveryRepository.updatePerson(DeliveryUserRequestModel(
+        id: item.id,
+        phone: textSdt.text,
+        email: textEmail.text,
+        fullname: textName.text,
+        address: textAddress.text,
+        cccd: textCCCD.text,
+        gender: 0,
+      ));
+      await getListDeliveryPerson();
+      print('getListDelivery::' + listData.length.toString());
+      hideLoading();
+    } catch (e) {
+      hideLoading();
+    }
+  }
+
+  addPerson() async {
+    showLoading();
+    try {
+      await _deliveryRepository.addPerson(DeliveryUserRequestModel(
+        id: 0,
+        phone: textSdt.text,
+        email: textEmail.text,
+        fullname: textName.text,
+        address: textAddress.text,
+        cccd: textCCCD.text,
+        gender: 0,
+      ));
+      await getListDeliveryPerson();
       print('getListDelivery::' + listData.length.toString());
       hideLoading();
     } catch (e) {
