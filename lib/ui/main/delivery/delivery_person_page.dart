@@ -113,16 +113,37 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
                 textStyle: text14.bold.textColor141414,
               ),
               SizedBox(height: 10.ws),
-              DTextFromField(
-                leftTitle: 'Giới tính:',
-                hintText: 'Giới tính:',
-                keyboardType: TextInputType.visiblePassword,
-                controller: controller.textSex,
-                textStyle: text14.bold.textColor141414,
+              Obx(
+                () => Row(
+                  children: [
+                    Expanded(
+                      child: ListTile(
+                        title: Text('Nam', style: text14.bold.textColor141414),
+                        leading: Radio<GenderType>(
+                          value: GenderType.MEN,
+                          groupValue: controller.genderType.value,
+                          onChanged: (GenderType? value) {
+                            controller.updateGender(value);
+                          },
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ListTile(
+                        title: Text('Nữ', style: text14.bold.textColor141414),
+                        leading: Radio<GenderType>(
+                          value: GenderType.WOMEN,
+                          groupValue: controller.genderType.value,
+                          onChanged: (GenderType? value) {
+                            controller.updateGender(value);
+                          },
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(
-                height: 20.hs,
-              ),
+              SizedBox(height: 20.hs),
               Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomButton(

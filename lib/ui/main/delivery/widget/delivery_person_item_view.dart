@@ -84,7 +84,7 @@ class DeliveryPersonItemView extends StatelessWidget {
                       width: 100.ws,
                       child: Text('Giới tính: ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                     ),
-                    Text(item.gender == 0 ? 'Nam' : 'Nữ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
+                    Text(item.gender == 1 ? 'Nam' : 'Nữ', style: text16.medium.textColor141414, overflow: TextOverflow.ellipsis, maxLines: 1),
                   ],
                 ),
               ],

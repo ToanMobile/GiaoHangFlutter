@@ -7,6 +7,8 @@ import '../../../app/app_controller.dart';
 import '../../../data/api/repositories/delivery_repository.dart';
 import '../../base/base_controller.dart';
 
+enum GenderType { MEN, WOMEN }
+
 class DeliveryPersonController extends BaseController {
   final _deliveryRepository = Get.find<DeliveryRepository>();
   final _appController = Get.find<AppController>();
@@ -20,6 +22,9 @@ class DeliveryPersonController extends BaseController {
   TextEditingController textAddress = TextEditingController();
   TextEditingController textCCCD = TextEditingController();
   TextEditingController textSex = TextEditingController();
+  final genderType = GenderType.MEN.obs;
+
+  int get getGender => genderType == GenderType.MEN ? 1 : 0;
 
   @override
   void onInit() async {
@@ -53,7 +58,12 @@ class DeliveryPersonController extends BaseController {
     textSdt.text = item.phone ?? '';
     textAddress.text = item.address ?? '';
     textCCCD.text = item.cccd ?? '';
-    textSex.text = item.gender == 0 ? 'Nam' : 'Nữ';
+    genderType.value = item.gender == 1 ? GenderType.MEN : GenderType.WOMEN;
+    textSex.text = item.gender == 1 ? 'Nam' : 'Nữ';
+  }
+
+  updateGender(GenderType? genderUpdateType) {
+    genderType.value = genderUpdateType ?? GenderType.MEN;
   }
 
   updatePerson(DeliveryModel item) async {
@@ -66,7 +76,7 @@ class DeliveryPersonController extends BaseController {
         fullname: textName.text,
         address: textAddress.text,
         cccd: textCCCD.text,
-        gender: 0,
+        gender: getGender,
       ));
       await getListDeliveryPerson();
       print('getListDelivery::' + listData.length.toString());
@@ -86,7 +96,7 @@ class DeliveryPersonController extends BaseController {
         fullname: textName.text,
         address: textAddress.text,
         cccd: textCCCD.text,
-        gender: 0,
+        gender: getGender,
       ));
       await getListDeliveryPerson();
       print('getListDelivery::' + listData.length.toString());
