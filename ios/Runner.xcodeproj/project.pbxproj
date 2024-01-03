@@ -145,7 +145,6 @@
 				4EC98B4C900944CA90E4AD08 /* Pods-RunnerTests.profile-prod.xcconfig */,
 				9258AD28BC2FFE6AB2C3E99E /* Pods-RunnerTests.release-prod.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -473,7 +472,7 @@
 			baseConfigurationReference = D891BE60A0456839FFAE97E8 /* Pods-Runner.debug-stg.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MSR46E92DK;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang.stg;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Debug-stg";
@@ -483,7 +482,7 @@
 			baseConfigurationReference = F8EF704913BA9AE368446535 /* Pods-Runner.profile-stg.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = MSR46E92DK;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang.stg;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Profile-stg";
@@ -492,9 +491,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EB0B2D09B23DED73A9A09ADE /* Pods-Runner.release-stg.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = MSR46E92DK;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang.stg;
 				PRODUCT_NAME = Runner;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = "Release-stg";
 		};
