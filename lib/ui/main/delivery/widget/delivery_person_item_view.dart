@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
 import '../../../../data/api/models/response/delivery/delivery_model.dart';
 import '../../../../res/style.dart';
 import '../../../widgets/button/touchable_opacity.dart';
 
-class DeliveryItemView extends StatelessWidget {
+class DeliveryPersonItemView extends StatelessWidget {
   final DeliveryModel item;
   final VoidCallback onPressed;
 
-  DeliveryItemView({
+  DeliveryPersonItemView({
     required this.item,
     required this.onPressed,
   });

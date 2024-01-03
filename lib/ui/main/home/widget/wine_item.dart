@@ -1,7 +1,7 @@
-import 'package:app_giao_hang/data/api/models/response/order/order_detail_model.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/utils/currency_format.dart';
 import 'package:flutter/material.dart';
+
 import '../../../../data/api/models/response/order/item_model.dart';
 import '../../../widgets/image_widget.dart';
 
@@ -13,7 +13,7 @@ class WineItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('WineItem::::'+ item.toString());
+    print('WineItem::::' + item.toString());
     return InkWell(
       onTap: onTap,
       child: Container(

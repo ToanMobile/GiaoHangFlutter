@@ -9,14 +9,15 @@
 
 class DeliveryModel {
   DeliveryModel({
-      num? id, 
-      String? phone, 
-      String? fullname, 
-      dynamic address, 
-      String? cccd, 
-      num? gender, 
-      dynamic email, 
-      num? active,}){
+    num? id,
+    String? phone,
+    String? fullname,
+    dynamic address,
+    String? cccd,
+    num? gender,
+    dynamic email,
+    num? active,
+  }) {
     _id = id;
     _phone = phone;
     _fullname = fullname;
@@ -25,7 +26,7 @@ class DeliveryModel {
     _gender = gender;
     _email = email;
     _active = active;
-}
+  }
 
   DeliveryModel.fromJson(dynamic json) {
     _id = json['id'];
@@ -37,6 +38,7 @@ class DeliveryModel {
     _email = json['email'];
     _active = json['active'];
   }
+
   num? _id;
   String? _phone;
   String? _fullname;
@@ -45,30 +47,42 @@ class DeliveryModel {
   num? _gender;
   dynamic _email;
   num? _active;
-  DeliveryModel copyWith({  num? id,
-  String? phone,
-  String? fullname,
-  dynamic address,
-  String? cccd,
-  num? gender,
-  dynamic email,
-  num? active,
-}) => DeliveryModel(  id: id ?? _id,
-  phone: phone ?? _phone,
-  fullname: fullname ?? _fullname,
-  address: address ?? _address,
-  cccd: cccd ?? _cccd,
-  gender: gender ?? _gender,
-  email: email ?? _email,
-  active: active ?? _active,
-);
+
+  DeliveryModel copyWith({
+    num? id,
+    String? phone,
+    String? fullname,
+    dynamic address,
+    String? cccd,
+    num? gender,
+    dynamic email,
+    num? active,
+  }) =>
+      DeliveryModel(
+        id: id ?? _id,
+        phone: phone ?? _phone,
+        fullname: fullname ?? _fullname,
+        address: address ?? _address,
+        cccd: cccd ?? _cccd,
+        gender: gender ?? _gender,
+        email: email ?? _email,
+        active: active ?? _active,
+      );
+
   num? get id => _id;
+
   String? get phone => _phone;
+
   String? get fullname => _fullname;
+
   dynamic get address => _address;
+
   String? get cccd => _cccd;
+
   num? get gender => _gender;
+
   dynamic get email => _email;
+
   num? get active => _active;
 
   Map<String, dynamic> toJson() {
@@ -83,5 +97,4 @@ class DeliveryModel {
     map['active'] = _active;
     return map;
   }
-
 }

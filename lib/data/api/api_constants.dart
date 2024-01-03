@@ -34,7 +34,8 @@ const GET_DETAIL_ORDER = "cms/api/order/get-delivery-detail?page=1&limit=100&ord
 //Get list cabinet
 const GET_LIST_CABINET = "cms/api/customer/get-hscheck?page=1&limit=100";
 //Get list delivery
-const GET_LIST_DELIVERY = "cms/api/customer/get-user-info?page=1&limit=100&type=1";
+const GET_LIST_DELIVERY_PER = "cms/api/customer/get-user-info?page=1&limit=100&type=1";
+const GET_LIST_DELIVERY_CAR = "cms/api/customer/get-vehicles?page=1&limit=100&type=1";
 
 //OLD
 //Register

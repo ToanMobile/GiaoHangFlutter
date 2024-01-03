@@ -50,51 +50,52 @@ import 'item_model.dart';
 
 class OrderDetail {
   OrderDetail({
-      num? id, 
-      num? depotid, 
-      String? type, 
-      num? customerid, 
-      String? customername, 
-      String? customermoblie, 
-      String? customeremail, 
-      String? customeraddress, 
-      String? customercity, 
-      String? customerdistrict, 
-      String? customerward, 
-      dynamic moneytotal, 
-      num? moneydiscount, 
-      num? moneytransfer, 
-      dynamic moneytransferaccount, 
-      num? moneydeposit, 
-      dynamic moneydepositaccount, 
-      String? paymentmethod, 
-      dynamic paymentcode, 
-      String? paymentgateway, 
-      num? carrierid, 
-      num? carrierserviceid, 
-      num? customershipfee, 
-      dynamic deliverydate, 
-      num? status, 
-      String? description, 
-      String? privatedescription, 
-      String? createdate, 
-      dynamic couponcode, 
-      num? allowtest, 
-      num? autosend, 
-      num? sendcarriertype, 
-      num? usedpoints, 
-      num? discount, 
-      dynamic ref, 
-      num? bonus, 
-      num? combo, 
-      num? parentid, 
-      String? modifydate, 
-      num? cityid, 
-      num? districtid, 
-      num? wardid, 
-      List<Productorder>? productorder, 
-      Shipping? shipping, 
-      Contract? contract,}){
+    num? id,
+    num? depotid,
+    String? type,
+    num? customerid,
+    String? customername,
+    String? customermoblie,
+    String? customeremail,
+    String? customeraddress,
+    String? customercity,
+    String? customerdistrict,
+    String? customerward,
+    dynamic moneytotal,
+    num? moneydiscount,
+    num? moneytransfer,
+    dynamic moneytransferaccount,
+    num? moneydeposit,
+    dynamic moneydepositaccount,
+    String? paymentmethod,
+    dynamic paymentcode,
+    String? paymentgateway,
+    num? carrierid,
+    num? carrierserviceid,
+    num? customershipfee,
+    dynamic deliverydate,
+    num? status,
+    String? description,
+    String? privatedescription,
+    String? createdate,
+    dynamic couponcode,
+    num? allowtest,
+    num? autosend,
+    num? sendcarriertype,
+    num? usedpoints,
+    num? discount,
+    dynamic ref,
+    num? bonus,
+    num? combo,
+    num? parentid,
+    String? modifydate,
+    num? cityid,
+    num? districtid,
+    num? wardid,
+    List<Productorder>? productorder,
+    Shipping? shipping,
+    Contract? contract,
+  }) {
     _id = id;
     _depotid = depotid;
     _type = type;
@@ -140,7 +141,7 @@ class OrderDetail {
     _productorder = productorder;
     _shipping = shipping;
     _contract = contract;
-}
+  }
 
   OrderDetail.fromJson(dynamic json) {
     _id = json['id'];
@@ -194,6 +195,7 @@ class OrderDetail {
     _shipping = json['shipping'] != null ? Shipping.fromJson(json['shipping']) : null;
     _contract = json['contract'] != null ? Contract.fromJson(json['contract']) : null;
   }
+
   num? _id;
   num? _depotid;
   String? _type;
@@ -239,141 +241,190 @@ class OrderDetail {
   List<Productorder>? _productorder;
   Shipping? _shipping;
   Contract? _contract;
-  OrderDetail copyWith({  num? id,
-  num? depotid,
-  String? type,
-  num? customerid,
-  String? customername,
-  String? customermoblie,
-  String? customeremail,
-  String? customeraddress,
-  String? customercity,
-  String? customerdistrict,
-  String? customerward,
-  dynamic moneytotal,
-  num? moneydiscount,
-  num? moneytransfer,
-  dynamic moneytransferaccount,
-  num? moneydeposit,
-  dynamic moneydepositaccount,
-  String? paymentmethod,
-  dynamic paymentcode,
-  String? paymentgateway,
-  num? carrierid,
-  num? carrierserviceid,
-  num? customershipfee,
-  dynamic deliverydate,
-  num? status,
-  String? description,
-  String? privatedescription,
-  String? createdate,
-  dynamic couponcode,
-  num? allowtest,
-  num? autosend,
-  num? sendcarriertype,
-  num? usedpoints,
-  num? discount,
-  dynamic ref,
-  num? bonus,
-  num? combo,
-  num? parentid,
-  String? modifydate,
-  num? cityid,
-  num? districtid,
-  num? wardid,
-  List<Productorder>? productorder,
-  Shipping? shipping,
-  Contract? contract,
-}) => OrderDetail(  id: id ?? _id,
-  depotid: depotid ?? _depotid,
-  type: type ?? _type,
-  customerid: customerid ?? _customerid,
-  customername: customername ?? _customername,
-  customermoblie: customermoblie ?? _customermoblie,
-  customeremail: customeremail ?? _customeremail,
-  customeraddress: customeraddress ?? _customeraddress,
-  customercity: customercity ?? _customercity,
-  customerdistrict: customerdistrict ?? _customerdistrict,
-  customerward: customerward ?? _customerward,
-  moneytotal: moneytotal ?? _moneytotal,
-  moneydiscount: moneydiscount ?? _moneydiscount,
-  moneytransfer: moneytransfer ?? _moneytransfer,
-  moneytransferaccount: moneytransferaccount ?? _moneytransferaccount,
-  moneydeposit: moneydeposit ?? _moneydeposit,
-  moneydepositaccount: moneydepositaccount ?? _moneydepositaccount,
-  paymentmethod: paymentmethod ?? _paymentmethod,
-  paymentcode: paymentcode ?? _paymentcode,
-  paymentgateway: paymentgateway ?? _paymentgateway,
-  carrierid: carrierid ?? _carrierid,
-  carrierserviceid: carrierserviceid ?? _carrierserviceid,
-  customershipfee: customershipfee ?? _customershipfee,
-  deliverydate: deliverydate ?? _deliverydate,
-  status: status ?? _status,
-  description: description ?? _description,
-  privatedescription: privatedescription ?? _privatedescription,
-  createdate: createdate ?? _createdate,
-  couponcode: couponcode ?? _couponcode,
-  allowtest: allowtest ?? _allowtest,
-  autosend: autosend ?? _autosend,
-  sendcarriertype: sendcarriertype ?? _sendcarriertype,
-  usedpoints: usedpoints ?? _usedpoints,
-  discount: discount ?? _discount,
-  ref: ref ?? _ref,
-  bonus: bonus ?? _bonus,
-  combo: combo ?? _combo,
-  parentid: parentid ?? _parentid,
-  modifydate: modifydate ?? _modifydate,
-  cityid: cityid ?? _cityid,
-  districtid: districtid ?? _districtid,
-  wardid: wardid ?? _wardid,
-  productorder: productorder ?? _productorder,
-  shipping: shipping ?? _shipping,
-  contract: contract ?? _contract,
-);
+
+  OrderDetail copyWith({
+    num? id,
+    num? depotid,
+    String? type,
+    num? customerid,
+    String? customername,
+    String? customermoblie,
+    String? customeremail,
+    String? customeraddress,
+    String? customercity,
+    String? customerdistrict,
+    String? customerward,
+    dynamic moneytotal,
+    num? moneydiscount,
+    num? moneytransfer,
+    dynamic moneytransferaccount,
+    num? moneydeposit,
+    dynamic moneydepositaccount,
+    String? paymentmethod,
+    dynamic paymentcode,
+    String? paymentgateway,
+    num? carrierid,
+    num? carrierserviceid,
+    num? customershipfee,
+    dynamic deliverydate,
+    num? status,
+    String? description,
+    String? privatedescription,
+    String? createdate,
+    dynamic couponcode,
+    num? allowtest,
+    num? autosend,
+    num? sendcarriertype,
+    num? usedpoints,
+    num? discount,
+    dynamic ref,
+    num? bonus,
+    num? combo,
+    num? parentid,
+    String? modifydate,
+    num? cityid,
+    num? districtid,
+    num? wardid,
+    List<Productorder>? productorder,
+    Shipping? shipping,
+    Contract? contract,
+  }) =>
+      OrderDetail(
+        id: id ?? _id,
+        depotid: depotid ?? _depotid,
+        type: type ?? _type,
+        customerid: customerid ?? _customerid,
+        customername: customername ?? _customername,
+        customermoblie: customermoblie ?? _customermoblie,
+        customeremail: customeremail ?? _customeremail,
+        customeraddress: customeraddress ?? _customeraddress,
+        customercity: customercity ?? _customercity,
+        customerdistrict: customerdistrict ?? _customerdistrict,
+        customerward: customerward ?? _customerward,
+        moneytotal: moneytotal ?? _moneytotal,
+        moneydiscount: moneydiscount ?? _moneydiscount,
+        moneytransfer: moneytransfer ?? _moneytransfer,
+        moneytransferaccount: moneytransferaccount ?? _moneytransferaccount,
+        moneydeposit: moneydeposit ?? _moneydeposit,
+        moneydepositaccount: moneydepositaccount ?? _moneydepositaccount,
+        paymentmethod: paymentmethod ?? _paymentmethod,
+        paymentcode: paymentcode ?? _paymentcode,
+        paymentgateway: paymentgateway ?? _paymentgateway,
+        carrierid: carrierid ?? _carrierid,
+        carrierserviceid: carrierserviceid ?? _carrierserviceid,
+        customershipfee: customershipfee ?? _customershipfee,
+        deliverydate: deliverydate ?? _deliverydate,
+        status: status ?? _status,
+        description: description ?? _description,
+        privatedescription: privatedescription ?? _privatedescription,
+        createdate: createdate ?? _createdate,
+        couponcode: couponcode ?? _couponcode,
+        allowtest: allowtest ?? _allowtest,
+        autosend: autosend ?? _autosend,
+        sendcarriertype: sendcarriertype ?? _sendcarriertype,
+        usedpoints: usedpoints ?? _usedpoints,
+        discount: discount ?? _discount,
+        ref: ref ?? _ref,
+        bonus: bonus ?? _bonus,
+        combo: combo ?? _combo,
+        parentid: parentid ?? _parentid,
+        modifydate: modifydate ?? _modifydate,
+        cityid: cityid ?? _cityid,
+        districtid: districtid ?? _districtid,
+        wardid: wardid ?? _wardid,
+        productorder: productorder ?? _productorder,
+        shipping: shipping ?? _shipping,
+        contract: contract ?? _contract,
+      );
+
   num? get id => _id;
+
   num? get depotid => _depotid;
+
   String? get type => _type;
+
   num? get customerid => _customerid;
+
   String? get customername => _customername;
+
   String? get customermoblie => _customermoblie;
+
   String? get customeremail => _customeremail;
+
   String? get customeraddress => _customeraddress;
+
   String? get customercity => _customercity;
+
   String? get customerdistrict => _customerdistrict;
+
   String? get customerward => _customerward;
+
   dynamic get moneytotal => _moneytotal;
+
   num? get moneydiscount => _moneydiscount;
+
   num? get moneytransfer => _moneytransfer;
+
   dynamic get moneytransferaccount => _moneytransferaccount;
+
   num? get moneydeposit => _moneydeposit;
+
   dynamic get moneydepositaccount => _moneydepositaccount;
+
   String? get paymentmethod => _paymentmethod;
+
   dynamic get paymentcode => _paymentcode;
+
   String? get paymentgateway => _paymentgateway;
+
   num? get carrierid => _carrierid;
+
   num? get carrierserviceid => _carrierserviceid;
+
   num? get customershipfee => _customershipfee;
+
   dynamic get deliverydate => _deliverydate;
+
   num? get status => _status;
+
   String? get description => _description;
+
   String? get privatedescription => _privatedescription;
+
   String? get createdate => _createdate;
+
   dynamic get couponcode => _couponcode;
+
   num? get allowtest => _allowtest;
+
   num? get autosend => _autosend;
+
   num? get sendcarriertype => _sendcarriertype;
+
   num? get usedpoints => _usedpoints;
+
   num? get discount => _discount;
+
   dynamic get ref => _ref;
+
   num? get bonus => _bonus;
+
   num? get combo => _combo;
+
   num? get parentid => _parentid;
+
   String? get modifydate => _modifydate;
+
   num? get cityid => _cityid;
+
   num? get districtid => _districtid;
+
   num? get wardid => _wardid;
+
   List<Productorder>? get productorder => _productorder;
+
   Shipping? get shipping => _shipping;
+
   Contract? get contract => _contract;
 
   Map<String, dynamic> toJson() {
@@ -431,7 +482,6 @@ class OrderDetail {
     }
     return map;
   }
-
 }
 
 /// id : "5"
@@ -443,19 +493,20 @@ class OrderDetail {
 
 class Contract {
   Contract({
-      String? id, 
-      String? title, 
-      String? content, 
-      String? type, 
-      String? file, 
-      String? signature,}){
+    String? id,
+    String? title,
+    String? content,
+    String? type,
+    String? file,
+    String? signature,
+  }) {
     _id = id;
     _title = title;
     _content = content;
     _type = type;
     _file = file;
     _signature = signature;
-}
+  }
 
   Contract.fromJson(dynamic json) {
     _id = json['id'];
@@ -465,30 +516,41 @@ class Contract {
     _file = json['file'];
     _signature = json['signature'];
   }
+
   String? _id;
   String? _title;
   String? _content;
   String? _type;
   String? _file;
   String? _signature;
-Contract copyWith({  String? id,
-  String? title,
-  String? content,
-  String? type,
-  String? file,
-  String? signature,
-}) => Contract(  id: id ?? _id,
-  title: title ?? _title,
-  content: content ?? _content,
-  type: type ?? _type,
-  file: file ?? _file,
-  signature: signature ?? _signature,
-);
+
+  Contract copyWith({
+    String? id,
+    String? title,
+    String? content,
+    String? type,
+    String? file,
+    String? signature,
+  }) =>
+      Contract(
+        id: id ?? _id,
+        title: title ?? _title,
+        content: content ?? _content,
+        type: type ?? _type,
+        file: file ?? _file,
+        signature: signature ?? _signature,
+      );
+
   String? get id => _id;
+
   String? get title => _title;
+
   String? get content => _content;
+
   String? get type => _type;
+
   String? get file => _file;
+
   String? get signature => _signature;
 
   Map<String, dynamic> toJson() {
@@ -501,7 +563,6 @@ Contract copyWith({  String? id,
     map['signature'] = _signature;
     return map;
   }
-
 }
 
 /// id : 37
@@ -529,28 +590,29 @@ Contract copyWith({  String? id,
 
 class Shipping {
   Shipping({
-      num? id, 
-      num? orderid, 
-      num? shipperid, 
-      String? shipname, 
-      String? phone, 
-      String? code, 
-      num? type, 
-      String? session, 
-      String? receivedate, 
-      String? shippingdate, 
-      dynamic paydate, 
-      String? completedate, 
-      String? vehicle, 
-      String? licenseplate, 
-      String? receiveimg, 
-      String? completeimg, 
-      String? contractfile, 
-      String? deliveryid, 
-      String? deliverysession, 
-      dynamic note, 
-      String? location, 
-      num? status,}){
+    num? id,
+    num? orderid,
+    num? shipperid,
+    String? shipname,
+    String? phone,
+    String? code,
+    num? type,
+    String? session,
+    String? receivedate,
+    String? shippingdate,
+    dynamic paydate,
+    String? completedate,
+    String? vehicle,
+    String? licenseplate,
+    String? receiveimg,
+    String? completeimg,
+    String? contractfile,
+    String? deliveryid,
+    String? deliverysession,
+    dynamic note,
+    String? location,
+    num? status,
+  }) {
     _id = id;
     _orderid = orderid;
     _shipperid = shipperid;
@@ -573,7 +635,7 @@ class Shipping {
     _note = note;
     _location = location;
     _status = status;
-}
+  }
 
   Shipping.fromJson(dynamic json) {
     _id = json['id'];
@@ -599,6 +661,7 @@ class Shipping {
     _location = json['location'];
     _status = json['status'];
   }
+
   num? _id;
   num? _orderid;
   num? _shipperid;
@@ -621,72 +684,98 @@ class Shipping {
   dynamic _note;
   String? _location;
   num? _status;
-Shipping copyWith({  num? id,
-  num? orderid,
-  num? shipperid,
-  String? shipname,
-  String? phone,
-  String? code,
-  num? type,
-  String? session,
-  String? receivedate,
-  String? shippingdate,
-  dynamic paydate,
-  String? completedate,
-  String? vehicle,
-  String? licenseplate,
-  String? receiveimg,
-  String? completeimg,
-  String? contractfile,
-  String? deliveryid,
-  String? deliverysession,
-  dynamic note,
-  String? location,
-  num? status,
-}) => Shipping(  id: id ?? _id,
-  orderid: orderid ?? _orderid,
-  shipperid: shipperid ?? _shipperid,
-  shipname: shipname ?? _shipname,
-  phone: phone ?? _phone,
-  code: code ?? _code,
-  type: type ?? _type,
-  session: session ?? _session,
-  receivedate: receivedate ?? _receivedate,
-  shippingdate: shippingdate ?? _shippingdate,
-  paydate: paydate ?? _paydate,
-  completedate: completedate ?? _completedate,
-  vehicle: vehicle ?? _vehicle,
-  licenseplate: licenseplate ?? _licenseplate,
-  receiveimg: receiveimg ?? _receiveimg,
-  completeimg: completeimg ?? _completeimg,
-  contractfile: contractfile ?? _contractfile,
-  deliveryid: deliveryid ?? _deliveryid,
-  deliverysession: deliverysession ?? _deliverysession,
-  note: note ?? _note,
-  location: location ?? _location,
-  status: status ?? _status,
-);
+
+  Shipping copyWith({
+    num? id,
+    num? orderid,
+    num? shipperid,
+    String? shipname,
+    String? phone,
+    String? code,
+    num? type,
+    String? session,
+    String? receivedate,
+    String? shippingdate,
+    dynamic paydate,
+    String? completedate,
+    String? vehicle,
+    String? licenseplate,
+    String? receiveimg,
+    String? completeimg,
+    String? contractfile,
+    String? deliveryid,
+    String? deliverysession,
+    dynamic note,
+    String? location,
+    num? status,
+  }) =>
+      Shipping(
+        id: id ?? _id,
+        orderid: orderid ?? _orderid,
+        shipperid: shipperid ?? _shipperid,
+        shipname: shipname ?? _shipname,
+        phone: phone ?? _phone,
+        code: code ?? _code,
+        type: type ?? _type,
+        session: session ?? _session,
+        receivedate: receivedate ?? _receivedate,
+        shippingdate: shippingdate ?? _shippingdate,
+        paydate: paydate ?? _paydate,
+        completedate: completedate ?? _completedate,
+        vehicle: vehicle ?? _vehicle,
+        licenseplate: licenseplate ?? _licenseplate,
+        receiveimg: receiveimg ?? _receiveimg,
+        completeimg: completeimg ?? _completeimg,
+        contractfile: contractfile ?? _contractfile,
+        deliveryid: deliveryid ?? _deliveryid,
+        deliverysession: deliverysession ?? _deliverysession,
+        note: note ?? _note,
+        location: location ?? _location,
+        status: status ?? _status,
+      );
+
   num? get id => _id;
+
   num? get orderid => _orderid;
+
   num? get shipperid => _shipperid;
+
   String? get shipname => _shipname;
+
   String? get phone => _phone;
+
   String? get code => _code;
+
   num? get type => _type;
+
   String? get session => _session;
+
   String? get receivedate => _receivedate;
+
   String? get shippingdate => _shippingdate;
+
   dynamic get paydate => _paydate;
+
   String? get completedate => _completedate;
+
   String? get vehicle => _vehicle;
+
   String? get licenseplate => _licenseplate;
+
   String? get receiveimg => _receiveimg;
+
   String? get completeimg => _completeimg;
+
   String? get contractfile => _contractfile;
+
   String? get deliveryid => _deliveryid;
+
   String? get deliverysession => _deliverysession;
+
   dynamic get note => _note;
+
   String? get location => _location;
+
   num? get status => _status;
 
   Map<String, dynamic> toJson() {
@@ -715,7 +804,6 @@ Shipping copyWith({  num? id,
     map['status'] = _status;
     return map;
   }
-
 }
 
 /// id : 290
@@ -731,16 +819,17 @@ Shipping copyWith({  num? id,
 
 class Productorder {
   Productorder({
-      num? id, 
-      String? uniqueid, 
-      String? sku, 
-      String? name, 
-      dynamic imeiHs, 
-      String? image, 
-      num? quantity, 
-      num? price, 
-      num? capacity, 
-      String? model,}){
+    num? id,
+    String? uniqueid,
+    String? sku,
+    String? name,
+    dynamic imeiHs,
+    String? image,
+    num? quantity,
+    num? price,
+    num? capacity,
+    String? model,
+  }) {
     _id = id;
     _uniqueid = uniqueid;
     _sku = sku;
@@ -751,7 +840,7 @@ class Productorder {
     _price = price;
     _capacity = capacity;
     _model = model;
-}
+  }
 
   Productorder.fromJson(dynamic json) {
     _id = json['id'];
@@ -765,6 +854,7 @@ class Productorder {
     _capacity = json['capacity'];
     _model = json['model'];
   }
+
   num? _id;
   String? _uniqueid;
   String? _sku;
@@ -775,36 +865,50 @@ class Productorder {
   num? _price;
   num? _capacity;
   String? _model;
-Productorder copyWith({  num? id,
-  String? uniqueid,
-  String? sku,
-  String? name,
-  dynamic imeiHs,
-  String? image,
-  num? quantity,
-  num? price,
-  num? capacity,
-  String? model,
-}) => Productorder(  id: id ?? _id,
-  uniqueid: uniqueid ?? _uniqueid,
-  sku: sku ?? _sku,
-  name: name ?? _name,
-  imeiHs: imeiHs ?? _imeiHs,
-  image: image ?? _image,
-  quantity: quantity ?? _quantity,
-  price: price ?? _price,
-  capacity: capacity ?? _capacity,
-  model: model ?? _model,
-);
+
+  Productorder copyWith({
+    num? id,
+    String? uniqueid,
+    String? sku,
+    String? name,
+    dynamic imeiHs,
+    String? image,
+    num? quantity,
+    num? price,
+    num? capacity,
+    String? model,
+  }) =>
+      Productorder(
+        id: id ?? _id,
+        uniqueid: uniqueid ?? _uniqueid,
+        sku: sku ?? _sku,
+        name: name ?? _name,
+        imeiHs: imeiHs ?? _imeiHs,
+        image: image ?? _image,
+        quantity: quantity ?? _quantity,
+        price: price ?? _price,
+        capacity: capacity ?? _capacity,
+        model: model ?? _model,
+      );
+
   num? get id => _id;
+
   String? get uniqueid => _uniqueid;
+
   String? get sku => _sku;
+
   String? get name => _name;
+
   dynamic get imeiHs => _imeiHs;
+
   String? get image => _image;
+
   num? get quantity => _quantity;
+
   num? get price => _price;
+
   num? get capacity => _capacity;
+
   String? get model => _model;
 
   Map<String, dynamic> toJson() {
@@ -821,7 +925,6 @@ Productorder copyWith({  num? id,
     map['model'] = _model;
     return map;
   }
-
 }
 
 List<MModel> mModelFromJson(String str) {

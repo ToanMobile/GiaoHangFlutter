@@ -9,7 +9,6 @@ import 'package:get/get.dart';
 import '../../../app/app_controller.dart';
 import '../../../data/api/models/TUser.dart';
 import '../../../data/api/models/response/order/list_order_model.dart';
-import '../../../data/api/models/response/order/order_detail_model.dart';
 import '../../base/base_controller.dart';
 
 class HomeController extends BaseController {

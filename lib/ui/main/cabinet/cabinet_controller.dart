@@ -8,6 +8,7 @@ import '../../base/base_controller.dart';
 class CabinetController extends BaseController {
   final _cabinetRepository = Get.find<CabinetRepository>();
   final _appController = Get.find<AppController>();
+
   List<CabinetModel> get listData => _listData$.value;
   final _listData$ = <CabinetModel>[].obs;
 

@@ -1,4 +1,6 @@
+import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:get/get.dart';
+
 import '../../storage/my_storage.dart';
 import '../api_constants.dart';
 import '../models/response/auth/auth_res.dart';
@@ -10,10 +12,19 @@ class DeliveryService extends BaseService {
 
   Future<AuthRes?> tokenModel() async => await _storage.getDeviceToken();
 
-  Future<List<DeliveryModel>?> getListDelivery() async {
-    final response = await get(GET_LIST_DELIVERY);
+  Future<List<DeliveryModel>?> getListDeliveryPerson() async {
+    final response = await get(GET_LIST_DELIVERY_PER);
     if (response.data != null) {
       return List<DeliveryModel>.from(response.data.map((item) => DeliveryModel.fromJson(item)));
+    } else {
+      return null;
+    }
+  }
+
+  Future<List<CarModel>?> getListDeliveryCar() async {
+    final response = await get(GET_LIST_DELIVERY_CAR);
+    if (response.data != null) {
+      return List<CarModel>.from(response.data.map((item) => CarModel.fromJson(item)));
     } else {
       return null;
     }

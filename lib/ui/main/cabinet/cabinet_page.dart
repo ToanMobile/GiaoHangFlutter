@@ -1,6 +1,5 @@
 import 'package:app_giao_hang/res/style.dart';
 import 'package:app_giao_hang/ui/main/cabinet/cabinet_controller.dart';
-import 'package:app_giao_hang/ui/widgets/base_scaffold_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../base/base_page.dart';
