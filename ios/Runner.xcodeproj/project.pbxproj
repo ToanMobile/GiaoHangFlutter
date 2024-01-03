@@ -335,6 +335,102 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0311FEEE2B452AE900663774 /* Debug-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-stg";
+		};
+		0311FEEF2B452AE900663774 /* Profile-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-stg";
+		};
+		0311FEF02B452AE900663774 /* Release-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-stg";
+		};
+		0311FEF12B452AE900663774 /* Debug-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Debug-prod";
+		};
+		0311FEF22B452AE900663774 /* Profile-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Profile-prod";
+		};
+		0311FEF32B452AE900663774 /* Release-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = MSR46E92DK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
+				PRODUCT_NAME = Runner;
+			};
+			name = "Release-prod";
+		};
+		0311FEF42B452AE900663774 /* Debug-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-stg";
+		};
+		0311FEF52B452AE900663774 /* Profile-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-stg";
+		};
+		0311FEF62B452AE900663774 /* Release-stg */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-stg";
+		};
+		0311FEF72B452AE900663774 /* Debug-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Debug-prod";
+		};
+		0311FEF82B452AE900663774 /* Profile-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Profile-prod";
+		};
+		0311FEF92B452AE900663774 /* Release-prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = RunnerTests;
+			};
+			name = "Release-prod";
+		};
 		249021D3217E4FDB00AE95B9 /* Profile */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -392,13 +488,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = MSR46E92DK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.appNhanh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -778,13 +875,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = MSR46E92DK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.appNhanh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -800,13 +898,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
+				DEVELOPMENT_TEAM = MSR46E92DK;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.appNhanh;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ibp.app.giaohang;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1034,6 +1133,12 @@
 				331C8088294A63A400263BE5 /* Debug */,
 				331C8089294A63A400263BE5 /* Release */,
 				331C808A294A63A400263BE5 /* Profile */,
+				0311FEF42B452AE900663774 /* Debug-stg */,
+				0311FEF52B452AE900663774 /* Profile-stg */,
+				0311FEF62B452AE900663774 /* Release-stg */,
+				0311FEF72B452AE900663774 /* Debug-prod */,
+				0311FEF82B452AE900663774 /* Profile-prod */,
+				0311FEF92B452AE900663774 /* Release-prod */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1060,6 +1165,12 @@
 				97C147061CF9000F007C117D /* Debug */,
 				97C147071CF9000F007C117D /* Release */,
 				249021D4217E4FDB00AE95B9 /* Profile */,
+				0311FEEE2B452AE900663774 /* Debug-stg */,
+				0311FEEF2B452AE900663774 /* Profile-stg */,
+				0311FEF02B452AE900663774 /* Release-stg */,
+				0311FEF12B452AE900663774 /* Debug-prod */,
+				0311FEF22B452AE900663774 /* Profile-prod */,
+				0311FEF32B452AE900663774 /* Release-prod */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
