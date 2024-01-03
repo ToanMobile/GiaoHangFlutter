@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import '../../storage/my_storage.dart';
 import '../api_constants.dart';
+import '../models/request/delivery/delivery_user_request_model.dart';
 import '../models/response/auth/auth_res.dart';
 import '../models/response/delivery/delivery_model.dart';
 import 'base_service.dart';
@@ -28,6 +29,11 @@ class DeliveryService extends BaseService {
     } else {
       return null;
     }
+  }
+
+  Future<bool> updatePerson(DeliveryUserRequestModel userRequestModel) async {
+    final response = await post(UPDATE_DELIVERY_PER, data: userRequestModel.toJson());
+    return response.result ?? false;
   }
 
 /*
@@ -92,11 +98,7 @@ class DeliveryService extends BaseService {
     return await post(DELETE_DEVICE, data: params);
   }
 
-  Future<ApiResponse> updateDevice({required String sn, required String name}) async {
-    final token = await tokenModel();
-    final params = {"uk": token?.uk, "fk": token?.fk, "sn": sn, "name": name};
-    return await post(UPDATE_DEVICE, data: params);
-  }
+
 
   Future<List<ChartDevice>?> getChart({required String sn, required String startTime, required String endTime}) async {
     Stopwatch stopwatch = Stopwatch()..start();

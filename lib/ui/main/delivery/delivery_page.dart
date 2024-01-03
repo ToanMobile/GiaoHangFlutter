@@ -12,28 +12,24 @@ import 'delivery_person_page.dart';
 class DeliveryPage extends BasePage<DeliveryController> {
   @override
   Widget buildContentView(BuildContext context, DeliveryController controller) {
-    return DefaultTabController(
-      length: 2,
-      child: Scaffold(
-        appBar: DefaultAppbar(
-          height: 100.ws,
-          title: 'Danh sách Giao hàng',
-          appBarStyle: AppBarStyle.NONE,
-          tabBar: CommonTabBar.build(
-            context,
-            tabs: [
-              Tab(text: 'Quản lý nhân viên'.toUpperCase()),
-              Tab(text: 'Quản lý phương tiện'.toUpperCase()),
-            ],
-            isScrollable: false,
-          ),
+    return Scaffold(
+      appBar: DefaultAppbar(
+        height: 100.ws,
+        title: 'Danh sách Giao hàng',
+        appBarStyle: AppBarStyle.NONE,
+        tabBar: CommonTabBar.build(
+          context,
+          tabs: controller.myTabs,
+          isScrollable: false,
+          controller: controller.controller,
         ),
-        body: TabBarView(
-          children: [
-            DeliveryCarPage(),
-            DeliveryPersonPage(),
-          ],
-        ),
+      ),
+      body: TabBarView(
+        controller: controller.controller,
+        children: [
+          DeliveryPersonPage(),
+          DeliveryCarPage(),
+        ],
       ),
     );
   }

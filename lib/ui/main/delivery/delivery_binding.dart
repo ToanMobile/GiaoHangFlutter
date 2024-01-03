@@ -7,8 +7,8 @@ import 'delivery_person_controller.dart';
 class DeliveryBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(DeliveryController());
     Get.put(DeliveryCarController());
     Get.put(DeliveryPersonController());
+    Get.put(DeliveryController());
   }
 }

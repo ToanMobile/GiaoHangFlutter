@@ -1,3 +1,4 @@
+import 'package:app_giao_hang/data/api/models/request/delivery/delivery_user_request_model.dart';
 import 'package:app_giao_hang/data/api/models/response/delivery/delivery_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -44,6 +45,17 @@ class DeliveryPersonController extends BaseController {
     textAddress.text = item.address;
     textCCCD.text = item.cccd ?? '';
     textSex.text = item.gender == 0 ? 'Nam' : 'Nữ';
+  }
+
+  updatePerson(DeliveryModel item) async {
+    showLoading();
+    try {
+      await _deliveryRepository.updatePerson(DeliveryUserRequestModel(id: item.id, ));
+      print('getListDelivery::' + listData.length.toString());
+      hideLoading();
+    } catch (e) {
+      hideLoading();
+    }
   }
 
   @override

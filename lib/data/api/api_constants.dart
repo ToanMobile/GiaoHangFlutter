@@ -36,6 +36,10 @@ const GET_LIST_CABINET = "cms/api/customer/get-hscheck?page=1&limit=100";
 //Get list delivery
 const GET_LIST_DELIVERY_PER = "cms/api/customer/get-user-info?page=1&limit=100&type=1";
 const GET_LIST_DELIVERY_CAR = "cms/api/customer/get-vehicles?page=1&limit=100&type=1";
+const UPDATE_DELIVERY_PER = "cms/api/customer/update-userinfo";
+const UPDATE_DELIVERY_CAR = "cms/api/customer/update-vehicle";
+const ADD_DELIVERY_PER = "cms/api/customer/insert-userinfo";
+const ADD_DELIVERY_CAR = "cms/api/customer/insert-vehicle";
 
 //OLD
 //Register

@@ -18,7 +18,7 @@ class DeliveryCarItemView extends StatelessWidget {
   Widget build(BuildContext context) {
     return TouchableOpacity(
       child: Container(
-        height: 160.ws,
+        height: 90.ws,
         padding: EdgeInsets.only(right: 10.ws, top: 8.ws, bottom: 8.ws),
         child: Column(
           children: [
