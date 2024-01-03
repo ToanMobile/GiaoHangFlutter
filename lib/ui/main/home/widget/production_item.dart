@@ -17,52 +17,55 @@ class ProductionItem extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 100.ws,
-        margin: const EdgeInsets.symmetric(horizontal: 16),
+        color: Colors.white,
         padding: const EdgeInsets.symmetric(vertical: 6),
-        decoration: const BoxDecoration(
-            // border: Border(
-            //   bottom: BorderSide(
-            //     color: AppColor.grey3,
-            //     width: 1.0,
-            //   ),
-            // ),
-            ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            RoundNetworkImage(
+              width: 100.ws,
+              height: 60.ws,
+              url: item.image ?? "",
+            ),
+            SizedBox(width: 20.ws),
             Expanded(
-              child: Stack(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: RoundNetworkImage(
-                      width: 200.ws,
-                      height: 200.ws,
-                      url: item.image ?? "",
+                  Expanded(
+                    child: Text(
+                      'Tên: ${item.name ?? ''}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12.ts,
+                      ),
+                      maxLines: 2,
+                    ),
+                  ),
+                  Text(
+                    "Loại: Tủ",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                    ),
+                  ),
+                  Text(
+                    "SL: ${(item.quantity ?? 0).toString()}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                    ),
+                  ),
+                  Text(
+                    "Giá: ${((item.price ?? 0).toString()).stringToVNCurrency()} ₫",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                      color: color0EAC71,
                     ),
                   ),
                 ],
-              ),
-            ),
-            // CommonNetworkImage(
-            //   item.image ?? "",
-            //   width: 75,
-            //   height: 120,
-            // ),
-            Text(
-              textAlign: TextAlign.center,
-              item.name ?? "",
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 13,
-              ),
-            ),
-            Text(
-              "${((item.price ?? 0).toString()).stringToVNCurrency()} ₫",
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-                color: Colors.lightGreenAccent,
               ),
             ),
           ],

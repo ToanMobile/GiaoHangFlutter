@@ -42,7 +42,7 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
         padding: EdgeInsets.all(8),
         decoration: BoxDecoration(
           color: getColor().bgThemeColorWhite,
-          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(14), bottomRight: Radius.circular(14)),
+          borderRadius: BorderRadius.all(Radius.circular(14)),
           boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(0.3),
@@ -53,15 +53,14 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
           ],
         ),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30.ws),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Mã biên bản:",
@@ -79,8 +78,6 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
                 ),
                 SizedBox(height: 10.ws),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Tên người vận chuyển:",
@@ -100,13 +97,10 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
             ),
             SizedBox(width: 10.ws),
             Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(height: 30.ws),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Số đơn:",
@@ -124,8 +118,6 @@ class HomeDetailPage extends BasePage<HomeDetailsController> {
                 ),
                 SizedBox(height: 10.ws),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
                       "Ghi chú:",

@@ -49,9 +49,9 @@ class HomeDetailsController extends BaseController {
         _orderDetail$.value = value?.first ?? OrderDetail();
         if (_orderDetail$.value.productorder?.first.model != null) {
           List<SlotsModel>? listSlot = [];
-          mModelFromJson(_orderDetail$.value.productorder?.first.model ?? '').map((e) {
+          final list = mModelFromJson(_orderDetail$.value.productorder?.first.model ?? '');
+          list.forEach((e) {
             listSlot.addAll(e.slots?.toList() ?? []);
-            print('HomeController:orderDetail:' + listSlot.toString());
           });
           _listModel$.value = listSlot;
         }

@@ -43,6 +43,11 @@ class MModel {
   num? _heightlimit;
   List<SlotsModel>? _slots;
 
+  @override
+  String toString() {
+    return 'MModel{_name: $_name, _type: $_type, _active: $_active, _capacity: $_capacity, _heightlimit: $_heightlimit, _slots: $_slots}';
+  }
+
   MModel copyWith({
     String? name,
     String? type,
@@ -108,6 +113,11 @@ class SlotsModel {
     _capacity = capacity;
     _heightlimit = heightlimit;
     _item = item;
+  }
+
+  @override
+  String toString() {
+    return 'SlotsModel{_name: $_name, _type: $_type, _active: $_active, _capacity: $_capacity, _heightlimit: $_heightlimit, _item: $_item}';
   }
 
   SlotsModel.fromJson(dynamic json) {
@@ -199,6 +209,11 @@ class MItemModel {
     _favorites = favorites;
   }
 
+  @override
+  String toString() {
+    return 'MItemModel{_sku: $_sku, _uniqueid: $_uniqueid, _name: $_name, _img: $_img, _type: $_type, _price: $_price, _temporaryprice: $_temporaryprice, _favorites: $_favorites}';
+  }
+
   MItemModel.fromJson(dynamic json) {
     _sku = json['sku'];
     _uniqueid = json['uniqueid'];
@@ -255,6 +270,8 @@ class MItemModel {
   num? get temporaryprice => _temporaryprice;
 
   num? get favorites => _favorites;
+
+  num get sl => 0;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};

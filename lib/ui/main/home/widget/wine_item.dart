@@ -13,57 +13,60 @@ class WineItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('WineItem::::' + item.toString());
     return InkWell(
       onTap: onTap,
       child: Container(
         height: 100.ws,
         margin: const EdgeInsets.symmetric(horizontal: 16),
         padding: const EdgeInsets.symmetric(vertical: 6),
-        decoration: const BoxDecoration(
-            // border: Border(
-            //   bottom: BorderSide(
-            //     color: AppColor.grey3,
-            //     width: 1.0,
-            //   ),
-            // ),
-            ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            RoundNetworkImage(
+              width: 60.ws,
+              height: 60.ws,
+              url: item.item?.img ?? '',
+            ),
+            SizedBox(width: 20.ws),
             Expanded(
-              child: Stack(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  AspectRatio(
-                    aspectRatio: 1,
-                    child: RoundNetworkImage(
-                      width: 200.ws,
-                      height: 200.ws,
-                      url: item.item?.img ?? "",
+                  Expanded(
+                    child: Text(
+                      'Tên: ${item.item?.name ?? ''}',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w700,
+                        fontSize: 12.ts,
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                      maxLines: 2,
+                    ),
+                  ),
+                  Text(
+                    "Loại: Chai",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                    ),
+                  ),
+                  Text(
+                    "SL: ${(item.item?.sl ?? 0).toString()}",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                    ),
+                  ),
+                  Text(
+                    "Giá: ${((item.item?.price ?? 0).toString()).stringToVNCurrency()} ₫",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 13.ts,
+                      color: color0EAC71,
                     ),
                   ),
                 ],
-              ),
-            ),
-            // CommonNetworkImage(
-            //   item.image ?? "",
-            //   width: 75,
-            //   height: 120,
-            // ),
-            Text(
-              textAlign: TextAlign.center,
-              item.name ?? "",
-              style: const TextStyle(
-                fontWeight: FontWeight.w400,
-                fontSize: 13,
-              ),
-            ),
-            Text(
-              "${((item.item?.price ?? 0).toString()).stringToVNCurrency()} ₫",
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-                color: Colors.lightGreenAccent,
               ),
             ),
           ],
