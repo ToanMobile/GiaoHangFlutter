@@ -2,6 +2,7 @@ import 'package:app_giao_hang/data/api/models/response/delivery/car_model.dart';
 import 'package:app_giao_hang/res/style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../base/base_page.dart';
 import '../../widgets/button/custom_button.dart';
 import '../../widgets/input/text_form_field_widget.dart';
@@ -60,10 +61,14 @@ class DeliveryCarPage extends BasePage<DeliveryCarController> {
 
   void openCarBottomSheet(BuildContext context, CarModel? item) {
     Get.bottomSheet(
-      SizedBox(
-        height: 260.ws,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      Container(
+        height: Get.height * 0.3,
+        padding: EdgeInsets.symmetric(vertical: 16.ws, horizontal: 24.ws),
+        decoration: BoxDecoration(
+          color: colorWhite,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(12.rs), topRight: Radius.circular(12.rs)),
+        ),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,

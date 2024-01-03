@@ -61,10 +61,14 @@ class DeliveryPersonPage extends BasePage<DeliveryPersonController> {
 
   void openDetailBottomSheet(BuildContext context, DeliveryModel? item) {
     Get.bottomSheet(
-      SizedBox(
-        height: 800.ws,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
+      Container(
+        height: Get.height * 0.7,
+        padding: EdgeInsets.symmetric(vertical: 16.ws, horizontal: 24.ws),
+        decoration: BoxDecoration(
+          color: colorWhite,
+          borderRadius: BorderRadius.only(topLeft: Radius.circular(12.rs), topRight: Radius.circular(12.rs)),
+        ),
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
