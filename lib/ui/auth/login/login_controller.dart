@@ -13,8 +13,8 @@ class LoginController extends BaseController {
 
   ViewState get initState => ViewState.loaded;
   final formKey = GlobalKey<FormState>();
-  TextEditingController textEmailCl = TextEditingController()..text = 'vodaiquoctu@gmail.com';
-  TextEditingController textPasswordCl = TextEditingController()..text = '123456';
+  TextEditingController textEmailCl = TextEditingController();//..text = 'vodaiquoctu@gmail.com';
+  TextEditingController textPasswordCl = TextEditingController();//..text = '123456';
   RxBool buttonEnable = false.obs;
 
   @override
